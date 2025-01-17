@@ -1,0 +1,25 @@
+/* Nascondi il menu mobile di default */
+.mobile-menu {
+    display: none;
+}
+
+/* Menu Hamburger */
+.hamburger-menu {
+    display: none;
+}
+
+/* Media Query per schermi piccoli */
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .mobile-menu {
+        display: block;
+    }
+    .hidden {
+        display: none;
+    }
+}

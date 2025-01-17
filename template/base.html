@@ -5,30 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All You Knit - Homepage</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <!-- Header con logo e barra di ricerca -->
     <header>
-        <div>
+        <div class="logo">
             <img src="#" alt="Logo All You Knit">
         </div>
-        <div>
-            <form action="#" method="get">
-                <input type="text" placeholder="Cerca un prodotto">
-                <button type="submit">🔍</button>
-            </form>
-        </div>
-        <div>
+
+        <form class="search-bar" action="#" method="get">
+            <input type="text" placeholder="Cerca un prodotto">
+            <button type="submit">🔍</button>
+        </form>
+
+        <div class="icons">
             <a href="#">Ciao, Maurizio Capuano</a>
             <a href="#">🔔</a>
             <a href="#">🛒</a>
         </div>
+
+        <!-- Menu Hamburger -->
+        <div class="hamburger-menu">
+            <button id="menu-button">☰</button>
+        </div>
+
     </header>
 
     <!-- Barra di navigazione -->
-    <nav>
-        <ul>
+    <nav id="navbar">
+        
+        <ul class="desktop-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Filati</a></li>
+            <li><a href="#">Tutto Borse</a></li>
+            <li><a href="#">Attrezzi</a></li>
+            <li><a href="#">Bijoux</a></li>
+            <li><a href="#">Editoria</a></li>
+            <li><a href="#">Offerte</a></li>
+        </ul>
+    
+        <ul class="mobile-menu hidden">
             <li><a href="#">Home</a></li>
             <li><a href="#">Filati</a></li>
             <li><a href="#">Tutto Borse</a></li>
@@ -70,6 +88,7 @@
     <footer>
         <p>All You Knit S.p.a</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

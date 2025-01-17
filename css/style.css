@@ -1,9 +1,19 @@
 /* Nascondi il menu mobile di default */
+
+.desktop-menu {
+    display: block;
+}
+.desktop-only {
+    display: block;
+}
+
+
 .mobile-menu {
     display: none;
 }
-
-/* Menu Hamburger */
+.mobile-only {
+    display: none;
+}
 .hamburger-menu {
     display: none;
 }
@@ -13,13 +23,20 @@
     .desktop-menu {
         display: none;
     }
-    .hamburger-menu {
-        display: block;
-    }
-    .mobile-menu {
-        display: block;
+    .desktop-only {
+        display: none;
     }
     .hidden {
         display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+    .mobile-only {
+        display: block;
+    }
+    .hamburger-menu {
+        display: block;
     }
 }

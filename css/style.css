@@ -9,12 +9,13 @@ body {
 
 .mainheader {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    height: 180px;
     padding: 10px 20px;
 
     .logo img {
-        height: 250px;
+        height: 200px;
     }
 
     .search-bar {
@@ -65,6 +66,78 @@ body {
     }
     
 }
+
+.desktop-navbar {
+    background-color: #fff;
+    padding: 10px 0; 
+
+    .desktop-menu {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        list-style: none;
+        padding: 0;
+        margin: 0; 
+    }
+
+    .desktop-menu li {
+        margin: 0 3%;
+        font-size: 16px;
+        font-weight: bold;
+        position: relative;
+        text-transform: uppercase;
+
+        :hover {
+            color:#005BAD;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+
+    .desktop-menu li:not(:last-child)::after {
+        content: ''; 
+        position: absolute;
+        right: -10px; 
+        top: 50%; 
+        transform: translateY(-50%);
+        width: 1px; /* Thickness of the line */
+        height: 20px; /* Height of the line */
+        background-color: #d3d3d3; /* Light grey color for the separator */
+    }
+    
+}
+
+footer {
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center;
+    height: 150px;
+    padding: 0px;
+    background-color: #F85760;
+
+    li {
+        display: flex;
+        list-style-type: none;
+        color:#fff;
+        line-height: 20px;
+    }
+
+    .brand-logo img {
+        width: 200px;
+    }
+
+    .payment-icons span img {
+        display: inline-flex;
+        justify-content: space-between;
+        margin-inline: 10px;
+        width: 80px;
+    }
+}
+
+
 
 /* Nascondi il menu mobile di default */
 .desktop-menu {

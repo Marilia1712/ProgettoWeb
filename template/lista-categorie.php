@@ -64,11 +64,15 @@
 
 <!-- Brand Banner -->
 <section class="white-banner py-5">
-    <div class="container text-center">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10">
-                <img src="./upload/logos/LOGO2.png" alt="All You Knit Logo" class="img-fluid mb-4">
-                <p>
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Logo Section -->
+            <div class="col-12 col-md-3 text-center text-md-start">
+                <img src="./upload/logos/LOGO2.png" alt="All You Knit Logo" class="img-fluid">
+            </div>
+            <!-- Text Section -->
+            <div class="col-12 col-md-9">
+                <p class="brand-description">
                     All You Knit, da oltre 30 anni, è un brand retrò che combina la passione per la maglieria con lo stile groovy
                     degli anni passati. I nostri filati e gomitoli, selezionati con cura, garantiscono morbidezza, resistenza e
                     colori vivaci che richiamano l'energia e la creatività di un’epoca unica. Coniughiamo tradizione e design
@@ -78,3 +82,4 @@
         </div>
     </div>
 </section>
+

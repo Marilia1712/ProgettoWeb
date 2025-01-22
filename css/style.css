@@ -200,6 +200,30 @@ main {
     margin: 0;
 }
 
+.white-banner {
+    background-color: #ffffff;
+}
+
+.brand-description {
+    font-weight: bold;
+    text-align: center;
+    padding: 0 5rem;
+}
+
+.brand-logo {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 1rem; 
+}
+
+.brand-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
 
 
 

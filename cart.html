@@ -1,42 +1,49 @@
-<main>
-    <h1>Carrello</h1>
-    <section class="cart">
+<h1 class="mb-4">Carrello</h1>
+
+<!-- Elenco Prodotti -->
+<section class="cart">
+    <div class="row mb-3">
         <!-- Prodotto 1 -->
-        <article class="cart-item">
-            <div class="product-image">
-                <img src="#" alt="Bravissimo Batik Grano 500 gr">
-            </div>
-            <div class="product-details">
-                <h2>Bravissimo Batik Grano 500 gr</h2>
-                <p><strong>Prezzo:</strong> 11,90 $</p>
-                <div class="quantity">
-                    <label for="quantity1">Quantità:</label>
-                    <input type="number" id="quantity1" value="1" min="1">
+        <div class="col-12">
+            <article class="cart-item d-flex align-items-center p-3 bg-white border rounded">
+                <div class="product-image me-3">
+                    <img src="#" alt="Bravissimo Batik Grano 500 gr" class="img-fluid" style="width: 100px;">
                 </div>
-            </div>
-        </article>
+                <div class="product-details">
+                    <h2 class="h5">Bravissimo Batik Grano 500 gr</h2>
+                    <p class="mb-2"><strong>Prezzo:</strong> 11,90 $</p>
+                    <div class="quantity d-flex align-items-center">
+                        <label for="quantity1" class="me-2">Quantità:</label>
+                        <input type="number" id="quantity1" value="1" min="1" class="form-control w-25">
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
 
+    <div class="row mb-3">
         <!-- Prodotto 2 -->
-        <article class="cart-item">
-            <div class="product-image">
-                <img src="#" alt="Bravissimo Batik Verde 200 gr">
-            </div>
-            <div class="product-details">
-                <h2>Bravissimo Batik Verde 200 gr</h2>
-                <p><strong>Prezzo:</strong> 7,90 $</p>
-                <div class="quantity">
-                    <label for="quantity2">Quantità:</label>
-                    <input type="number" id="quantity2" value="1" min="1">
+        <div class="col-12">
+            <article class="cart-item d-flex align-items-center p-3 bg-white border rounded">
+                <div class="product-image me-3">
+                    <img src="#" alt="Bravissimo Batik Verde 200 gr" class="img-fluid" style="width: 100px;">
                 </div>
-            </div>
-        </article>
-    </section>
+                <div class="product-details">
+                    <h2 class="h5">Bravissimo Batik Verde 200 gr</h2>
+                    <p class="mb-2"><strong>Prezzo:</strong> 7,90 $</p>
+                    <div class="quantity d-flex align-items-center">
+                        <label for="quantity2" class="me-2">Quantità:</label>
+                        <input type="number" id="quantity2" value="1" min="1" class="form-control w-25">
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
 
-    <!-- Totale Carrello -->
-    <section class="cart-total">
-        <h2>Totale</h2>
-        <p><strong>19,80 $</strong></p>
-        <button>Procedi al Checkout</button>
-    </section>
-</main>
-
+<!-- Totale Carrello -->
+<section class="cart-total text-center py-3 bg-light border rounded">
+    <h2 class="h4">Totale</h2>
+    <p class="mb-3"><strong>19,80 $</strong></p>
+    <button class="btn btn-primary">Procedi al Checkout</button>
+</section>

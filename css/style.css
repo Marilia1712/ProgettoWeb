@@ -115,3 +115,37 @@ footer .payment-icons img {
     max-width: 40px;
     margin: 0 10px;
 }
+
+
+/* Main container */
+main {
+    background-color: white;
+    padding: 20px 0;
+}
+
+/* User section styles */
+.user-section {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.user-section:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image icons in user sections */
+.section-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+/* Additional styles for user header */
+.user-header img.user-logo {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+

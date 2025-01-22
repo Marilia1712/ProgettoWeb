@@ -1,4 +1,4 @@
-<div>
+<div class="row justify-content-center">
     <!-- Sezione Login -->
     <div>
         <h1>Accedi</h1>
@@ -18,7 +18,7 @@
             <button type="submit">Accedi</button>
         </form>
     </div>
-    <br><br>
+
     <!-- Sezione Registrazione -->
     <div>
         <h1>Registrati</h1>
@@ -41,5 +41,4 @@
             <button type="submit">Registrati</button>
         </form>
     </div>
-    <br><br>
 </div>

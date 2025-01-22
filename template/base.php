@@ -19,7 +19,9 @@
                 <div class="col-lg-4 col-md-6">
                     <form class="d-flex search-bar" action="#" method="get">
                         <input type="text" class="form-control me-2" placeholder="Cerca un prodotto">
-                        <button type="submit" class="btn btn-primary">🔍</button>
+                        <button type="submit" class="btn btn-primary">
+                            <img src="./upload/icons/magnifying-glass-solid.svg" alt="Cerca" width="24">
+                        </button>
                     </form>
                 </div>
                 

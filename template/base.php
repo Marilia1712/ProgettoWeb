@@ -24,7 +24,7 @@
         </div>
 
         <div class="loginbanner">
-            <a href="./login.html" class="desktop-only">Ciao, Maurizio Capuano</a>
+            <a href="./index-login.php" class="desktop-only">&nbsp Benvenuto! Effettua login &nbsp</a>
         </div>
         
         <div class="icons">

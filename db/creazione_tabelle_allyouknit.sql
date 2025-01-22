@@ -35,6 +35,7 @@ CREATE TABLE `prodotti` (
   `Colore` varchar(45) DEFAULT NULL,
   `Composizione` varchar(250) DEFAULT NULL,
   `Strumenti` varchar(250) DEFAULT NULL,
+  `Giacenza` int(11) DEFAULT 0,
   PRIMARY KEY (`CodID`)
   );
 
@@ -129,4 +130,4 @@ CREATE TABLE `applicazioniofferte` (
 SELECT table_name
 FROM information_schema.tables
 WHERE table_type='BASE TABLE'
-      AND table_schema = 'shoponline';
+      AND table_schema = 'allyouknit';

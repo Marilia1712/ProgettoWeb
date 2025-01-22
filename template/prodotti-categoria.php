@@ -6,10 +6,10 @@
 <section class="product-list">
 
     <?php foreach($templateParams["prodotti"] as $prodotto): ?>
-        <article>
-            <img src="<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>">
-            <h2><a href="#"><?php echo $prodotto["NomeProdotto"]; ?></a></h2>
-            <p><strong><?php echo $prodotto["Prezzo"]; ?> $</strong></p>
+        <article class="product-item">
+            <img src="<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["NomeProdotto"]; ?>">
+            <h2><a href="./index-singolo-prodotto.php?idProdotto=<?php echo $prodotto["CodID"]?>"><?php echo $prodotto["NomeProdotto"]; ?></a></h2>
+            <br>
         </article>
     <?php endforeach; ?>
     

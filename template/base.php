@@ -48,13 +48,13 @@
     <!-- Barra di navigazione -->
     <nav class="desktop-navbar">
         <ul class="desktop-menu">
-            <li><a href="./base.html">Home</a></li> <!-- diventerà index.html -->
+            <li><a href="./index.php">Home</a></li>
             <?php foreach($templateParams["categorie"] as $categoria): ?>
             <li>
                 <a href="./index-prodotti-categoria.php?nomeCategoria=<?php echo $categoria["Nome"]?>"><?php echo $categoria["Nome"]; ?></a>
             </li>
             <?php endforeach; ?>
-            <li><a href="#">Offerte</a></li>
+            <li><a href="./index-offerte.php">Offerte</a></li>
         </ul>
 
         <div class="mobile-greeting mobile-only">
@@ -63,13 +63,13 @@
         </div>
     
         <ul class="mobile-menu hidden">
-            <li><a href="./base.html">Home</a></li> <!-- diventerà index.html -->
+            <li><a href="./index.php">Home</a></li>
             <?php foreach($templateParams["categorie"] as $categoria): ?>
             <li>
                 <a href="./index-prodotti-categoria.php?nomeCategoria=<?php echo $categoria["Nome"]?>"><?php echo $categoria["Nome"]; ?></a>
             </li>
             <?php endforeach; ?>
-            <li><a href="#">Offerte</a></li>
+            <li><a href="./index-offerte.php">Offerte</a></li>
         </ul>
     </nav>
 

@@ -35,6 +35,46 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getProduct($product){
+        $stmt = $this->conn->prepare("SELECT * FROM prodotti WHERE CodId = ?");
+        $stmt->bind_param('i',$product);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getDiscountedProducts(){
+        $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN offerte ON(prodotti.CodID = offerte.CodIDProdotto) WHERE Scadenza > ?");
+        $date = gmdate('Y-m-d h:i:s \G\M\T');
+        $stmt->bind_param('s', $date);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    
+    public function getDiscountedProduct($product){
+        $stmt = $this->conn->prepare("SELECT *, prodotti.CodID as CodIDProdotto FROM prodotti INNER JOIN offerte ON(prodotti.CodID = offerte.CodIDProdotto) WHERE prodotti.CodId = ?");
+        $stmt->bind_param('i', $product);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    
+    public function checkProductInSale($product){
+        $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN offerte ON(prodotti.CodID = offerte.CodIDProdotto) WHERE Scadenza > ? AND prodotti.CodID = ?");
+        $date = gmdate('Y-m-d h:i:s \G\M\T');
+        $stmt->bind_param('si', $date, $product);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if(empty($result->fetch_all(MYSQLI_ASSOC)))
+            return false; //prodotto non in offerta
+        else
+            return true; //prodotto in offerta
+    }
 
 
 

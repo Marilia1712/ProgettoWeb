@@ -18,31 +18,43 @@
     </div>
 </section>
 
-<section class="banner-categorie mb-5" data-bs-interval="3000">
+<section class="banner-categorie mb-5" data-bs-interval="2000">
     <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <a href="./index-prodotti-categoria.php?nomeCategoria=Filati">
-                    <img src="./upload/carousel/carousel1.jpg" class="d-block w-100 banner-image" alt="Filati">
+                    <img src="./upload/carousel/filati.jpg" class="d-block w-100 banner-image" alt="">
                     <p>Filati</p>
                 </a>
             </div>
             <div class="carousel-item">
-                <a href="./index-prodotti-categoria.php?nomeCategoria=Tutto Borse">
-                    <img src="./upload/carousel/carousel2.jpg" class="d-block w-100 banner-image" alt="Borse">
-                    <p>Borse</p>
-                </a>
-            </div>
-            <div class="carousel-item">
                 <a href="./index-prodotti-categoria.php?nomeCategoria=Attrezzi">
-                    <img src="./upload/carousel/carousel3.jpg" class="d-block w-100 banner-image" alt="Attrezzi">
+                    <img src="./upload/carousel/attrezzi.jpg" class="d-block w-100 banner-image" alt="">
                     <p>Attrezzi</p>
                 </a>
             </div>
             <div class="carousel-item">
                 <a href="./index-prodotti-categoria.php?nomeCategoria=Bijoux">
-                    <img src="./upload/carousel/carousel4.jpg" class="d-block w-100 banner-image" alt="Bijoux">
+                    <img src="./upload/carousel/bijoux.jpg" class="d-block w-100 banner-image" alt="">
                     <p>Bijoux</p>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="./index-prodotti-categoria.php?nomeCategoria=Filati">
+                    <img src="./upload/carousel/filati.jpg" class="d-block w-100 banner-image" alt="">
+                    <p>Filati</p>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="./index-prodotti-categoria.php?nomeCategoria=Applicazioni">
+                    <img src="./upload/carousel/applicazioni.jpg" class="d-block w-100 banner-image" alt="">
+                    <p>Applicazioni</p>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="./index-prodotti-categoria.php?nomeCategoria=Editoria">
+                    <img src="./upload/carousel/editoria.jpg" class="d-block w-100 banner-image" alt="">
+                    <p>Editoria</p>
                 </a>
             </div>
         </div>

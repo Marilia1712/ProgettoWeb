@@ -28,7 +28,7 @@ class DatabaseHelper{
 
     public function getProductsOfCategory($category){
         $stmt = $this->conn->prepare("SELECT *, prodotti.Nome as NomeProdotto FROM prodotti INNER JOIN appartenenzacategoria USING(CodID) WHERE appartenenzacategoria.Nome = ?");
-        $stmt->bind_param('s',$category);
+        $stmt->bind_param('s', $category);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -37,7 +37,7 @@ class DatabaseHelper{
 
     public function getProduct($product){
         $stmt = $this->conn->prepare("SELECT * FROM prodotti WHERE CodId = ?");
-        $stmt->bind_param('i',$product);
+        $stmt->bind_param('i', $product);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -75,6 +75,46 @@ class DatabaseHelper{
         else
             return true; //prodotto in offerta
     }
+
+    public function checkUserPresence($userEmail){
+        $stmt = $this->conn->prepare("SELECT * FROM clienti WHERE Email = ?");
+        $stmt->bind_param('s', $userEmail);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if(empty($result->fetch_all(MYSQLI_ASSOC)))
+            return false; //utente non registrato
+        else
+            return true; //utente registrato
+    }
+
+    public function checkUserCredentials($email, $password){
+        $stmt = $this->conn->prepare("SELECT * FROM clienti WHERE Email = ? AND Password = ?");
+        $stmt->bind_param('ss', $email, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $result = $result->fetch_all(MYSQLI_ASSOC);
+
+        if(empty($result))
+            return NULL; //credenziali errate
+        else
+            return $result[0]; //credenziali corrette
+    }
+
+    public function signUserUp($email, $nome, $cognome, $password){
+        $query = "INSERT INTO clienti (email, nome, cognome, password) VALUES (?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('ssss', $email, $nome, $cognome, $password);
+        $stmt->execute();
+    }
+
+
+
+
+
+
+
+
 
 
 

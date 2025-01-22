@@ -33,7 +33,11 @@
                 <!-- Icons -->
                 <div class="col-lg-4 text-end">
                     <div class="loginbanner mb-2">
-                        <a href="./index-login.php" class="text-decoration-none">Benvenuto! Effettua login</a>
+                    <?php if(isset($_SESSION["email"])): ?>
+                        <a href="./index-login.php" class="text-decoration-none">Pagina del profilo di <?php echo $_SESSION["nome"]; ?></a>
+                    <?php else: ?>
+                        <a href="./index-login.php" class="text-decoration-none">Welcome! Effettua login</a>
+                    <?php endif; ?>
                     </div>
                     <div class="icons d-inline-flex gap-2">
                         <a href="./notifications.html">
@@ -42,6 +46,11 @@
                         <a href="./cart.html">
                             <img src="./upload/icons/cart-shopping-solid.svg" alt="Carrello" width="24">
                         </a>
+                        <?php if(isset($_SESSION["email"])): ?>
+                        <a href="./utils/logout-script.php">
+                            <img src="./upload/icons/logout-solid.svg" alt="Logout" width="24">
+                        </a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

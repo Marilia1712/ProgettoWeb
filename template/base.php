@@ -33,7 +33,7 @@
                 <!-- Icons -->
                 <div class="col-lg-4 text-end">
                     <div class="loginbanner mb-2">
-                        <a href="./login.html" class="text-decoration-none">Ciao, Maurizio Capuano</a>
+                        <a href="./index-login.php" class="text-decoration-none">Benvenuto! Effettua login</a>
                     </div>
                     <div class="icons d-inline-flex gap-2">
                         <a href="./notifications.html">

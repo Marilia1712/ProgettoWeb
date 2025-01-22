@@ -45,9 +45,9 @@ class DatabaseHelper{
     }
 
     public function getDiscountedProducts(){
-        $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN offerte ON(prodotti.CodID = offerte.CodIDProdotto) WHERE Scadenza > ?");
+        $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN offerte ON(prodotti.CodID = offerte.CodIDProdotto) WHERE Inizio < ? AND Scadenza > ?");
         $date = gmdate('Y-m-d h:i:s \G\M\T');
-        $stmt->bind_param('s', $date);
+        $stmt->bind_param('ss', $date, $date);
         $stmt->execute();
         $result = $stmt->get_result();
 

@@ -19,6 +19,7 @@
 </section>
 
 <!-- Sezione del carosello di immagini -->
+<script src="./js/script.js"></script>
 <section class="banner-categorie">
     <div class="carousel">
         <a href="./index-prodotti-categoria.php?nomeCategoria=Filati">

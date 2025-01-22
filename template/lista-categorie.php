@@ -12,19 +12,19 @@
 <!-- Sezione del carosello di immagini FIXME: aggiorna link -->
 <section class="banner-categorie">
     <div class="carousel">
-        <a href="./category-filati.html">
+        <a href="./index-prodotti-categoria.php?nomeCategoria=Filati">
             <img src="./upload/carousel/carousel1.jpg" alt="" class="carousel-image">
             <p>Filati</p>
         </a>
-        <a href="./category-borse.html">
+        <a href="./index-prodotti-categoria.php?nomeCategoria=Tutto Borse">
             <img src="./upload/carousel/carousel2.jpg" alt="" class="carousel-image">
             <p>Borse</p>
         </a>
-        <a href="./category-attrezzi.html">
+        <a href="./index-prodotti-categoria.php?nomeCategoria=Attrezzi">
             <img src="./upload/carousel/carousel3.jpg" alt="" class="carousel-image">
             <p>Attrezzi</p>
         </a>
-        <a href="./category-bijoux.html">
+        <a href="./index-prodotti-categoria.php?nomeCategoria=Bijoux">
             <img src="./upload/carousel/carousel4.jpg" alt="" class="carousel-image">
             <p>Bijoux</p>
         </a>

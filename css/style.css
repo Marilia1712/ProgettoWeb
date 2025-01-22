@@ -149,3 +149,27 @@ main {
     margin-bottom: 15px;
 }
 
+
+/**/
+
+.carousel-item img {
+    height: 400px; /* Adjust as needed */
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.white-banner img {
+    max-width: 150px;
+    height: auto;
+}
+
+.white-banner p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}

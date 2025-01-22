@@ -31,9 +31,11 @@
                         <img src="./upload/icons/cart-shopping-solid.svg" alt="Carrello" width="24">
                     </button>
                     <input type="number" value="0" min="0" max="<?php echo $prodotto["Giacenza"]; ?>" class="form-control w-25 d-inline-block mx-2">
-                    <button class="btn btn-outline-danger">
-                        <img src="./upload/icons/heart-solid-pink.svg" alt="Aggiungi a wishlist" width="24">
-                    </button>
+                    <a href="http://">
+                        <button class="btn btn-outline-danger">
+                            <img src="./upload/icons/heart-solid-pink.svg" alt="Aggiungi a wishlist" width="24">
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>

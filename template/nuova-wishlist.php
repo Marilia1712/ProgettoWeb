@@ -1,15 +1,15 @@
 <h1 class="text-center mb-4">Crea una nuova wishlist</h1>
-<form action="/submit-new-wishlist" method="POST" class="row g-4">
+<form action="./utils/new-wishlist-script.php" method="POST" class="row g-4">
     <!-- Nome della wishlist -->
     <div class="col-12 col-md-4">
         <label for="wishlist-name" class="form-label">Nome della wishlist:</label>
-        <input type="text" id="wishlist-name" name="wishlist-name" class="form-control" placeholder="Inserisci il nome della wishlist" required>
+        <input type="text" id="wishlist-name" name="nome" class="form-control" placeholder="Inserisci il nome della wishlist" required>
     </div>
 
     <!-- Descrizione della wishlist -->
     <div class="col-12 col-md-8">
         <label for="wishlist-description" class="form-label">Descrizione:</label>
-        <textarea id="wishlist-description" name="wishlist-description" class="form-control" placeholder="Inserisci una descrizione della wishlist" rows="5" required></textarea>
+        <textarea id="wishlist-description" name="descrizione" class="form-control" placeholder="Inserisci una descrizione della wishlist" rows="5" required></textarea>
     </div>
 
     <!-- Pulsante per l'invio -->
@@ -17,4 +17,3 @@
         <button type="submit" class="btn btn-primary btn-lg">Crea Wishlist</button>
     </div>
 </form>
-

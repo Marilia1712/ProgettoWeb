@@ -102,17 +102,52 @@ class DatabaseHelper{
     }
 
     public function signUserUp($email, $nome, $cognome, $password){
-        $query = "INSERT INTO clienti (email, nome, cognome, password) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO clienti (Email, Nome, Cognome, Password) VALUES (?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param('ssss', $email, $nome, $cognome, $password);
         $stmt->execute();
     }
 
+    public function getUserInbox($userEmail){
+        $stmt = $this->conn->prepare("SELECT * FROM clienti INNER JOIN inboxclienti USING(Email) INNER JOIN avvisi USING(CodID) WHERE Email = ? ORDER BY Data, Ora");
+        $stmt->bind_param('s', $userEmail);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
+    public function getUserWishlists($userEmail){
+        $stmt = $this->conn->prepare("SELECT * FROM clienti INNER JOIN wishlists USING(Email) WHERE Email = ? ORDER BY wishlists.Nome");
+        $stmt->bind_param('s', $userEmail);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
+    public function createNewWishlist($nome, $descrizione, $email){
+        $query = "INSERT INTO wishlists (Nome, Descrizione, Email) VALUES (?, ?, ?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('sss', $nome, $descrizione, $email);
+        $stmt->execute();
+    }
 
+    public function deleteWishlist($id){
+        $stmt = $this->conn->prepare("DELETE FROM wishlists WHERE CodID = ?");
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+    }
+
+    public function getWishlistProducts($wishlistID){
+        $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN aggiuntawishlist ON(prodotti.CodID = aggiuntawishlist.CodIDProdotto)
+                                        INNER JOIN wishlists ON(aggiuntawishlist.CodIDWishlist = wishlists.CodID) WHERE wishlists.CodID = ?");
+        $stmt->bind_param('i', $wishlistID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
 
 

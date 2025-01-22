@@ -1,3 +1,4 @@
+<!-- ?php session_start(); ?> -->
 <!DOCTYPE html>
 <html lang="it">
 
@@ -36,19 +37,19 @@
                 <div class="col-lg-4 text-end">
                     <div class="loginbanner mb-2">
                     <?php if(isset($_SESSION["email"])): ?>
-                        <a href="./index-login.php" class="text-decoration-none">Pagina del profilo di <?php echo $_SESSION["nome"]; ?></a>
+                        <a href="./index-pagina-personale.php" class="text-decoration-none">Pagina del profilo di <?php echo $_SESSION["nome"]; ?></a>
                     <?php else: ?>
                         <a href="./index-login.php" class="text-decoration-none">Welcome! Effettua login</a>
                     <?php endif; ?>
                     </div>
                     <div class="icons d-inline-flex gap-2">
-                        <a href="./notifications.html">
+                        <?php if(isset($_SESSION["email"])): ?>
+                        <a href="./index-avvisi.php">
                             <img src="./upload/icons/bell-solid.svg" alt="Notifiche" width="24">
                         </a>
                         <a href="./cart.html">
                             <img src="./upload/icons/cart-shopping-solid.svg" alt="Carrello" width="24">
                         </a>
-                        <?php if(isset($_SESSION["email"])): ?>
                         <a href="./utils/logout-script.php">
                             <img src="./upload/icons/logout-solid.svg" alt="Logout" width="24">
                         </a>
@@ -84,7 +85,8 @@
         }
         ?>
     </main>
-
+    
+    <br>
     <!-- Footer -->
     <footer class="py-4">
         <div class="container">

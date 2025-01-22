@@ -116,7 +116,7 @@ CREATE TABLE `categorieprodotti` (
 
 LOCK TABLES `categorieprodotti` WRITE;
 /*!40000 ALTER TABLE `categorieprodotti` DISABLE KEYS */;
-INSERT INTO `categorieprodotti` VALUES ('Applicazioni','applicazioni.jpg','Paillettes, perline, decorazioni in metallo e tutto ciò che ti può servire per la tua prossima creazione.'),('Attrezzi','attrezzi.webp','Ferri e uncinetti per le tue creazioni di maglia e uncinetto.'),('Bijoux','bijoux.png','Filati, cristalli e gioielli per decorare le tue creazioni.'),('Editoria','editoria.jpg','Libri, pdf scaricabili e gift card. Non si finisce mai di imparare!'),('Filati','filati.png','Sfoglia il catalogo e lasciati ispirare dai nostri filati per borse e per ricamo.'),('Tutto borse','tuttoborse.jpg','Manici, fodere e tutto il necessario per realizzare la tua nuova borsa preferita.');
+INSERT INTO `categorieprodotti` VALUES ('Applicazioni','applicazioni.png','Paillettes, perline, decorazioni in metallo e tutto ciò che ti può servire per la tua prossima creazione.'),('Attrezzi','attrezzi.png','Ferri e uncinetti per le tue creazioni di maglia e uncinetto.'),('Bijoux','bijoux.png','Filati, cristalli e gioielli per decorare le tue creazioni.'),('Editoria','editoria.png','Libri, pdf scaricabili e gift card. Non si finisce mai di imparare!'),('Filati','filati.png','Sfoglia il catalogo e lasciati ispirare dai nostri filati per borse e per ricamo.'),('Tutto borse','tuttoborse.png','Manici, fodere e tutto il necessario per realizzare la tua nuova borsa preferita.');
 /*!40000 ALTER TABLE `categorieprodotti` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -407,4 +407,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-22 18:34:21
+-- Dump completed on 2025-01-22 18:47:47

@@ -152,24 +152,32 @@ main {
 
 /**/
 
-.carousel-item img {
-    height: 400px; /* Adjust as needed */
-    object-fit: cover;
+/* Carousel Banner */
+.banner-categorie {
+    width: 100%;
+    overflow: hidden;
 }
 
-.carousel-caption {
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
+.banner-categorie .banner-image {
+    height: 450px; 
+    object-fit: cover; 
+    filter: brightness(75%); 
+    transition: filter 0.3s ease-in-out; 
 }
 
-.white-banner img {
-    max-width: 150px;
-    height: auto;
+.banner-categorie .banner-image:hover {
+    filter: brightness(100%); /* Normal brightness on hover */
 }
 
-.white-banner p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+.carousel-item a p {
+    font-size: 2.5rem; /* Bigger text for better visibility */
+    font-weight: bold;
+    margin: 0;
 }
+
+
+
+
+
+
+

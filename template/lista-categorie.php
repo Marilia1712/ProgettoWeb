@@ -18,53 +18,37 @@
     </div>
 </section>
 
-<!-- Carousel Section -->
-<section class="banner-categorie my-5">
+<section class="banner-categorie mb-5" data-bs-interval="3000">
     <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <a href="./index-prodotti-categoria.php?nomeCategoria=Filati">
-                    <img src="./upload/carousel/carousel1.jpg" class="d-block w-100" alt="Filati">
-                    <div class="carousel-caption">
-                        <p>Filati</p>
-                    </div>
+                    <img src="./upload/carousel/carousel1.jpg" class="d-block w-100 banner-image" alt="Filati">
+                    <p>Filati</p>
                 </a>
             </div>
             <div class="carousel-item">
                 <a href="./index-prodotti-categoria.php?nomeCategoria=Tutto Borse">
-                    <img src="./upload/carousel/carousel2.jpg" class="d-block w-100" alt="Borse">
-                    <div class="carousel-caption">
-                        <p>Borse</p>
-                    </div>
+                    <img src="./upload/carousel/carousel2.jpg" class="d-block w-100 banner-image" alt="Borse">
+                    <p>Borse</p>
                 </a>
             </div>
             <div class="carousel-item">
                 <a href="./index-prodotti-categoria.php?nomeCategoria=Attrezzi">
-                    <img src="./upload/carousel/carousel3.jpg" class="d-block w-100" alt="Attrezzi">
-                    <div class="carousel-caption">
-                        <p>Attrezzi</p>
-                    </div>
+                    <img src="./upload/carousel/carousel3.jpg" class="d-block w-100 banner-image" alt="Attrezzi">
+                    <p>Attrezzi</p>
                 </a>
             </div>
             <div class="carousel-item">
                 <a href="./index-prodotti-categoria.php?nomeCategoria=Bijoux">
-                    <img src="./upload/carousel/carousel4.jpg" class="d-block w-100" alt="Bijoux">
-                    <div class="carousel-caption">
-                        <p>Bijoux</p>
-                    </div>
+                    <img src="./upload/carousel/carousel4.jpg" class="d-block w-100 banner-image" alt="Bijoux">
+                    <p>Bijoux</p>
                 </a>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 </section>
+
 
 <!-- Brand Banner -->
 <section class="white-banner py-5">

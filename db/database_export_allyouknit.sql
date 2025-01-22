@@ -71,32 +71,6 @@ INSERT INTO `appartenenzacategoria` VALUES (1,'Filati'),(2,'Filati'),(3,'Filati'
 UNLOCK TABLES;
 
 --
--- Table structure for table `applicazioniofferte`
---
-
-DROP TABLE IF EXISTS `applicazioniofferte`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `applicazioniofferte` (
-  `CodIDOfferte` int(11) NOT NULL,
-  `CodIDOrdini` int(11) NOT NULL,
-  PRIMARY KEY (`CodIDOfferte`,`CodIDOrdini`),
-  KEY `CodIDOrdini` (`CodIDOrdini`),
-  CONSTRAINT `CodIDOfferte` FOREIGN KEY (`CodIDOfferte`) REFERENCES `offerte` (`CodID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `CodIDOrdini` FOREIGN KEY (`CodIDOrdini`) REFERENCES `ordini` (`CodID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `applicazioniofferte`
---
-
-LOCK TABLES `applicazioniofferte` WRITE;
-/*!40000 ALTER TABLE `applicazioniofferte` DISABLE KEYS */;
-/*!40000 ALTER TABLE `applicazioniofferte` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `avvisi`
 --
 
@@ -168,7 +142,7 @@ CREATE TABLE `clienti` (
 
 LOCK TABLES `clienti` WRITE;
 /*!40000 ALTER TABLE `clienti` DISABLE KEYS */;
-INSERT INTO `clienti` VALUES ('mariliamerendi@gmail.com','Marilia','Merendi','Tina2022'),('mauricapuano@gmail.com','Maurizio','Capuano','Kira2003');
+INSERT INTO `clienti` VALUES ('cinziabuccino@gmail.com','Cinzia','Buccino','Paco2006'),('mariliamerendi@gmail.com','Marilia','Merendi','Tina2022'),('mauricapuano@gmail.com','Maurizio','Capuano','Kira2003'),('mauricapuano@icloud.com','Maurizio','Capuano','Maurizio03');
 /*!40000 ALTER TABLE `clienti` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,6 +158,7 @@ CREATE TABLE `inboxclienti` (
   `CodID` int(11) NOT NULL,
   `Data` date NOT NULL,
   `Ora` time NOT NULL,
+  `Letta` tinyint(4) NOT NULL DEFAULT 0,
   PRIMARY KEY (`Email`,`CodID`),
   KEY `CodID` (`CodID`),
   CONSTRAINT `CodID` FOREIGN KEY (`CodID`) REFERENCES `avvisi` (`CodID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -432,4 +407,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-22  1:15:01
+-- Dump completed on 2025-01-22 18:34:21

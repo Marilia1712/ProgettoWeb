@@ -66,14 +66,15 @@ CREATE TABLE `avvisi` (
   `CodID` int(11) NOT NULL,
   `Titolo` varchar(45) NOT NULL,
   `Contenuto` varchar(250) NOT NULL,
-  `Data` date NOT NULL,
-  `Ora` time NOT NULL,
   PRIMARY KEY (`CodID`)
 );
 
 CREATE TABLE `inboxclienti` (
   `Email` varchar(45) NOT NULL,
   `CodID` int(11) NOT NULL,
+  `Data` date NOT NULL,
+  `Ora` time NOT NULL,
+  `Letta` date NOT NULL DEFAULT 0,
   PRIMARY KEY (`Email`,`CodID`),
   CONSTRAINT `CodID` FOREIGN KEY (`CodID`) REFERENCES `avvisi` (`CodID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `Email` FOREIGN KEY (`Email`) REFERENCES `clienti` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -117,14 +118,6 @@ CREATE TABLE `wishlists` (
   `Email` varchar(45) NOT NULL,
   PRIMARY KEY (`Numero`),
   CONSTRAINT `Emailx` FOREIGN KEY (`Email`) REFERENCES `clienti` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE `applicazioniofferte` (
-  `CodIDOfferte` int(11) NOT NULL,
-  `CodIDOrdini` int(11) NOT NULL,
-  PRIMARY KEY (`CodIDOfferte`,`CodIDOrdini`),
-  CONSTRAINT `CodIDOfferte` FOREIGN KEY (`CodIDOfferte`) REFERENCES `offerte` (`CodID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `CodIDOrdini` FOREIGN KEY (`CodIDOrdini`) REFERENCES `ordini` (`CodID`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 SELECT table_name

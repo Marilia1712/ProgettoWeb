@@ -581,6 +581,18 @@ main {
 
 /*small screens*/
 @media (max-width: 767.98px) {
+
+    .desktop-navbar {
+        display: none;
+    }
+    .mainheader .row {
+        flex-direction: column-reverse;
+    }
+
+    .mainheader .row .icons {
+        display: none;
+    }
+
     .login-banner{
         display: none;
     }
@@ -592,12 +604,16 @@ main {
     .search-bar input {
         width: 100%; 
     }
+
+    .search-bar,
+    .logo,
+    .icons {
+        padding: 10px 0;
+    }
     
-    .desktop-navbar {
-        display: none;
+    .search-bar form {
+        padding: 0 15px;
     }
-    .mainheader .row {
-        flex-direction: column-reverse;
-    }
+    
 }
 

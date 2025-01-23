@@ -24,45 +24,45 @@
 
     <!-- Header -->
     <header class="mainheader py-4">
-            <div class="row align-items-center justify-content-between py-3" style="padding-left:30px; padding-right:30px;">
-                <!-- Search Bar -->
-                <div class="col-auto search-bar">
-                    <form class="d-flex" action="./index-ricerca.php" method="get">
-                        <input type="text" name="research" class="form-control me-2" placeholder="Cerca un prodotto">
-                        <button type="submit" class="btn btn-primary">
-                            <img src="./upload/icons/magnifying-glass-solid.svg" alt="Cerca" width="24">
-                        </button>
-                    </form>
-                </div>
-                
-                <!-- Logo -->
-                <div class="col-auto logo text-center">
-                    <img src="./upload/logos/LOGO2.png" alt="Logo All You Knit" class="img-fluid">
-                </div>
-                
-                <!-- Icons -->
-                <div class="col-auto icons">
-                    <div class="d-inline-flex gap-2">
-                        <?php if(isset($_SESSION["email"])): ?>
-                        <a href="./index-avvisi.php">
-                            <?php if($templateParams["news"]): ?>
-                                <img src="./upload/icons/bell-solid.svg" alt="Ci sono nuove notifiche" width="24">
-                            <?php else: ?>
-                                <img src="./upload/icons/bell-regular.svg" alt="Sezione notifiche" width="24">
-                            <?php endif; ?>
-                        </a>
-                        <a href="./index-carrello.php">
-                            <img src="./upload/icons/cart-shopping-solid.svg" alt="Accedi al carrello" width="24">
-                        </a>
-                        <a href="./utils/logout-script.php">
-                            <img src="./upload/icons/logout-solid.svg" alt="Effettua il logout" width="24">
-                        </a>
+        <div class="row align-items-center justify-content-between py-3" style="padding-left:30px; padding-right:30px;">
+            <!-- Search Bar -->
+            <div class="col-auto search-bar">
+                <form class="d-flex" action="./index-ricerca.php" method="get">
+                    <input type="text" name="research" class="form-control me-2" placeholder="Cerca un prodotto">
+                    <button type="submit" class="btn btn-primary">
+                        <img src="./upload/icons/magnifying-glass-solid.svg" alt="Cerca" width="24">
+                    </button>
+                </form>
+            </div>
+
+            <!-- Logo -->
+            <div class="col-auto logo text-center">
+                <img src="./upload/logos/LOGO2.png" alt="Logo All You Knit" class="img-fluid">
+            </div>
+
+            <!-- Icons -->
+            <div class="col-auto icons">
+                <div class="d-inline-flex gap-2">
+                    <?php if(isset($_SESSION["email"])): ?>
+                    <a href="./index-avvisi.php">
+                        <?php if($templateParams["news"]): ?>
+                            <img src="./upload/icons/bell-solid.svg" alt="Ci sono nuove notifiche" width="24">
+                        <?php else: ?>
+                            <img src="./upload/icons/bell-regular.svg" alt="Sezione notifiche" width="24">
                         <?php endif; ?>
-                    </div>
+                    </a>
+                    <a href="./index-carrello.php">
+                        <img src="./upload/icons/cart-shopping-solid.svg" alt="Accedi al carrello" width="24">
+                    </a>
+                    <a href="./utils/logout-script.php">
+                        <img src="./upload/icons/logout-solid.svg" alt="Effettua il logout" width="24">
+                    </a>
+                    <?php endif; ?>
                 </div>
             </div>
-        
+        </div>
     </header>
+
 
 
     <!-- Navigation Bar -->

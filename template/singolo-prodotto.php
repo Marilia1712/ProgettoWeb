@@ -32,9 +32,9 @@
             <div class="product-info">
                 <h1><?php echo $prodotto["Nome"]; ?></h1>
                 <?php if($prodottoInOfferta): ?>
-                    <p><del><?php echo number_format($prodotto["Prezzo"], 2, ",", ""); ?> $</del> <strong><?php echo number_format(($prodotto["Prezzo"]*(100-$prodotto["PercSconto"]))/100, 2, ",", ""); ?> $</strong></p>
+                    <p><del><?php echo number_format($prodotto["Prezzo"], 2, ",", ""); ?> €</del> <strong><?php echo number_format(($prodotto["Prezzo"]*(100-$prodotto["PercSconto"]))/100, 2, ",", ""); ?> $</strong></p>
                 <?php else: ?>
-                    <p><strong><?php echo number_format($prodotto["Prezzo"], 2, ",", ""); ?> $</strong></p>
+                    <p><strong><?php echo number_format($prodotto["Prezzo"], 2, ",", ""); ?> €</strong></p>
                 <?php endif; ?>
 
                 <div>

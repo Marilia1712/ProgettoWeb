@@ -18,8 +18,8 @@
     </div>
 </section>
 
-<section class="banner-categorie mb-5" data-bs-interval="2000">
-    <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
+<section class="banner-categorie mb-5">
+    <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <a href="./index-prodotti-categoria.php?nomeCategoria=Filati">

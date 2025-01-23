@@ -358,8 +358,6 @@ footer .payment-icons img {
 
 footer .payment-icons {
     display: flex;
-    justify-content: space-between;
-    gap: 0px; /* Space between icons */
 }
 
 

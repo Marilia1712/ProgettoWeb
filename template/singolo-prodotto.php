@@ -1,7 +1,7 @@
 <section class="container py-5">
     <div class="row p-4">
         <!-- Product Image -->
-        <div class="col-md-4 text-center mb-4 prod-image">
+        <div id="imageZoom" style="--url: url('../upload/logos/palette.png')" class="col-md-4 text-center mb-4 prod-image">
             <img src="<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         </div>
 

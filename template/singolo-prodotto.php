@@ -6,7 +6,7 @@
                                     --display:none;
         " 
         
-        class="col-md-4 text-center mb-4 prod-image">
+        class="col-md-5 text-center mb-4 prod-image">
             <img src="<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         </div>
         <script>
@@ -28,7 +28,7 @@
         </script>
 
         <!-- Product Details -->
-        <div class="col-md-8">
+        <div class="col-md-7">
             <div class="product-info">
                 <h1><?php echo $prodotto["Nome"]; ?></h1>
                 <?php if($prodottoInOfferta): ?>

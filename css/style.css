@@ -428,7 +428,9 @@ main {
     opacity: 1;
 }
 
-
+.prod-image{
+    min-width: 400px;
+}
 
 /* Make the product price as big as the product name */
 .product-info h1,

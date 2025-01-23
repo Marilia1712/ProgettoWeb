@@ -15,7 +15,7 @@ body {
     color: white;
     font-size: 14px;
     padding: 8px 15px; 
-    position: fixed;
+    position:absolute;
     top: 0;
     right: 7%;  
     z-index: 9999;
@@ -119,10 +119,26 @@ nav.desktop-navbar {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+nav.desktop-navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav.desktop-navbar ul.nav {
-    gap: 10px;
+    display: flex; 
+    gap: 20px; 
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+nav.desktop-navbar ul.nav li {
+    list-style-type: none; 
 }
 
 nav.desktop-navbar ul.nav li a {
@@ -137,6 +153,39 @@ nav.desktop-navbar ul.nav li a {
 nav.desktop-navbar ul.nav li a:hover {
     color: #005BAD;
 }
+
+nav.desktop-navbar .nav-item {
+    border-left: 1px solid #dcdcdc;
+    margin-right: 0.5%; 
+    padding-left: 2%; 
+}
+
+nav.desktop-navbar .nav-item:first-child {
+    border-left: none;
+}
+
+
+nav.desktop-navbar .nav-link {
+    padding-left: 15px; 
+    padding-right: 15px; 
+    font-size: 16px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Main Section */
 main {

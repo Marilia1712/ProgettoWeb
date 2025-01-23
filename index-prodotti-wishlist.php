@@ -8,6 +8,7 @@ if(isset($_GET["IDwishlist"])){
 $templateParams["titolo"] = "AllYouKnit - ".$nomeWishlist;
 $templateParams["nome"] = "prodotti-wishlist.php";
 $templateParams["categorie"] = $dbh->getCategories();
+$templateParams["news"] = $dbh->checkNewNotifications($_SESSION["email"]);
 $templateParams["prodotti"] = $dbh->getWishlistProducts($IDwishlist);
 
 require 'template/base.php';

@@ -171,22 +171,6 @@ nav.desktop-navbar .nav-link {
     font-size: 16px; 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Main Section */
 main {
     margin-top: 20px;
@@ -363,8 +347,20 @@ main {
 }
 
 
+footer .payment-icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 0px; /* Space between icons */
+}
 
 
+footer .payment-icons .payment-icon {
+    flex-grow: 1; /* Allow the icons to take up all available space */
+    width: 100%;
+    max-width: 60px;
+    object-fit: contain; /* Ensure the icons scale properly */
+    transform: translateY(50%);
+}
 
 
 

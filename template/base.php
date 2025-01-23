@@ -107,14 +107,15 @@
                     </div>
                 </div>
                 <div class="col-md-4 text-end">
-                    <div class="payment-icons d-inline-flex gap-2">
-                        <img src="./upload/icons/cc-apple-pay-brands-solid.svg" alt="" width="32">
-                        <img src="./upload/icons/cc-mastercard-brands-solid.svg" alt="" width="32">
-                        <img src="./upload/icons/cc-visa-brands-solid.svg" alt="" width="32">
+                    <div class="payment-icons d-flex justify-content-between">
+                        <img src="./upload/icons/cc-apple-pay-brands-solid.svg" alt="Apple Pay" class="payment-icon">
+                        <img src="./upload/icons/cc-mastercard-brands-solid.svg" alt="Mastercard" class="payment-icon">
+                        <img src="./upload/icons/cc-visa-brands-solid.svg" alt="Visa" class="payment-icon">
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
 </body>
 </html>

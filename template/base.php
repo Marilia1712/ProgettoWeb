@@ -23,12 +23,12 @@
     </div>
 
     <!-- Header -->
-    <header class="mainheader py-5">
+    <header class="mainheader py-4">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-center justify-content-between">
                 <!-- Search Bar -->
-                <div class="col-lg-4 col-md-6">
-                    <form class="d-flex search-bar" action="./index-ricerca.php" method="get">
+                <div class="col-auto search-bar">
+                    <form class="d-flex" action="./index-ricerca.php" method="get">
                         <input type="text" name="research" class="form-control me-2" placeholder="Cerca un prodotto">
                         <button type="submit" class="btn btn-primary">
                             <img src="./upload/icons/magnifying-glass-solid.svg" alt="Cerca" width="24">
@@ -37,18 +37,13 @@
                 </div>
                 
                 <!-- Logo -->
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="logo">
-                        <img src="./upload/logos/LOGO2.png" alt="Logo All You Knit" class="img-fluid">
-                    </div>
-                    <div class="logo-mobile">
-                        <img src="./upload/logos/LOGOYARN.png" alt="Logo All You Knit" class="img-fluid">
-                    </div>
+                <div class="col-auto logo text-center">
+                    <img src="./upload/logos/LOGO2.png" alt="Logo All You Knit" class="img-fluid">
                 </div>
                 
                 <!-- Icons -->
-                <div class="col-lg-4 text-end">
-                    <div class="icons d-inline-flex gap-2">
+                <div class="col-auto icons">
+                    <div class="d-inline-flex gap-2">
                         <?php if(isset($_SESSION["email"])): ?>
                         <a href="./index-avvisi.php">
                             <img src="./upload/icons/bell-solid-notification.png" alt="Notifiche" width="24">
@@ -65,6 +60,7 @@
             </div>
         </div>
     </header>
+
 
     <!-- Navigation Bar -->
     <nav class="desktop-navbar bg-light py-2">

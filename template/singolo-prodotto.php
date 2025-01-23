@@ -1,8 +1,8 @@
 <section class="container py-5">
-    <div class="row bg-white p-4 rounded shadow-sm">
+    <div class="row p-4">
         <!-- Product Image -->
-        <div class="col-md-4 text-center mb-4">
-            <img src="<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid">
+        <div class="col-md-4 text-center mb-4 prod-image">
+            <img src="<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         </div>
 
         <!-- Product Details -->
@@ -16,12 +16,14 @@
                 <?php endif; ?>
 
                 <div>
-                    <h2>Scheda Tecnica:</h2>
-                    <ul>
-                        <li>Colore: <?php if(!is_null($prodotto["Colore"])) echo $prodotto["Colore"]; else echo "--"; ?></li>
-                        <li>Composizione: <?php if(!is_null($prodotto["Composizione"])) echo $prodotto["Composizione"]; else echo "--"; ?></li>
-                        <li>Strumenti: <?php if(!is_null($prodotto["Strumenti"])) echo $prodotto["Strumenti"]; else echo "--"; ?></li>
-                    </ul>
+                    <div class="schedatecnica">
+                        <h2>Scheda Tecnica:</h2>
+                        <ul>
+                            <li>Colore: <?php if(!is_null($prodotto["Colore"])) echo $prodotto["Colore"]; else echo "--"; ?></li>
+                            <li>Composizione: <?php if(!is_null($prodotto["Composizione"])) echo $prodotto["Composizione"]; else echo "--"; ?></li>
+                            <li>Strumenti: <?php if(!is_null($prodotto["Strumenti"])) echo $prodotto["Strumenti"]; else echo "--"; ?></li>
+                        </ul>
+                    </div>
                     <p>Codice di Riferimento: <?php echo $prodotto["CodID"]; ?></p>
                 </div>
 

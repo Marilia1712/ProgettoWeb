@@ -401,3 +401,48 @@ main {
     transform: scale(1.05);
     opacity: 1;
 }
+
+
+
+/* Make the product price as big as the product name */
+.product-info h1,
+.product-info p strong {
+    font-size: 2rem; /* Make the product name and price equally large */
+}
+
+.product-info {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 30px;
+}
+
+/* Make the 'Scheda Tecnica' section smaller, inside a light-grey box */
+.schedatecnica {
+    background-color: #f7f7f7; /* Light grey background */
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.875rem; /* Smaller font size */
+    margin-top: 20px;
+}
+
+.schedatecnica h2 {
+    font-size: 1.25rem; /* Slightly larger header */
+    margin-bottom: 10px;
+}
+
+/* Style for the product details section */
+.product-info p {
+    font-size: 1.2rem;
+}
+
+/* Add some space between product details and action buttons */
+.mt-4 {
+    margin-top: 30px;
+}
+
+/* Optional: Make sure the product price has bold and distinct look */
+.product-info p strong {
+    font-weight: bold;
+    color: #333; /* Darker color for better visibility */
+}

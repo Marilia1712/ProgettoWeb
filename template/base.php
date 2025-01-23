@@ -24,8 +24,7 @@
 
     <!-- Header -->
     <header class="mainheader py-4">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
+            <div class="row align-items-center justify-content-between py-3" style="padding-left:30px; padding-right:30px;">
                 <!-- Search Bar -->
                 <div class="col-auto search-bar">
                     <form class="d-flex" action="./index-ricerca.php" method="get">
@@ -62,7 +61,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
     </header>
 
 

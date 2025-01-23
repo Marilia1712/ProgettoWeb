@@ -584,6 +584,15 @@ main {
     .login-banner{
         display: none;
     }
+
+    .search-bar form {
+        flex: 1;
+    }
+
+    .search-bar input {
+        width: 100%; 
+    }
+    
     .desktop-navbar {
         display: none;
     }

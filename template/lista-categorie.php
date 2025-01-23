@@ -40,9 +40,9 @@
                 </a>
             </div>
             <div class="carousel-item">
-                <a href="./index-prodotti-categoria.php?nomeCategoria=Filati">
-                    <img src="./upload/carousel/filati.jpg" class="d-block w-100 banner-image" alt="">
-                    <p>Filati</p>
+                <a href="./index-prodotti-categoria.php?nomeCategoria=TuttoBorse">
+                    <img src="./upload/carousel/tuttoborse.png" class="d-block w-100 banner-image" alt="">
+                    <p>Tutto Borse</p>
                 </a>
             </div>
             <div class="carousel-item">

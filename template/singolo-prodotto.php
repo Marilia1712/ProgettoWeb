@@ -1,6 +1,6 @@
 <section class="container py-5">
     <div class="row p-4">
-        <!-- Product Image -->                                                  <!--fixme: php for loading path to imag file -->
+        <!-- Product Image -->                                               
         <div id="imageZoom" style="--url: url(.<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>);          
                                     --zoom-x: 0%; --zoom-y:0%;
                                     --display:none;

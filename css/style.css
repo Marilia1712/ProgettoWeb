@@ -553,3 +553,18 @@ main {
     justify-content: space-between;
     height: 100%;
 }
+
+
+
+@media screen and (max-width: 768px) {
+
+    .mainheader .container .row {
+        flex-direction: column-reverse;
+    }
+    .login-banner{
+        visibility: hidden;
+    }
+    .desktop-navbar {
+        visibility: hidden;
+    }
+  }

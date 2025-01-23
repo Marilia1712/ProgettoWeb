@@ -36,7 +36,7 @@ class DatabaseHelper{
     }
 
     public function getProduct($product){
-        $stmt = $this->conn->prepare("SELECT * FROM prodotti WHERE CodId = ?");
+        $stmt = $this->conn->prepare("SELECT *, prodotti.CodID as CodIDProdotto FROM prodotti WHERE CodId = ?");
         $stmt->bind_param('i', $product);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -64,9 +64,9 @@ class DatabaseHelper{
     }
     
     public function checkProductInSale($product){
-        $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN offerte ON(prodotti.CodID = offerte.CodIDProdotto) WHERE Scadenza > ? AND prodotti.CodID = ?");
+        $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN offerte ON(prodotti.CodID = offerte.CodIDProdotto) WHERE Inizio < ? AND Scadenza > ? AND prodotti.CodID = ?");
         $date = gmdate('Y-m-d h:i:s \G\M\T');
-        $stmt->bind_param('si', $date, $product);
+        $stmt->bind_param('ssi', $date, $date, $product);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -150,9 +150,12 @@ class DatabaseHelper{
     }
 
     public function getCartProducts($userEmail){
-        $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN prodottiordinati ON(prodotti.CodID = prodottiordinati.CodIDProdotto)
-                                        INNER JOIN ordini ON(prodottiordinati.CodIDOrdine = ordini.CodID) WHERE EmailCliente = ?");
-        $stmt->bind_param('s', $userEmail);
+        $stmt = $this->conn->prepare("SELECT * FROM prodotti
+                                        LEFT JOIN (SELECT * FROM offerte WHERE Inizio < ? AND Scadenza > ?) AS offerteAttive ON(prodotti.CodID = offerteAttive.CodIDProdotto)
+                                        INNER JOIN prodottiordinati ON(prodotti.CodID = prodottiordinati.CodIDProdotto)
+                                        INNER JOIN ordini ON(prodottiordinati.CodIDOrdine = ordini.CodID) WHERE EmailCliente = ? AND Pagato = 0");
+        $date = gmdate('Y-m-d h:i:s \G\M\T');
+        $stmt->bind_param('sss', $date, $date, $userEmail);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -162,7 +165,7 @@ class DatabaseHelper{
     public function createNewOrder($userEmail){
         $query = "INSERT INTO ordini (EmailCliente) VALUES (?)";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('s', $email);
+        $stmt->bind_param('s', $userEmail);
         $stmt->execute();
     }
 
@@ -202,9 +205,66 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    
+    public function insertIntoCart($userEmail, $productID, $quantity){
+        $stmt = $this->conn->prepare("SELECT CodID FROM ordini INNER JOIN clienti ON(Email = EmailCliente) WHERE Email = ? AND Pagato = False");
+        $stmt->bind_param('s', $userEmail);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $cartID = $result->fetch_all(MYSQLI_ASSOC)[0]["CodID"];
 
+        $stmt = $this->conn->prepare("SELECT * FROM prodottiordinati WHERE CodIDProdotto = ? AND CodIDOrdine = ?");
+        $stmt->bind_param('ii', $productID, $cartID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $result = $result->fetch_all(MYSQLI_ASSOC);
+        if(empty($result)){
+            $query = "INSERT INTO prodottiordinati (CodIDProdotto, CodIDOrdine, Quantita) VALUES (?, ?, ?)";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bind_param('iii', $productID, $cartID, $quantity);
+            $stmt->execute();
+        }
+        else{
+            $newQuantity = $result[0]["Quantita"]+$quantity;
+            $query = "UPDATE prodottiordinati SET Quantita = ? WHERE CodIDProdotto = ? AND CodIDOrdine = ?";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bind_param('iii', $newQuantity, $productID, $cartID);
+            $stmt->execute();
+        }
 
+        return;
+    }
+
+    public function removeFromCart($userEmail, $productID){
+        $stmt = $this->conn->prepare("SELECT CodID FROM ordini INNER JOIN clienti ON(Email = EmailCliente) WHERE Email = ? AND Pagato = False");
+        $stmt->bind_param('s', $userEmail);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $cartID = $result->fetch_all(MYSQLI_ASSOC)[0]["CodID"];
+
+        $stmt = $this->conn->prepare("DELETE FROM prodottiordinati WHERE CodIDProdotto = ? AND CodIDOrdine = ?");
+        $stmt->bind_param('ii', $productID, $cartID);
+        $stmt->execute();
+    }
+
+    public function cartCheckout($userEmail, $totalPrice){
+        $stmt = $this->conn->prepare("SELECT CodID FROM ordini INNER JOIN clienti ON(Email = EmailCliente) WHERE Email = ? AND Pagato = False");
+        $stmt->bind_param('s', $userEmail);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $cartID = $result->fetch_all(MYSQLI_ASSOC)[0]["CodID"];
+
+        $query = "UPDATE ordini SET Pagato = True, Importo = ? WHERE CodID = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('di', $totalPrice, $cartID);
+        $stmt->execute();
+
+        $query = "INSERT INTO ordini (EmailCliente) VALUES (?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('s', $userEmail);
+        $stmt->execute();
+
+        return;
+    }
 
 
 

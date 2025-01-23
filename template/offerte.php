@@ -23,8 +23,8 @@
                                 </a>
                             </h2>
                             <p class="card-text text-muted mb-2">
-                                <del class="old-price"><?php echo number_format($prodotto["Prezzo"], 2, ",", ""); ?> $</del>
-                                <strong class="new-price"><?php echo number_format(($prodotto["Prezzo"] * (100 - $prodotto["PercSconto"])) / 100, 2, ",", ""); ?> $</strong>
+                                <del class="old-price"><?php echo number_format($prodotto["Prezzo"], 2, ",", ""); ?> €</del>
+                                <strong class="new-price"><?php echo number_format(($prodotto["Prezzo"] * (100 - $prodotto["PercSconto"])) / 100, 2, ",", ""); ?> €</strong>
                             </p>
                             <p class="card-text discount text-danger fw-bold">-<?php echo $prodotto["PercSconto"]; ?>%</p>
                         </div>

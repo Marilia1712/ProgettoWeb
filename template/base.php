@@ -23,7 +23,7 @@
     </div>
 
     <!-- Header -->
-    <header class="mainheader py-3">
+    <header class="mainheader py-5">
         <div class="container">
             <div class="row align-items-center">
                 <!-- Search Bar -->

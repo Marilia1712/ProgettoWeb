@@ -9,6 +9,28 @@ body {
 }
 
 
+/*login banner*/
+.login-banner {
+    background-color: #F85760; 
+    color: white;
+    font-size: 14px;
+    padding: 8px 15px; 
+    position: fixed;
+    top: 0;
+    right: 7%;  
+    z-index: 9999;
+    border-radius: 0 0 12px 12px; 
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+
+.login-banner a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
 
 
 /*header*/

@@ -1,4 +1,3 @@
-<!-- ?php session_start(); ?> -->
 <!DOCTYPE html>
 <html lang="it">
 
@@ -12,6 +11,17 @@
 </head>
 
 <body>
+    <!-- Login Banner -->
+    <div class="login-banner">
+        <div class="container">
+            <?php if(isset($_SESSION["email"])): ?>
+                <a href="./index-pagina-personale.php" class="text-decoration-none">Ciao, <?php echo $_SESSION["nome"]; ?>!</a>
+            <?php else: ?>
+                <a href="./index-login.php" class="text-decoration-none">Welcome! Effettua login</a>
+            <?php endif; ?>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="mainheader py-3">
         <div class="container">
@@ -35,13 +45,6 @@
                 
                 <!-- Icons -->
                 <div class="col-lg-4 text-end">
-                    <div class="loginbanner mb-2">
-                    <?php if(isset($_SESSION["email"])): ?>
-                        <a href="./index-pagina-personale.php" class="text-decoration-none">Ciao, <?php echo $_SESSION["nome"]; ?>!</a>
-                    <?php else: ?>
-                        <a href="./index-login.php" class="text-decoration-none">Welcome! Effettua login</a>
-                    <?php endif; ?>
-                    </div>
                     <div class="icons d-inline-flex gap-2">
                         <?php if(isset($_SESSION["email"])): ?>
                         <a href="./index-avvisi.php">
@@ -67,9 +70,7 @@
                 <li class="nav-item"><a class="nav-link" href="./index.php">Home</a></li>
                 <?php foreach($templateParams["categorie"] as $categoria): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="./index-prodotti-categoria.php?nomeCategoria=<?php echo $categoria["Nome"]?>">
-                        <?php echo $categoria["Nome"]; ?>
-                    </a>
+                    <a class="nav-link" href="./index-prodotti-categoria.php?nomeCategoria=<?php echo $categoria["Nome"]?>"><?php echo $categoria["Nome"]; ?></a>
                 </li>
                 <?php endforeach; ?>
                 <li class="nav-item"><a class="nav-link" href="./index-offerte.php">Offerte</a></li>

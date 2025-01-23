@@ -1,53 +1,60 @@
-<div class="row justify-content-center">
-    <!-- Sezione Login -->
-    <div class="col-12 col-md-6 mb-5">
-        <h1 class="text-center mb-4">Accedi</h1>
-        <?php if (isset($_GET["wrongPassword"])): ?>
-            <h3>Password errata, riprovare</h3>
-        <?php endif; ?>
-        <?php if (isset($_GET["notRegistered"])): ?>
-            <h3>Non sei ancora registrato nel nostro sito!</h3>
-        <?php endif; ?>
-        <form action="./utils/check-login.php" method="POST" class="needs-validation">
-            <div class="mb-3">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" required>
+<section class="basic-bg">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <!-- Sezione Login -->
+            <div class="col-12 col-md-6 mb-5 d-flex flex-column align-items-center">
+                <h1 class="text-center mb-4">Accedi</h1>
+                <?php if (isset($_GET["wrongPassword"])): ?>
+                    <h3 class="text-center text-danger">Password errata, riprovare</h3>
+                <?php endif; ?>
+                <?php if (isset($_GET["notRegistered"])): ?>
+                    <h3 class="text-center text-warning">Non sei ancora registrato nel nostro sito!</h3>
+                <?php endif; ?>
+                <form action="./utils/check-login.php" method="POST" class="needs-validation w-75">
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg" style="background-color:#005BAD; color:#fff;">Accedi</button>
+                    </div>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-lg">Accedi</button>
-            </div>
-        </form>
-    </div>
 
-    <!-- Sezione Registrazione -->
-    <div class="col-12 col-md-6">
-        <h1 class="text-center mb-4">Registrati</h1>
-        <?php if (isset($_GET["alreadyRegistered"])): ?>
-            <h3>Sei già registrato nel nostro sito!</h3>
-        <?php endif; ?>
-        <form action="./utils/check-signup.php" method="POST" class="needs-validation">
-            <div class="mb-3">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" required>
+            <!-- Sezione Registrazione -->
+            <div class="col-12 col-md-6 d-flex flex-column align-items-center">
+                <h1 class="text-center mb-4">Registrati</h1>
+                <?php if (isset($_GET["alreadyRegistered"])): ?>
+                    <h3 class="text-center text-info">Sei già registrato nel nostro sito!</h3>
+                <?php endif; ?>
+                <form action="./utils/check-signup.php" method="POST" class="needs-validation w-75">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" class="form-control" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="cognome">Cognome</label>
+                            <input type="text" id="cognome" name="cognome" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-lg" style="background-color:#005BAD; color:#fff;">Registrati</button>
+                    </div>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="cognome">Cognome</label>
-                <input type="cognome" id="cognome" name="cognome" required>
-            </div>
-            <div class="mb-3">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            <div class="text-center">
-                <button type="submit" class="btn btn-success btn-lg">Registrati</button>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+</section>

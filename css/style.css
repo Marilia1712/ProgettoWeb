@@ -499,8 +499,8 @@ main {
     background-size: 400%; 
     background-position: var(--zoom-x) var(--zoom-y);
     position: absolute;
-    left: calc(var(--zoom-x) - 75px); /* Center the zoom effect horizontally */
-    top: calc(var(--zoom-y) - 75px);  /* Center the zoom effect vertically */
+    left: calc(var(--zoom-x) - 125px); 
+    top: calc(var(--zoom-y) - 125px);
     pointer-events: none; 
     border: 3px solid black;
     border-radius: 50%;
@@ -508,3 +508,13 @@ main {
 }
 
 
+.basic-bg{
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-height: 40vh; /* Ensures the section takes up the full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0; /* Adds padding for spacing */
+}

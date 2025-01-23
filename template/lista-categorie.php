@@ -2,11 +2,11 @@
     <div class="row">
         <?php foreach ($templateParams["categorie"] as $categoria): ?>
             <div class="col-12 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img src="<?php echo UPLOAD_DIR."categories/".$categoria["Immagine"]; ?>" class="card-img-top" alt="<?php echo $categoria["Nome"]; ?>">
-                    <div class="card-body">
+                <div class="card h-100 d-flex flex-row">
+                    <img src="<?php echo UPLOAD_DIR."categories/".$categoria["Immagine"]; ?>" class="card-img-left" alt="<?php echo $categoria["Nome"]; ?>" style="width: 200px; height: auto; margin-right: 15px;">
+                    <div class="card-body d-flex flex-column justify-content-center">
                         <h5 class="card-title">
-                            <a href="./index-prodotti-categoria.php?nomeCategoria=<?php echo $categoria["Nome"]; ?>" class="text-decoration-none">
+                            <a href="./index-prodotti-categoria.php?nomeCategoria=<?php echo $categoria["Nome"]; ?>" style="color:#F85760; text-decoration:none;">
                                 <?php echo $categoria["Nome"]; ?>
                             </a>
                         </h5>
@@ -17,6 +17,7 @@
         <?php endforeach; ?>
     </div>
 </section>
+
 
 <section class="banner-categorie mb-5">
     <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">

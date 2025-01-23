@@ -55,7 +55,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: nowrap; 
 }
 
 header .search-bar {
@@ -79,7 +79,6 @@ header .search-bar {
     flex-grow: 1;
     outline: none;
     width: 100%;
-    /*max-width: 200px; */
 }
 
 .search-bar button {
@@ -129,7 +128,7 @@ header .icons {
     gap: 15px;
 
     a {
-        margin-left: 10px; /* Add more space between each icon */
+        margin-left: 10px; 
         margin-right: 10px;
     }
 }
@@ -266,8 +265,6 @@ footer .payment-icons img {
 }
 
 
-/**/
-
 /* Carousel Banner */
 .banner-categorie {
     width: 100%;
@@ -386,10 +383,10 @@ footer .payment-icons {
 
 
 footer .payment-icons .payment-icon {
-    flex-grow: 1; /* Allow the icons to take up all available space */
+    flex-grow: 1; 
     width: 100%;
     max-width: 60px;
-    object-fit: contain; /* Ensure the icons scale properly */
+    object-fit: contain;
     transform: translateY(50%);
 }
 
@@ -454,10 +451,10 @@ main {
     min-width: 400px;
 }
 
-/* Make the product price as big as the product name */
+
 .product-info h1,
 .product-info p strong {
-    font-size: 2rem; /* Make the product name and price equally large */
+    font-size: 2rem;
 }
 
 .product-info {
@@ -467,41 +464,41 @@ main {
     padding: 30px;
 }
 
-/* Make the 'Scheda Tecnica' section smaller, inside a light-grey box */
+
 .schedatecnica {
-    background-color: #f7f7f7; /* Light grey background */
+    background-color: #f7f7f7; 
     padding: 15px;
     border-radius: 8px;
-    font-size: 0.875rem; /* Smaller font size */
+    font-size: 0.875rem; 
     margin-top: 20px;
 }
 
 .schedatecnica h2 {
-    font-size: 1.25rem; /* Slightly larger header */
+    font-size: 1.25rem; 
     margin-bottom: 10px;
 }
 
-/* Style for the product details section */
+
 .product-info p {
     font-size: 1.2rem;
 }
 
-/* Add some space between product details and action buttons */
+
 .mt-4 {
     margin-top: 30px;
 }
 
-/* Optional: Make sure the product price has bold and distinct look */
+
 .product-info p strong {
     font-weight: bold;
-    color: #333; /* Darker color for better visibility */
+    color: #333;
 }
 
 
 
 #imageZoom {
     position: relative;
-    overflow: hidden; /* Ensures no part of the zoomed image exceeds boundaries */
+    overflow: hidden; 
 }
 
 #imageZoom img {
@@ -534,7 +531,7 @@ main {
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    min-height: 40vh; /* Ensures the section takes up the full viewport height */
+    min-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -576,6 +573,42 @@ main {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+}
+
+
+.offcanvas-header {
+    background-color: #F85760;
+}
+
+.offcanvas-body .text-center a {
+    text-decoration: none;
+    color:#F85760;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: large;
+}
+
+.offcanvas-body .nav li .nav-link{
+    text-decoration: none;
+    color:black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.offcanvas .nav-item {
+    border-bottom: 1px solid lightgrey;
+
+    :hover{
+        background-color: lightgrey;
+    }
+}
+
+.offcanvas .nav-item:last-child {
+    border-bottom: none; 
+}
+
+.offcanvas .nav-item {
+    padding-bottom: 10px;
 }
 
 

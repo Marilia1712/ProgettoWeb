@@ -8,6 +8,7 @@ $templateParams["titolo"] = "AllYouKnit - Product ".$idProdotto;
 $templateParams["nome"] = "singolo-prodotto.php";
 $templateParams["categorie"] = $dbh->getCategories();
 $templateParams["news"] = $dbh->checkNewNotifications($_SESSION["email"]);
+$templateParams["wishlists"] = $dbh->getUserWishlists($_SESSION["email"]);
 if($dbh->checkProductInSale($idProdotto)){
     $prodotto = $dbh->getDiscountedProduct($idProdotto)[0];
     $prodottoInOfferta = true;

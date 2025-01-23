@@ -37,7 +37,7 @@
                 <div class="col-lg-4 text-end">
                     <div class="loginbanner mb-2">
                     <?php if(isset($_SESSION["email"])): ?>
-                        <a href="./index-pagina-personale.php" class="text-decoration-none">Pagina del profilo di <?php echo $_SESSION["nome"]; ?></a>
+                        <a href="./index-pagina-personale.php" class="text-decoration-none">Ciao, <?php echo $_SESSION["nome"]; ?>!</a>
                     <?php else: ?>
                         <a href="./index-login.php" class="text-decoration-none">Welcome! Effettua login</a>
                     <?php endif; ?>

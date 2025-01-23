@@ -8,6 +8,11 @@ body {
     background-size: 100% 100%;
 }
 
+
+
+
+/*header*/
+
 header.mainheader {
     padding: 20px 0;
 }
@@ -16,6 +21,7 @@ header .search-bar {
     background-color: #fff;
     border-radius: 12px;
     padding: 5px 10px;
+    max-width: 320px; 
     display: flex;
     align-items: center;
 }
@@ -25,6 +31,7 @@ header .search-bar input {
     background: transparent;
     flex-grow: 1;
     outline: none;
+    width: 100%; 
 }
 
 header .search-bar button {
@@ -35,7 +42,8 @@ header .search-bar button {
 }
 
 header .logo img {
-    max-height: 100px;
+    max-width: 250px;
+    width: auto; 
     margin: auto;
     display: block;
 }
@@ -56,7 +64,16 @@ header .icons img {
 
 header .icons {
     gap: 15px;
+
+    a {
+        margin-left: 10px; /* Add more space between each icon */
+        margin-right: 10px;
+    }
 }
+
+
+
+
 
 /* Navigation Bar */
 nav.desktop-navbar {

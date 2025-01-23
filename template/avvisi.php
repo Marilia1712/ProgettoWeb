@@ -5,9 +5,21 @@
     <?php foreach($templateParams["inbox"] as $notification): ?>
         <div class="row mb-3 align-items-center">
             <div class="col-auto">
-                <button class="btn btn-link">
-                    <img src="./upload/icons/unread-icon.svg" alt="Unread" width=32">
-                </button>
+                <?php if($notification["Letta"]): ?>
+                    <form action="./utils/unread-notification-script.php" method="POST">
+                        <input type="hidden" name="idAvviso" value="<?php echo $notification["CodID"]; ?>" />
+                        <button type="submit" class="btn btn-link">
+                            <img src="./upload/icons/read-icon.svg" alt="Unread" width=32">
+                        </button>
+                    </form>
+                <?php else: ?>
+                    <form action="./utils/read-notification-script.php" method="POST">
+                        <input type="hidden" name="idAvviso" value="<?php echo $notification["CodID"]; ?>" />
+                        <button type="submit" class="btn btn-link">
+                            <img src="./upload/icons/unread-icon.svg" alt="Unread" width=32">
+                        </button>
+                    </form>
+                <?php endif; ?>
             </div>
             <div class="col-12 bg-white p-3 shadow-sm rounded">
                 <h2><?php echo $notification["Titolo"]; ?></h2>

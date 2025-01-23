@@ -46,13 +46,17 @@
                     <div class="d-inline-flex gap-2">
                         <?php if(isset($_SESSION["email"])): ?>
                         <a href="./index-avvisi.php">
-                            <img src="./upload/icons/bell-solid-notification.png" alt="Notifiche" width="24">
+                            <?php if($templateParams["news"]): ?>
+                                <img src="./upload/icons/bell-solid.svg" alt="Ci sono nuove notifiche" width="24">
+                            <?php else: ?>
+                                <img src="./upload/icons/bell-regular.svg" alt="Sezione notifiche" width="24">
+                            <?php endif; ?>
                         </a>
                         <a href="./index-carrello.php">
-                            <img src="./upload/icons/cart-shopping-solid.svg" alt="Carrello" width="24">
+                            <img src="./upload/icons/cart-shopping-solid.svg" alt="Accedi al carrello" width="24">
                         </a>
                         <a href="./utils/logout-script.php">
-                            <img src="./upload/icons/logout-solid.svg" alt="Logout" width="24">
+                            <img src="./upload/icons/logout-solid.svg" alt="Effettua il logout" width="24">
                         </a>
                         <?php endif; ?>
                     </div>

@@ -166,6 +166,35 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function readNotification($userEmail, $notificationID){
+        $query = "UPDATE inboxclienti SET Letta = True WHERE Email = ? AND CodId = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('si',$userEmail, $notificationID);
+        
+        return $stmt->execute();
+    }
+
+    public function unreadNotification($userEmail, $notificationID){
+        $query = "UPDATE inboxclienti SET Letta = False WHERE Email = ? AND CodId = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('si',$userEmail, $notificationID);
+        
+        return $stmt->execute();
+    }
+
+    public function checkNewNotifications($userEmail){
+        $stmt = $this->conn->prepare("SELECT * FROM inboxclienti WHERE Email = ? AND Letta = 0");
+        $stmt->bind_param('s', $userEmail);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $result = $result->fetch_all(MYSQLI_ASSOC);
+
+        if(empty($result))
+            return false; //no news
+        else
+            return true; //there's news
+    }
+
 
 
 

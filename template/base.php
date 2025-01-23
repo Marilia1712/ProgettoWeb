@@ -45,7 +45,7 @@
                     <div class="icons d-inline-flex gap-2">
                         <?php if(isset($_SESSION["email"])): ?>
                         <a href="./index-avvisi.php">
-                            <img src="./upload/icons/bell-solid.svg" alt="Notifiche" width="24">
+                            <img src="./upload/icons/bell-solid-notification.png" alt="Notifiche" width="24">
                         </a>
                         <a href="./index-carrello.php">
                             <img src="./upload/icons/cart-shopping-solid.svg" alt="Carrello" width="24">

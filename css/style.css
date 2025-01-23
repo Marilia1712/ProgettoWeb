@@ -516,5 +516,42 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 0; /* Adds padding for spacing */
+    padding: 2rem 0;
+}
+
+
+
+
+
+/* offerte */
+
+.old-price {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    color: #6c757d;
+    margin-right: 20px;
+}
+
+.new-price {
+    font-size: 2rem;
+    background-color: #F85760; 
+    color: white; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    font-weight: bold;
+    margin-bottom: 10px; 
+    margin-top: 5px; 
+}
+
+.discount {
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    color:#F85760;
+}
+
+.card-body-discount {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }

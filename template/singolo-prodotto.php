@@ -37,6 +37,7 @@
                         <img src="./upload/icons/cart-shopping-solid-white.svg" alt="Carrello" width="24">
                     </button>
                 </div>
+                <!-- -->
 
 
                     <!-- Wishlist Section -->

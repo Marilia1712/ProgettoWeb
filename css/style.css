@@ -206,15 +206,26 @@ footer .payment-icons img {
 
 /* User section styles */
 .user-section {
+    background-color: white;
     border: 1px solid white;
     border-radius: 12px;
     padding: 15px;
     margin: 10px 0;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .user-section:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.user-section a {
+    text-decoration: none;
+}
+
+.user-section a p{
+    color:#005BAD;
+    font-weight: bold; 
 }
 
 /* Image icons in user sections */
@@ -309,7 +320,7 @@ footer .payment-icons img {
 
 /*buttons section*/
 
-.btn-cart, .btn-wishlist {
+.btn-cart, .btn-wishlist, .btn-addwishlist, .btn-removewishlist {
     color: white;
     border: none; 
     padding: 10px 20px;
@@ -320,11 +331,15 @@ footer .payment-icons img {
     transition: background-color 0.3s ease; 
 }
 
+
+.btn-addwishlist, .btn-removewishlist {
+    gap: 10px;
+}
 .btn-wishlist img , .btn-cart img{
     margin-left: 8px; 
 }
 
-.btn-cart {
+.btn-cart, .btn-addwishlist, .btn-removewishlist{
     background-color: #005BAD;
 }
 
@@ -354,6 +369,17 @@ footer .payment-icons .payment-icon {
     max-width: 60px;
     object-fit: contain; /* Ensure the icons scale properly */
     transform: translateY(50%);
+}
+
+
+.wishlist-card {
+    border-radius: 12 px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.wishlist-card .wishlist-info a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color:#F85760
 }
 
 
@@ -446,3 +472,7 @@ main {
     font-weight: bold;
     color: #333; /* Darker color for better visibility */
 }
+
+
+
+

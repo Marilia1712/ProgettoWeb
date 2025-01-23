@@ -25,6 +25,13 @@
     <!-- Header -->
     <header class="mainheader py-4">
         <div class="row align-items-center justify-content-between py-3" style="padding-left:30px; padding-right:30px;">
+            <!-- Hamburger Menu Icon -->
+            <div class="col-auto d-md-none">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                    <img src="./upload/icons/bars-solid.svg" alt="Menu" width="24">
+                </button>
+            </div>
+
             <!-- Search Bar -->
             <div class="col-auto search-bar">
                 <form class="d-flex" action="./index-ricerca.php" method="get">
@@ -63,10 +70,8 @@
         </div>
     </header>
 
-
-
     <!-- Navigation Bar -->
-    <nav class="desktop-navbar bg-light py-2">
+    <nav class="desktop-navbar bg-light py-2 d-none d-md-block">
         <div class="container">
             <ul class="nav justify-content-center">
                 <li class="nav-item"><a class="nav-link" href="./index.php">Home</a></li>
@@ -79,6 +84,34 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Offcanvas Menu for Small Screens -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header">
+            <div class="logo text-center w-100">
+                <img src="./upload/icons/user-solid-white.svg" alt="Logo All You Knit" class="img-fluid">
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="text-center mb-4">
+                <?php if(isset($_SESSION["email"])): ?>
+                    <a href="./index-pagina-personale.php">Ciao, <?php echo $_SESSION["nome"]; ?>!</a>
+                <?php else: ?>
+                    <a href="./index-login.php">Log In / Sign Up</a>
+                <?php endif; ?>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" href="./index.php">Home</a></li>
+                <?php foreach($templateParams["categorie"] as $categoria): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index-prodotti-categoria.php?nomeCategoria=<?php echo $categoria["Nome"]?>"><?php echo $categoria["Nome"]; ?></a>
+                </li>
+                <?php endforeach; ?>
+                <li class="nav-item"><a class="nav-link" href="./index-offerte.php">Offerte</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main class="container py-4">

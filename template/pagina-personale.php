@@ -25,7 +25,7 @@
         </div>
         <div class="col-12 col-md-6">
             <div class="user-section text-center">
-                <a href="./cart.html">
+                <a href="./index-carrello.php">
                     <img src="./upload/icons/cart-shopping-solid.svg" alt="Carrello" class="section-icon">
                     <p>Carrello</p>
                 </a>

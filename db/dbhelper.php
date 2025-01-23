@@ -149,6 +149,23 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getCartProducts($userEmail){
+        $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN prodottiordinati ON(prodotti.CodID = prodottiordinati.CodIDProdotto)
+                                        INNER JOIN ordini ON(prodottiordinati.CodIDOrdine = ordini.CodID) WHERE EmailCliente = ?");
+        $stmt->bind_param('s', $userEmail);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function createNewOrder($userEmail){
+        $query = "INSERT INTO ordini (EmailCliente) VALUES (?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+    }
+
 
 
 

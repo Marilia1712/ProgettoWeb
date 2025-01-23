@@ -18,8 +18,8 @@
             <div class="row align-items-center">
                 <!-- Search Bar -->
                 <div class="col-lg-4 col-md-6">
-                    <form class="d-flex search-bar" action="#" method="get">
-                        <input type="text" class="form-control me-2" placeholder="Cerca un prodotto">
+                    <form class="d-flex search-bar" action="./index-ricerca.php" method="get">
+                        <input type="text" name="research" class="form-control me-2" placeholder="Cerca un prodotto">
                         <button type="submit" class="btn btn-primary">
                             <img src="./upload/icons/magnifying-glass-solid.svg" alt="Cerca" width="24">
                         </button>
@@ -47,7 +47,7 @@
                         <a href="./index-avvisi.php">
                             <img src="./upload/icons/bell-solid.svg" alt="Notifiche" width="24">
                         </a>
-                        <a href="./cart.html">
+                        <a href="./index-carrello.php">
                             <img src="./upload/icons/cart-shopping-solid.svg" alt="Carrello" width="24">
                         </a>
                         <a href="./utils/logout-script.php">

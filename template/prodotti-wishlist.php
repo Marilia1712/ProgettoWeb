@@ -10,13 +10,13 @@
                 <article class="wishlist-item d-flex">
                     <div class="product-image me-3">
                         <img src="<?php echo UPLOAD_DIR . "productimages/" . $prodotto["Immagine"]; ?>"
-                             alt="<?php echo $prodotto["NomeProdotto"]; ?>"
+                             alt="<?php echo $prodotto["Nome"]; ?>"
                              class="img-fluid">
                     </div>
                     <div class="product-details">
                         <a href="./index-singolo-prodotto.php?idProdotto=<?php echo $prodotto["CodID"] ?>" 
                            class="text-decoration-none text-dark">
-                            <?php echo $prodotto["NomeProdotto"]; ?>
+                            <?php echo $prodotto["Nome"]; ?>
                         </a>
                     </div>
                 </article>

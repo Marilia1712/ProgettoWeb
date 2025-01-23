@@ -27,15 +27,28 @@
 
                 <!-- Action Buttons -->
                 <div class="mt-4">
-                    <button class="btn btn-primary">Aggiungi al Carrello
-                        <img src="./upload/icons/cart-shopping-solid.svg" alt="Carrello" width="24">
-                    </button>
-                    <input type="number" value="0" min="0" max="<?php echo $prodotto["Giacenza"]; ?>" class="form-control w-25 d-inline-block mx-2">
-                    <a href="http://">
-                        <button class="btn btn-outline-danger">
-                            <img src="./upload/icons/heart-solid-pink.svg" alt="Aggiungi a wishlist" width="24">
+
+                    <!-- Cart Section -->
+                    <div class="mb-3">
+                        <button class="btn btn-primary">Aggiungi al Carrello
+                            <img src="./upload/icons/cart-shopping-solid.svg" alt="Carrello" width="24">
                         </button>
-                    </a>
+                        <input type="number" value="0" min="0" max="<?php echo $prodotto["Giacenza"]; ?>" class="form-control w-25 d-inline-block mx-2">
+                    </div>
+
+                    <!-- Wishlist Section -->
+                    <div class="mb-3">
+                        <button class="btn btn-btn-primary">Aggiungi a Wishlist
+                            <img src="./upload/icons/heart-solid-pink.svg" alt="Wishlist" width="24">
+                        </button>
+
+                        <select class="form-control w-25 d-inline-block mx-2">                          <!--fix me: php part-->
+                            <option value="" disabled selected>Nome Wishlist</option>
+                            <?php foreach($templateParams["wishlists"] as $wishlist): ?>
+                                <option value="<?php echo $wishlist["Codid"]; ?>"><?php echo $wishlist["nome"]; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>

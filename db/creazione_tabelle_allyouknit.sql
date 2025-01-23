@@ -41,8 +41,8 @@ CREATE TABLE `prodotti` (
 
 CREATE TABLE `ordini` (
   `CodID` int(11) NOT NULL,
-  `Data` date NOT NULL,
-  `Ora` time NOT NULL,
+  `Data` date,
+  `Ora` time,
   `Pagato` tinyint(4) NOT NULL,
   `Importo` double NOT NULL DEFAULT 0,
   `CodIDTransazione` int(11),

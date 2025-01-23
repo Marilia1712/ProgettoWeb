@@ -5,6 +5,7 @@
 
     <?php foreach($templateParams["inbox"] as $notification): ?>
         <div class="row mb-3">
+            <input type="checkbox" name="" id="">
             <div class="col-12 bg-white p-3 shadow-sm rounded">
                 <h2><?php echo $notification["Titolo"]; ?></h2>
                 <p class="datetime text-muted">Data: <?php echo $notification["Data"]; ?>, Ore: <?php echo $notification["Ora"]; ?></p>

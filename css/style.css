@@ -502,6 +502,7 @@ main {
     left: calc(var(--zoom-x) - 75px); /* Center the zoom effect horizontally */
     top: calc(var(--zoom-y) - 75px);  /* Center the zoom effect vertically */
     pointer-events: none; 
+    border: 3px solid black;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

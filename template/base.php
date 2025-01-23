@@ -41,6 +41,9 @@
                     <div class="logo">
                         <img src="./upload/logos/LOGO2.png" alt="Logo All You Knit" class="img-fluid">
                     </div>
+                    <div class="logo-mobile">
+                        <img src="./upload/logos/LOGOYARN.png" alt="Logo All You Knit" class="img-fluid">
+                    </div>
                 </div>
                 
                 <!-- Icons -->

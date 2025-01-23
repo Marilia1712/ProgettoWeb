@@ -555,6 +555,10 @@ main {
 }
 
 
+.text-center .logo-mobile img{
+    display: none;
+ }
+
 
 @media screen and (max-width: 768px) {
 
@@ -562,9 +566,37 @@ main {
         flex-direction: column-reverse;
     }
     .login-banner{
-        visibility: hidden;
+        display: none;
     }
     .desktop-navbar {
-        visibility: hidden;
+        display: none;
     }
+
+
+    header .icons img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    header .icons {
+        gap: 10px;
+    
+        a {
+            margin-left: 2px; /* Add more space between each icon */
+            margin-right: 2px;
+        }
+    }
+
+    .text-center .logo img{
+       display: none;
+    }
+
+    .text-center .logo-mobile img{
+        display: show;
+        max-width: 100px;
+        height: auto;
+        display: block;
+     }
+
+    
   }

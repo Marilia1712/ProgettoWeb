@@ -6,7 +6,7 @@
         <div class="row mb-3 align-items-center">
             <div class="col-auto">
                 <button class="btn btn-link">
-                    <img src="./upload/icons/unread-icon.svg" alt="Unread" width="24">
+                    <img src="./upload/icons/unread-icon.svg" alt="Unread" width=32">
                 </button>
             </div>
             <div class="col-12 bg-white p-3 shadow-sm rounded">

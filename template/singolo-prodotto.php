@@ -1,7 +1,7 @@
 <section class="container py-5">
     <div class="row p-4">
-        <!-- Product Image -->
-        <div id="imageZoom" style="--url: url('../upload/logos/palette.png');
+        <!-- Product Image -->                                                  <!--fixme: php for loading path to imag file -->
+        <div id="imageZoom" style="--url: url('../upload/carousel/bijoux.jpg');          
                                     --zoom-x: 0%; --zoom-y:0%;
                                     --display:none;
         " 
@@ -21,6 +21,10 @@
             imageZoom.style.setProperty('--zoom-x', pointer.x + '%');
             imageZoom.style.setProperty('--zoom-y', pointer.y + '%');
             })
+            imageZoom.addEventListener('mouseout',()=> {
+                imageZoom.style.setProperty('--display','none');
+            })
+
         </script>
 
         <!-- Product Details -->

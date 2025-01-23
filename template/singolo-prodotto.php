@@ -29,25 +29,26 @@
                 <div class="mt-4">
 
                     <!-- Cart Section -->
-                    <div class="mb-3">
-                        <button class="btn btn-primary">Aggiungi al Carrello
-                            <img src="./upload/icons/cart-shopping-solid.svg" alt="Carrello" width="24">
-                        </button>
-                        <input type="number" value="0" min="0" max="<?php echo $prodotto["Giacenza"]; ?>" class="form-control w-25 d-inline-block mx-2">
-                    </div>
+                <div class="mb-3">
+                    <input type="number" value="0" min="0" max="<?php echo $prodotto["Giacenza"]; ?>" class="form-control w-25 d-inline-block mx-2">
+                    <button class="btn-cart">Aggiungi al Carrello
+                        <img src="./upload/icons/cart-shopping-solid-white.svg" alt="Carrello" width="24">
+                    </button>
+                </div>
+
 
                     <!-- Wishlist Section -->
                     <div class="mb-3">
-                        <button class="btn btn-btn-primary">Aggiungi a Wishlist
-                            <img src="./upload/icons/heart-solid-pink.svg" alt="Wishlist" width="24">
-                        </button>
-
-                        <select class="form-control w-25 d-inline-block mx-2">                          <!--fix me: php part-->
+                        <select class="form-control w-25 d-inline-block mx-2">
                             <option value="" disabled selected>Nome Wishlist</option>
                             <?php foreach($templateParams["wishlists"] as $wishlist): ?>
                                 <option value="<?php echo $wishlist["Codid"]; ?>"><?php echo $wishlist["nome"]; ?></option>
                             <?php endforeach; ?>
                         </select>
+
+                        <button class="btn-wishlist">Aggiungi a Wishlist
+                            <img src="./upload/icons/heart-solid-white.svg" alt="Wishlist" width="24">
+                        </button>
                     </div>
                 </div>
             </div>

@@ -149,3 +149,85 @@ main {
     margin-bottom: 15px;
 }
 
+
+/**/
+
+/* Carousel Banner */
+.banner-categorie {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-categorie .banner-image {
+    height: 450px; 
+    z-index: 1;
+    object-fit: cover; 
+    filter: brightness(75%); 
+    transition: filter 0.3s ease-in-out; 
+}
+
+.banner-categorie .banner-image:hover {
+    filter: brightness(100%); 
+}
+
+.carousel-item a p {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    font-size: 5.0rem; 
+    font-weight: bold;
+    z-index: 10;
+    margin: 0;
+}
+
+
+.carousel-item a {
+    position: relative;
+    display: block;
+    height: 100%;
+    color: white; 
+    text-decoration: none;
+}
+
+.carousel-item a p {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    font-size: 2.5rem; 
+    font-weight: bold;
+    z-index: 10;
+    margin: 0;
+}
+
+.white-banner {
+    background-color: #ffffff;
+}
+
+.brand-description {
+    font-weight: bold;
+    text-align: center;
+    padding: 0 5rem;
+}
+
+.brand-logo {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 1rem; 
+}
+
+.brand-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+

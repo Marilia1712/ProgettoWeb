@@ -576,6 +576,42 @@ main {
 }
 
 
+.offcanvas-header {
+    background-color: #F85760;
+}
+
+.offcanvas-body .text-center a {
+    text-decoration: none;
+    color:#F85760;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: large;
+}
+
+.offcanvas-body .nav li .nav-link{
+    text-decoration: none;
+    color:black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.offcanvas .nav-item {
+    border-bottom: 1px solid lightgrey;
+
+    :hover{
+        background-color: lightgrey;
+    }
+}
+
+.offcanvas .nav-item:last-child {
+    border-bottom: none; 
+}
+
+.offcanvas .nav-item {
+    padding-bottom: 10px;
+}
+
+
 /*small screens*/
 @media (max-width: 767.98px) {
 

@@ -89,16 +89,16 @@
     <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
         <div class="offcanvas-header">
             <div class="logo text-center w-100">
-                <img src="./upload/logos/LOGO2.png" alt="Logo All You Knit" class="img-fluid">
+                <img src="./upload/icons/user-solid-white.svg" alt="Logo All You Knit" class="img-fluid">
             </div>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <div class="text-center mb-4">
                 <?php if(isset($_SESSION["email"])): ?>
-                    <a href="./index-pagina-personale.php" class="btn btn-primary">Ciao, <?php echo $_SESSION["nome"]; ?>!</a>
+                    <a href="./index-pagina-personale.php">Ciao, <?php echo $_SESSION["nome"]; ?>!</a>
                 <?php else: ?>
-                    <a href="./index-login.php" class="btn btn-primary">Log In / Sign Up</a>
+                    <a href="./index-login.php">Log In / Sign Up</a>
                 <?php endif; ?>
             </div>
             <ul class="nav flex-column">

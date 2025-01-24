@@ -70,7 +70,7 @@
                             <select name="idWishlist"  class="form-control w-25 d-inline-block mx-2" required>
                                 <option value="" disabled selected hidden>Scegli Wishlist</option>
                                 <?php foreach($templateParams["wishlists"] as $wishlist): ?>
-                                    <option value="<?php echo $wishlist["CodIDProdotto"]; ?>"><?php echo $wishlist["Nome"]; ?></option>
+                                    <option value="<?php echo $wishlist["CodID"]; ?>"><?php echo $wishlist["Nome"]; ?></option>
                                 <?php endforeach; ?>
                             </select>
                             <button class="btn-wishlist" <?php if($prodotto["Giacenza"] == 0) echo "disabled"; ?>>

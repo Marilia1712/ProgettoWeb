@@ -120,6 +120,11 @@ header .loginbanner a {
     border-radius: 5px;
 }
 
+header .icons .login-button {
+    min-width: 18vw;
+    display: flex;
+    justify-content: center;
+}
 
 header .icons img {
     width: 3.0rem;
@@ -643,7 +648,10 @@ main {
         display: none;
     }
 
-    
+    header .icons .login-button {
+        min-width: auto;
+    }
+
     .search-bar form {
         padding: 0 15px;
     }

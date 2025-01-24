@@ -50,20 +50,26 @@
                         </button>
                     </div>
                     <?php if(isset($_SESSION["email"])): ?>
-                    <!-- icone avvisi, carrello, logout -->
-                    <a href="./index-avvisi.php">
-                        <?php if($templateParams["news"]): ?>
-                            <img src="./upload/icons/bell-solid.svg" alt="Ci sono nuove notifiche" width="24">
-                        <?php else: ?>
-                            <img src="./upload/icons/bell-regular.svg" alt="Sezione notifiche" width="24">
-                        <?php endif; ?>
-                    </a>
-                    <a href="./index-carrello.php">
-                        <img src="./upload/icons/cart-shopping-solid.svg" alt="Accedi al carrello" width="24">
-                    </a>
-                    <a href="./utils/logout-script.php">
-                        <img src="./upload/icons/logout-solid.svg" alt="Effettua il logout" width="24">
-                    </a>
+                        <!-- icone avvisi, carrello, logout -->
+                        <a href="./index-avvisi.php">
+                            <?php if($templateParams["news"]): ?>
+                                <img src="./upload/icons/bell-solid.svg" alt="Ci sono nuove notifiche" width="24">
+                            <?php else: ?>
+                                <img src="./upload/icons/bell-regular.svg" alt="Sezione notifiche" width="24">
+                            <?php endif; ?>
+                        </a>
+                        <a href="./index-carrello.php">
+                            <img src="./upload/icons/cart-shopping-solid.svg" alt="Accedi al carrello" width="24">
+                        </a>
+                        <a href="./utils/logout-script.php">
+                            <img src="./upload/icons/logout-solid.svg" alt="Effettua il logout" width="24">
+                        </a>
+                    <?php endif; ?>
+                    <?php if(!isset($_SESSION["email"])): ?>
+                        <!-- login -->
+                        <a class="login-button" href="./index-login.php">
+                            <img src="./upload/icons/login-solid.svg" alt="Effettua il login" width="24">
+                        </a>
                     <?php endif; ?>
                 </div>
             </div>

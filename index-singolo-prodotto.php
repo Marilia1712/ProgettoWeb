@@ -12,11 +12,11 @@ if(isset($_SESSION["email"])){
     $templateParams["wishlists"] = $dbh->getUserWishlists($_SESSION["email"]);
 }
 if($dbh->checkProductInSale($idProdotto)){
-    $prodotto = $dbh->getDiscountedProduct($idProdotto)[0];
+    $prodotto = $dbh->getDiscountedProduct($idProdotto);
     $prodottoInOfferta = true;
 }
 else{
-    $prodotto = $dbh->getProduct($idProdotto)[0];
+    $prodotto = $dbh->getProduct($idProdotto);
     $prodottoInOfferta = false;
 }
 

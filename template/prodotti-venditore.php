@@ -17,7 +17,7 @@
                 <div class="col-md-9">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $prodotto["Nome"]; ?></h5>
-                        <p class="card-text"><strong><?php echo $prodotto["Prezzo"]; ?> €</strong></p>
+                        <p class="card-text"><strong><?php echo number_format($prodotto["Prezzo"], 2, ",", ""); ?> €</strong></p>
                         <p class="card-text text-muted">Cod di Riferimento: <?php echo $prodotto["CodID"]; ?></p>
                         <div class="d-flex justify-content-between">
                             <form action="./utils/delete-product-script.php" method="post">

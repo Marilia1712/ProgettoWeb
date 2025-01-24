@@ -2,25 +2,29 @@
     <h1 class="text-center my-4"><?php echo $nomeWishlist ?></h1>
 </section>
 
-<section class="wishlist">
-    <div class="container">
+<!-- Elenco dei prodotti -->
+<section class="product-list container">
+    <div class="row">
         <?php foreach ($templateParams["prodotti"] as $prodotto): ?>
-        <div class="row mb-4">
-            <div class="col-12">
-                <article class="wishlist-item d-flex">
-                    <div class="product-image me-3">
-                        <img src="<?php echo UPLOAD_DIR . "productimages/" . $prodotto["Immagine"]; ?>"
-                             alt="<?php echo $prodotto["Nome"]; ?>"
-                             class="img-fluid">
+        <!-- Adjusted the column classes for responsive behavior -->
+        <div class="col-12 col-md-6 mb-4">
+            <a href="./index-singolo-prodotto.php?idProdotto=<?php echo $prodotto["CodID"]; ?>" class="product-link" style="text-decoration:none;">
+                <article class="product-item d-flex align-items-center border p-3 shadow-sm bg-white" style="border-radius:12px;">
+                    <!-- Product Image -->
+                    <div class="me-3">
+                        <img src="<?php echo UPLOAD_DIR . "productimages/" . $prodotto["Immagine"]; ?>" 
+                             alt="<?php echo $prodotto["NomeProdotto"]; ?>" 
+                             class="img-fluid" 
+                             style="max-width: 150px; height: auto;">
                     </div>
-                    <div class="product-details">
-                        <a href="./index-singolo-prodotto.php?idProdotto=<?php echo $prodotto["CodID"] ?>" 
-                           class="text-decoration-none text-dark">
-                            <?php echo $prodotto["Nome"]; ?>
-                        </a>
+                    <!-- Product Details -->
+                    <div>
+                        <h2 class="h5 mb-2 text-dark" style="font-size:16pt;">
+                            <?php echo $prodotto["NomeProdotto"]; ?>
+                        </h2>
                     </div>
                 </article>
-            </div>
+            </a>
         </div>
         <?php endforeach; ?>
     </div>

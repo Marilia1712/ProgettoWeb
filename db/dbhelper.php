@@ -49,7 +49,7 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
-        return $result->fetch_all(MYSQLI_ASSOC);
+        return $result->fetch_all(MYSQLI_ASSOC)[0];
     }
 
     public function getDiscountedProducts(){
@@ -64,6 +64,15 @@ class DatabaseHelper{
     
     public function getDiscountedProduct($product){
         $stmt = $this->conn->prepare("SELECT *, prodotti.CodID as CodIDProdotto FROM prodotti INNER JOIN offerte ON(prodotti.CodID = offerte.CodIDProdotto) WHERE prodotti.CodId = ?");
+        $stmt->bind_param('i', $product);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC)[0];
+    }
+
+    public function getProductCategories($product){
+        $stmt = $this->conn->prepare("SELECT appartenenzacategoria.Nome FROM prodotti INNER JOIN appartenenzacategoria USING(CodID) WHERE prodotti.CodId = ?");
         $stmt->bind_param('i', $product);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -154,7 +163,7 @@ class DatabaseHelper{
     }
 
     public function getWishlistProducts($wishlistID){
-        $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN aggiuntawishlist ON(prodotti.CodID = aggiuntawishlist.CodIDProdotto)
+        $stmt = $this->conn->prepare("SELECT *, prodotti.Nome as NomeProdotto FROM prodotti INNER JOIN aggiuntawishlist ON(prodotti.CodID = aggiuntawishlist.CodIDProdotto)
                                         INNER JOIN wishlists ON(aggiuntawishlist.CodIDWishlist = wishlists.CodID) WHERE wishlists.CodID = ?");
         $stmt->bind_param('i', $wishlistID);
         $stmt->execute();
@@ -382,6 +391,30 @@ class DatabaseHelper{
         $stmt->execute();
 
         return;
+    }
+
+    public function editProduct($name, $price, $store, $categories, $color, $composition, $tools, $productID){
+        if($color == "")
+            $color = NULL;
+        if($composition == "")
+            $composition = NULL;
+        if($tools == "")
+            $tools = NULL;
+        $query = "UPDATE prodotti SET Nome = ?, Prezzo = ?, Colore = ?, Composizione = ?, Strumenti = ?, Giacenza = ? WHERE CodID = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('sdsssii', $name, $price, $color, $composition, $tools, $store, $productID);
+        $stmt->execute();
+
+        $stmt = $this->conn->prepare("DELETE FROM appartenenzacategoria WHERE CodID = ?");
+        $stmt->bind_param('i', $productID);
+        $stmt->execute();
+
+        foreach ($categories as $category) {
+            $query = "INSERT INTO appartenenzacategoria (CodID, Nome) VALUES (?, ?)";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bind_param('is', $productID, $category);
+            $stmt->execute();
+        }
     }
 
 }

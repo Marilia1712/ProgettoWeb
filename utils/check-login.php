@@ -10,10 +10,10 @@
             if(!is_null($cliente)) {
                 session_start();
                 session_unset();
-
                 $_SESSION["email"] = $cliente["Email"];
                 $_SESSION["nome"] = $cliente["Nome"];
                 $_SESSION["cognome"] = $cliente["Cognome"];
+                $dbh->sendWelcomeNotification($cliente["Email"]);
                 header("location: ../index.php");
             }
             else {

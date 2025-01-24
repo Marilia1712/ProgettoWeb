@@ -26,6 +26,14 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getUsers(){
+        $stmt = $this->conn->prepare("SELECT * FROM clienti");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getProductsOfCategory($category){
         $stmt = $this->conn->prepare("SELECT *, prodotti.Nome as NomeProdotto FROM prodotti INNER JOIN appartenenzacategoria USING(CodID) WHERE appartenenzacategoria.Nome = ?");
         $stmt->bind_param('s', $category);
@@ -109,7 +117,7 @@ class DatabaseHelper{
     }
 
     public function getUserInbox($userEmail){
-        $stmt = $this->conn->prepare("SELECT * FROM clienti INNER JOIN inboxclienti USING(Email) INNER JOIN avvisi USING(CodID) WHERE Email = ? ORDER BY Data, Ora");
+        $stmt = $this->conn->prepare("SELECT * FROM clienti INNER JOIN inboxclienti USING(Email) INNER JOIN avvisi USING(CodID) WHERE Email = ? ORDER BY Data DESC");
         $stmt->bind_param('s', $userEmail);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -264,10 +272,7 @@ class DatabaseHelper{
         $stmt->bind_param('dssi', $totalPrice, gmdate('Y-m-d \G\M\T'), gmdate('h:i:s \G\M\T'), $cartID);
         $stmt->execute();
 
-        $query = "INSERT INTO ordini (EmailCliente) VALUES (?)";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('s', $userEmail);
-        $stmt->execute();
+        $this->createNewOrder($userEmail);
 
         return;
     }
@@ -330,6 +335,28 @@ class DatabaseHelper{
             $stmt->bind_param('is', $lastAddedProductId, $category);
             $stmt->execute();
         }
+    }
+
+    public function sendNotification($title, $content){
+        $query = "INSERT INTO avvisi (Titolo, Contenuto) VALUES (?, ?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('ss', $title, $content);
+        $stmt->execute();
+
+        $newNotificationId = $stmt->insert_id;
+        foreach ($this->getUsers() as $user) {
+            $query = "INSERT INTO inboxclienti (Email, CodID, Data, Ora) VALUES (?, ?, ?, ?)";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bind_param('siss', $user["Email"], $newNotificationId, gmdate('Y-m-d \G\M\T'), gmdate('h:i:s \G\M\T'));
+            $stmt->execute();
+        }
+    }
+
+    public function sendWelcomeNotification($userEmail){
+        $query = "INSERT INTO inboxclienti (Email, CodID, Data, Ora) VALUES (?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('siss', $userEmail, 1, gmdate('Y-m-d \G\M\T'), gmdate('h:i:s \G\M\T'));
+        $stmt->execute();
     }
 
 }

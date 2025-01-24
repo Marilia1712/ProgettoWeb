@@ -1,17 +1,17 @@
 <!-- Sezione di benvenuto -->
 <div class="user-header text-center">
-    <img src="./upload/icons/user-solid.svg" alt="Logo utente" class="user-logo">
-    <h1>Benvenuto venditore</h1>
+    <img src="./upload/icons/user-tie-solid.svg" alt="Logo utente" class="user-logo">
+    <h1>Homepage del venditore</h1>
 </div>
 
 <!-- Sezioni principali -->
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6">
-            <a class="user-section-link" href="./notifications.html">
+            <a class="user-section-link" href="./index-nuovo-avviso.php">
                 <div class="user-section text-center">
                     <img src="./upload/icons/bell-solid.svg" alt="Notifiche" class="section-icon">
-                    <p>Notifiche</p>
+                    <p>Invia avviso</p>
                 </div>
             </a>
         </div>

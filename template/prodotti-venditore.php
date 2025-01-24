@@ -1,6 +1,6 @@
 <!-- Bottone per aggiungere un prodotto -->
 <section class="mb-4 text-center">
-    <form action="./index-aggiungi-prodotto.php">
+    <form action="./index-nuovo-prodotto.php">
         <button class="btn btn-primary">Aggiungi Prodotto +</button>
     </form>
 </section>

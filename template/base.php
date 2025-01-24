@@ -24,7 +24,7 @@
 
     <!-- Header -->
     <header class="mainheader py-4">
-        <div class="row align-items-center justify-content-between py-3" style="padding-left:30px; padding-right:30px;">
+        <div class="row align-items-center py-3" style="max-width:100%;">
             <!-- Hamburger Menu Icon -->
             <div class="col-auto d-md-none">
                 <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">

@@ -50,8 +50,8 @@ body {
     padding: 20px 0;
 }
 
-
 .mainheader .row {
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;

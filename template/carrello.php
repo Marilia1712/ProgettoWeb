@@ -2,10 +2,9 @@
 
 <!-- Elenco Prodotti -->
 <section class="cart">
-
-    <div class="row mb-3">
+    <div class="row">
         <?php foreach ($templateParams["prodotti"] as $prodotto): ?>
-        <div class="col-12">
+        <div class="col-12 mb-3">
             <article class="cart-item d-flex align-items-center p-3 bg-white border rounded">
                 <div class="product-image me-3">
                 <img src="<?php echo UPLOAD_DIR . "productimages/" . $prodotto["Immagine"]; ?>"
@@ -39,7 +38,6 @@
         </div>
         <?php endforeach; ?>
     </div>
-
 </section>
 
 <!-- Totale Carrello -->

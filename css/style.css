@@ -68,9 +68,10 @@ header .search-bar {
     position: relative;
 }
 
+                
 .search-bar form {
     display: flex;
-    align-items: center;
+    width: 100%;
 }
 
 .search-bar input {
@@ -120,6 +121,7 @@ header .loginbanner a {
     border-radius: 5px;
 }
 
+
 header .icons img {
     width: 3.5rem;
     height: 3.5rem;
@@ -133,9 +135,6 @@ header .icons {
         margin-right: 10px;
     }
 }
-
-
-
 
 
 /* Navigation Bar */
@@ -627,30 +626,9 @@ main {
     .desktop-navbar {
         display: none;
     }
-    .mainheader .row {
-        flex-direction: column-reverse;
-    }
-
-    .mainheader .row .icons {
-        display: none;
-    }
 
     .login-banner{
         display: none;
-    }
-
-    .search-bar form {
-        flex: 1;
-    }
-
-    .search-bar input {
-        width: 100%; 
-    }
-
-    .search-bar,
-    .logo,
-    .icons {
-        padding: 10px 0;
     }
     
     .search-bar form {

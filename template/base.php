@@ -64,8 +64,7 @@
                         <a href="./utils/logout-script.php">
                             <img src="./upload/icons/logout-solid.svg" alt="Effettua il logout" width="24">
                         </a>
-                    <?php endif; ?>
-                    <?php if(!isset($_SESSION["email"])): ?>
+                    <?php else: ?>
                         <!-- login -->
                         <a class="login-button" href="./index-login.php">
                             <img src="./upload/icons/login-solid.svg" alt="Effettua il login" width="24">

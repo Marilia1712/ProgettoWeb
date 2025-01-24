@@ -51,6 +51,7 @@ body {
 }
 
 .mainheader .row {
+    padding: 0px 7%;
     margin: auto;
     display: flex;
     align-items: center;

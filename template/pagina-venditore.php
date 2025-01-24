@@ -1,7 +1,7 @@
 <!-- Sezione di benvenuto -->
 <div class="user-header text-center">
     <img src="./upload/icons/user-solid.svg" alt="Logo utente" class="user-logo">
-    <h1>Il tuo account</h1>
+    <h1>Benvenuto venditore</h1>
 </div>
 
 <!-- Sezioni principali -->

@@ -20,7 +20,7 @@
         <div class="login-banner">
             <div class="container">
                 <?php if(isset($_SESSION["email"])): ?>
-                    <span>Ciao, <?php echo $_SESSION["nome"]; ?>!</span>
+                    <span>Pagina personale di <?php echo $_SESSION["nome"]; ?></span>
                 <?php else: ?>
                     <span>Welcome! Effettua login</span>
                 <?php endif; ?>

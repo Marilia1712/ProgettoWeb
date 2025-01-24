@@ -43,14 +43,13 @@
             <!-- Icons -->
             <div class="col-auto icons">
                 <div class="d-inline-flex gap-2">
-                    <?php if(isset($_SESSION["email"])): ?>
-
                     <!-- Hamburger menu mobile -->
                     <div class="col-auto d-md-none">
                         <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
                             <img src="./upload/icons/bars-solid.svg" alt="Menu" width="24">
                         </button>
                     </div>
+                    <?php if(isset($_SESSION["email"])): ?>
                     <!-- icone avvisi, carrello, logout -->
                     <a href="./index-avvisi.php">
                         <?php if($templateParams["news"]): ?>

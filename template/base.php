@@ -90,7 +90,9 @@
     <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
         <div class="offcanvas-header">
             <div class="logo text-center w-100">
-                <img src="./upload/icons/user-solid-white.svg" alt="Logo All You Knit" class="img-fluid">
+                <a href="./index-pagina-personale.php">
+                    <img src="./upload/icons/user-solid-white.svg" alt="Logo All You Knit" class="img-fluid">
+                </a>
             </div>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>

@@ -71,7 +71,7 @@
                 <img src="./upload/logos/LOGO2.png" alt="All You Knit Logo" class="img-fluid">
             </div>
             <!-- Text Section -->
-            <div class="col-12 col-md-8">
+            <div class="about-brand col-12 col-md-8">
                 <p class="brand-description">
                     All You Knit, da oltre 30 anni, è un brand retrò che combina la passione per la maglieria con lo stile groovy
                     degli anni passati. I nostri filati e gomitoli, selezionati con cura, garantiscono morbidezza, resistenza e

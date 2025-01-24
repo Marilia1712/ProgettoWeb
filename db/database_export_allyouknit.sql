@@ -40,6 +40,7 @@ CREATE TABLE `aggiuntawishlist` (
 
 LOCK TABLES `aggiuntawishlist` WRITE;
 /*!40000 ALTER TABLE `aggiuntawishlist` DISABLE KEYS */;
+INSERT INTO `aggiuntawishlist` VALUES (36,10),(58,10);
 /*!40000 ALTER TABLE `aggiuntawishlist` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -55,7 +56,7 @@ CREATE TABLE `appartenenzacategoria` (
   `Nome` varchar(45) NOT NULL,
   PRIMARY KEY (`CodID`,`Nome`),
   KEY `Nome` (`Nome`),
-  CONSTRAINT `CodIDProd` FOREIGN KEY (`CodID`) REFERENCES `prodotti` (`CodID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `CodIDProd` FOREIGN KEY (`CodID`) REFERENCES `prodotti` (`CodID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `Nome` FOREIGN KEY (`Nome`) REFERENCES `categorieprodotti` (`Nome`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -142,7 +143,7 @@ CREATE TABLE `clienti` (
 
 LOCK TABLES `clienti` WRITE;
 /*!40000 ALTER TABLE `clienti` DISABLE KEYS */;
-INSERT INTO `clienti` VALUES ('cinziabuccino@gmail.com','Cinzia','Buccino','Paco2006'),('mariliamerendi@gmail.com','Marilia','Merendi','Tina2022'),('mauricapuano@gmail.com','Maurizio','Capuano','Kira2003'),('mauricapuano@icloud.com','Maurizio','Capuano','Maurizio03');
+INSERT INTO `clienti` VALUES ('','','',''),('cinziabuccino@gmail.com','Cinzia','Buccino','Paco2006'),('mariliamerendi@gmail.com','Marilia','Merendi','Tina2022'),('mauricapuano@gmail.com','Maurizio','Capuano','Kira2003'),('mauricapuano@icloud.com','Maurizio','Capuano','Maurizio03');
 /*!40000 ALTER TABLE `clienti` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,6 +173,7 @@ CREATE TABLE `inboxclienti` (
 
 LOCK TABLES `inboxclienti` WRITE;
 /*!40000 ALTER TABLE `inboxclienti` DISABLE KEYS */;
+INSERT INTO `inboxclienti` VALUES ('mariliamerendi@gmail.com',1,'2025-01-10','00:00:00',0),('mariliamerendi@gmail.com',4,'2025-01-15','00:00:00',0),('mauricapuano@gmail.com',1,'2025-01-10','00:00:00',1),('mauricapuano@gmail.com',2,'2025-01-12','00:00:00',1),('mauricapuano@gmail.com',3,'2025-01-15','00:00:00',1),('mauricapuano@gmail.com',4,'2025-01-15','00:00:00',1);
 /*!40000 ALTER TABLE `inboxclienti` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -213,18 +215,19 @@ DROP TABLE IF EXISTS `ordini`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ordini` (
   `CodID` int(11) NOT NULL AUTO_INCREMENT,
-  `Data` date NOT NULL,
-  `Ora` time NOT NULL,
-  `Pagato` tinyint(4) NOT NULL,
+  `Data` date DEFAULT NULL,
+  `Ora` time DEFAULT NULL,
+  `Pagato` tinyint(4) NOT NULL DEFAULT 0,
   `Importo` double NOT NULL DEFAULT 0,
   `CodIDTransazione` int(11) DEFAULT NULL,
   `EmailCliente` varchar(45) NOT NULL,
+  `Stato` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`CodID`),
   KEY `EmailCliente` (`EmailCliente`),
   KEY `CodIDTransazione` (`CodIDTransazione`),
   CONSTRAINT `CodIDTransazione` FOREIGN KEY (`CodIDTransazione`) REFERENCES `transazioni` (`CodID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `EmailCliente` FOREIGN KEY (`EmailCliente`) REFERENCES `clienti` (`Email`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -233,6 +236,7 @@ CREATE TABLE `ordini` (
 
 LOCK TABLES `ordini` WRITE;
 /*!40000 ALTER TABLE `ordini` DISABLE KEYS */;
+INSERT INTO `ordini` VALUES (1,'2025-01-23','10:50:19',1,16.15,NULL,'mauricapuano@gmail.com','Ricevuto'),(2,NULL,NULL,0,0,NULL,'mariliamerendi@gmail.com',NULL),(3,NULL,NULL,0,0,NULL,'cinziabuccino@gmail.com',NULL),(12,NULL,NULL,0,0,NULL,'mauricapuano@gmail.com',NULL);
 /*!40000 ALTER TABLE `ordini` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,7 +257,7 @@ CREATE TABLE `prodotti` (
   `Strumenti` varchar(250) DEFAULT NULL,
   `Giacenza` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`CodID`)
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -305,8 +309,8 @@ CREATE TABLE `prodottiordinati` (
   `Quantita` int(11) NOT NULL,
   PRIMARY KEY (`CodIDProdotto`,`CodIDOrdine`),
   KEY `CodIDOrdine` (`CodIDOrdine`),
-  CONSTRAINT `CodIDOrdine` FOREIGN KEY (`CodIDOrdine`) REFERENCES `ordini` (`CodID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `CodIDProdottox` FOREIGN KEY (`CodIDProdotto`) REFERENCES `prodotti` (`CodID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `CodIDOrdine` FOREIGN KEY (`CodIDOrdine`) REFERENCES `ordini` (`CodID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `CodIDProdottox` FOREIGN KEY (`CodIDProdotto`) REFERENCES `prodotti` (`CodID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -316,6 +320,7 @@ CREATE TABLE `prodottiordinati` (
 
 LOCK TABLES `prodottiordinati` WRITE;
 /*!40000 ALTER TABLE `prodottiordinati` DISABLE KEYS */;
+INSERT INTO `prodottiordinati` VALUES (22,1,10);
 /*!40000 ALTER TABLE `prodottiordinati` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -366,7 +371,7 @@ CREATE TABLE `venditori` (
 
 LOCK TABLES `venditori` WRITE;
 /*!40000 ALTER TABLE `venditori` DISABLE KEYS */;
-INSERT INTO `venditori` VALUES ('mariliamerendi@gmail.com','Marilia','Merendi','Tina2022'),('mauricapuano@gmail.com','Maurizio','Capuano','Kira2003');
+INSERT INTO `venditori` VALUES ('annalisafranco@gmail.com','Annalisa','Franco','Database2024');
 /*!40000 ALTER TABLE `venditori` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -385,7 +390,7 @@ CREATE TABLE `wishlists` (
   PRIMARY KEY (`CodID`),
   KEY `Emailx` (`Email`),
   CONSTRAINT `Emailx` FOREIGN KEY (`Email`) REFERENCES `clienti` (`Email`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -394,7 +399,7 @@ CREATE TABLE `wishlists` (
 
 LOCK TABLES `wishlists` WRITE;
 /*!40000 ALTER TABLE `wishlists` DISABLE KEYS */;
-INSERT INTO `wishlists` VALUES (8,'Materiale per copertina a fiori','Forse dovrei cambiare colore dei gomitoli?','mariliamerendi@gmail.com'),(9,'Idee regalo','Compleanno di Martina: 25 febbraio. Compleanno di Marco: 12 marzo.','mariliamerendi@gmail.com'),(10,'Kira','Materiali che si abbinano bene alla casa e adatti ai gatti.mauricapuano@gmail.com','mauricapuano@gmail.com');
+INSERT INTO `wishlists` VALUES (8,'Materiale per copertina a fiori','Forse dovrei cambiare colore dei gomitoli?','mariliamerendi@gmail.com'),(9,'Idee regalo','Compleanno di Martina: 25 febbraio. Compleanno di Marco: 12 marzo.','mariliamerendi@gmail.com'),(10,'Kira','Materiali che si abbinano bene alla casa e adatti ai gatti','mauricapuano@gmail.com'),(13,'Idee regalo matrimonio','Auguri a tutte le donne!','mauricapuano@gmail.com');
 /*!40000 ALTER TABLE `wishlists` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -407,4 +412,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-22 18:47:47
+-- Dump completed on 2025-01-24  3:47:09

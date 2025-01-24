@@ -17,10 +17,9 @@ body {
     padding: 8px 15px; 
     position:absolute;
     top: 0;
-    right: 7%;  
+    right: 3%; 
     z-index: 9999;
     border-radius: 0 0 12px 12px; 
-    display: flex;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
 }
@@ -127,6 +126,19 @@ header .icons img {
     height: 3.5rem;
 }
 
+header .icons .btn img {
+    width: auto;
+    height: auto;
+}
+header .icons .btn {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+header .icons .btn {
+    background-color: #005BAD;
+}
+
 header .icons {
     gap: 15px;
 
@@ -216,6 +228,10 @@ footer ul {
 
 footer ul li {
     font-size: 14px;
+}
+
+footer .brand-logo {
+    margin: 0px;
 }
 
 footer .brand-logo img {
@@ -627,12 +643,13 @@ main {
         display: none;
     }
 
-    .login-banner{
-        display: none;
-    }
     
     .search-bar form {
         padding: 0 15px;
+    }
+
+    .payment-icons {
+        transform: translateY(-30%);
     }
 
     footer .payment-icons {
@@ -643,6 +660,39 @@ main {
     footer .list-unstyled {
         display: none;
     }
-    
+
+    .mainheader .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mainheader .logo {
+        order: 1; 
+        margin-bottom: 1rem;
+    }
+
+    .mainheader .icons {
+        order: 2;
+        margin-bottom: 1rem;
+    }
+
+    .mainheader .search-bar {
+        order: 3; 
+        width: 100%; 
+    }
+
+    .mainheader .search-bar form {
+        justify-content: center;
+    }
+
+    .mainheader .d-md-none {
+        display: inline-block; 
+    }
+
+    .mainheader .icons .d-inline-flex {
+        justify-content: center;
+    }
 }
+
+
 

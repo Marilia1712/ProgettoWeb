@@ -25,13 +25,6 @@
     <!-- Header -->
     <header class="mainheader py-4">
         <div class="row align-items-center py-3" style="max-width:100%;">
-            <!-- Hamburger Menu Icon -->
-            <div class="col-auto d-md-none">
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-                    <img src="./upload/icons/bars-solid.svg" alt="Menu" width="24">
-                </button>
-            </div>
-
             <!-- Search Bar -->
             <div class="col-auto search-bar">
                 <form class="d-flex" action="./index-ricerca.php" method="get">
@@ -51,6 +44,14 @@
             <div class="col-auto icons">
                 <div class="d-inline-flex gap-2">
                     <?php if(isset($_SESSION["email"])): ?>
+
+                    <!-- Hamburger menu mobile -->
+                    <div class="col-auto d-md-none">
+                        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                            <img src="./upload/icons/bars-solid.svg" alt="Menu" width="24">
+                        </button>
+                    </div>
+                    <!-- icone avvisi, carrello, logout -->
                     <a href="./index-avvisi.php">
                         <?php if($templateParams["news"]): ?>
                             <img src="./upload/icons/bell-solid.svg" alt="Ci sono nuove notifiche" width="24">

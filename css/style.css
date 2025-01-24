@@ -255,7 +255,6 @@ footer .payment-icons img {
     margin: 0 10px;
 }
 
-
 /* User section styles */
 .user-section {
     background-color: white;
@@ -271,11 +270,11 @@ footer .payment-icons img {
     transform: scale(1.05);
 }
 
-.user-section a {
+.user-section-link {
     text-decoration: none;
 }
 
-.user-section a p{
+.user-section-link p {
     color:#005BAD;
     font-weight: bold; 
 }

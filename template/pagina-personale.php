@@ -8,36 +8,36 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6">
-            <div class="user-section text-center">
-                <a href="./index-avvisi.php">
+            <a class="user-section-link" href="./index-avvisi.php">
+                <div class="user-section text-center">
                     <img src="./upload/icons/bell-solid.svg" alt="Notifiche" class="section-icon">
                     <p>Notifiche</p>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
         <div class="col-12 col-md-6">
-            <div class="user-section text-center">
-                <a href="./index-lista-wishlists.php">
+            <a class="user-section-link" href="./index-lista-wishlists.php">
+                <div class="user-section text-center">
                     <img src="./upload/icons/heart-solid.svg" alt="Wishlist" class="section-icon">
                     <p>Wishlist</p>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
         <div class="col-12 col-md-6">
-            <div class="user-section text-center">
-                <a href="./index-carrello.php">
+            <a class="user-section-link" href="./index-carrello.php">
+                <div class="user-section text-center">
                     <img src="./upload/icons/cart-shopping-solid.svg" alt="Carrello" class="section-icon">
                     <p>Carrello</p>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
         <div class="col-12 col-md-6">
-            <div class="user-section text-center">
-                <a href="./index-ordini-cliente.php">
+            <a class="user-section-link" href="./index-ordini-cliente.php">
+                <div class="user-section text-center">
                     <img src="./upload/icons/truck-solid.svg" alt="Ordini" class="section-icon">
                     <p>Ordini</p>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
     </div>
 </div>

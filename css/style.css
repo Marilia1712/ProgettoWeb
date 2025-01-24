@@ -195,11 +195,17 @@ nav.desktop-navbar .nav-link {
     font-size: 16px; 
 }
 
+
+
 /* Footer */
 footer {
     background-color: #F85760;
     color: #fff;
     padding: 20px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 footer ul {
@@ -219,13 +225,15 @@ footer .brand-logo img {
     display: block;
 }
 
+footer .payment-icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
 footer .payment-icons img {
     max-width: 40px;
     margin: 0 10px;
 }
-
-
-
 
 
 /* User section styles */
@@ -647,6 +655,15 @@ main {
     
     .search-bar form {
         padding: 0 15px;
+    }
+
+    footer .payment-icons {
+        display: flex;
+        justify-content: center;
+    }
+
+    footer .list-unstyled {
+        display: none;
     }
     
 }

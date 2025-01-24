@@ -139,6 +139,12 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function deleteProduct($id){
+        $stmt = $this->conn->prepare("DELETE FROM prodotti WHERE CodID = ?");
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+    }
+
     public function getWishlistProducts($wishlistID){
         $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN aggiuntawishlist ON(prodotti.CodID = aggiuntawishlist.CodIDProdotto)
                                         INNER JOIN wishlists ON(aggiuntawishlist.CodIDWishlist = wishlists.CodID) WHERE wishlists.CodID = ?");
@@ -253,9 +259,9 @@ class DatabaseHelper{
         $result = $stmt->get_result();
         $cartID = $result->fetch_all(MYSQLI_ASSOC)[0]["CodID"];
 
-        $query = "UPDATE ordini SET Pagato = True, Importo = ? WHERE CodID = ?";
+        $query = "UPDATE ordini SET Pagato = True, Importo = ?, Data = ?, Ora = ?, Stato = 'Ricevuto' WHERE CodID = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('di', $totalPrice, $cartID);
+        $stmt->bind_param('dssi', $totalPrice, gmdate('Y-m-d \G\M\T'), gmdate('h:i:s \G\M\T'), $cartID);
         $stmt->execute();
 
         $query = "INSERT INTO ordini (EmailCliente) VALUES (?)";
@@ -266,10 +272,65 @@ class DatabaseHelper{
         return;
     }
 
+    public function getCustomerOrders($userEmail){
+        $stmt = $this->conn->prepare("SELECT * FROM ordini WHERE EmailCliente = ? AND Pagato = True ORDER BY Data");
+        $stmt->bind_param('s', $userEmail);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
+    public function getOrderProducts($orderID){
+        $stmt = $this->conn->prepare("SELECT * FROM prodottiordinati INNER JOIN prodotti ON(prodottiordinati.CodIDProdotto = prodotti.CodID) WHERE CodIDOrdine = ?");
+        $stmt->bind_param('i', $orderID);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
+    public function getOrders(){
+        $stmt = $this->conn->prepare("SELECT * FROM ordini WHERE Pagato = True");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function checkSeller($userEmail, $password){
+        $stmt = $this->conn->prepare("SELECT * FROM venditori WHERE Email = ? AND Password = ?");
+        $stmt->bind_param('ss', $userEmail, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $result = $result->fetch_all(MYSQLI_ASSOC);
+
+        if(empty($result))
+            return false; //no seller
+        else
+            return true; //seller found
+    }
+
+    public function addProduct($name, $price, $store, $categories, $color, $composition, $tools){
+        if($color == "")
+            $color = NULL;
+        if($composition == "")
+            $composition = NULL;
+        if($tools == "")
+            $tools = NULL;
+        $query = "INSERT INTO prodotti (Nome, Prezzo, Colore, Composizione, Strumenti, Giacenza) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('sdsssi', $name, $price, $color, $composition, $tools, $store);
+        $stmt->execute();
+
+        $lastAddedProductId = $stmt->insert_id;
+        foreach ($categories as $category) {
+            $query = "INSERT INTO appartenenzacategoria (CodID, Nome) VALUES (?, ?)";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bind_param('is', $lastAddedProductId, $category);
+            $stmt->execute();
+        }
+    }
 
 }
 ?>

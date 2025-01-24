@@ -8,7 +8,8 @@ $templateParams["titolo"] = "AllYouKnit - ".$nomeCategoria;
 $templateParams["nome"] = "prodotti-categoria.php";
 $templateParams["prodotti"] = $dbh->getProductsOfCategory($nomeCategoria);
 $templateParams["categorie"] = $dbh->getCategories();
-$templateParams["news"] = $dbh->checkNewNotifications($_SESSION["email"]);
+if(isset($_SESSION["email"]))
+    $templateParams["news"] = $dbh->checkNewNotifications($_SESSION["email"]);
 
 require 'template/base.php';
 ?>

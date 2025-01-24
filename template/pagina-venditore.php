@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <div class="user-section text-center">
-                <a href="./index-avvisi.php">
+                <a href="./notifications.html">
                     <img src="./upload/icons/bell-solid.svg" alt="Notifiche" class="section-icon">
                     <p>Notifiche</p>
                 </a>
@@ -17,25 +17,25 @@
         </div>
         <div class="col-12 col-md-6">
             <div class="user-section text-center">
-                <a href="./index-lista-wishlists.php">
-                    <img src="./upload/icons/heart-solid.svg" alt="Wishlist" class="section-icon">
-                    <p>Wishlist</p>
+                <a href="./index-ordini-venditore.php">
+                    <img src="./upload/icons/box-open-solid.svg" alt="Ordini" class="section-icon">
+                    <p>Elenco Ordini</p>
                 </a>
             </div>
         </div>
         <div class="col-12 col-md-6">
             <div class="user-section text-center">
-                <a href="./index-carrello.php">
-                    <img src="./upload/icons/cart-shopping-solid.svg" alt="Carrello" class="section-icon">
-                    <p>Carrello</p>
+                <a href="./index-prodotti-venditore.php">
+                    <img src="./upload/icons/list-solid.svg" alt="Prodotti" class="section-icon">
+                    <p>Elenco Prodotti</p>
                 </a>
             </div>
         </div>
         <div class="col-12 col-md-6">
             <div class="user-section text-center">
-                <a href="./index-ordini-cliente.php">
-                    <img src="./upload/icons/truck-solid.svg" alt="Ordini" class="section-icon">
-                    <p>Ordini</p>
+                <a href="./index.php">
+                    <img src="./upload/icons/logout-solid.svg" alt="Logout" class="section-icon">
+                    <p>Logout</p>
                 </a>
             </div>
         </div>

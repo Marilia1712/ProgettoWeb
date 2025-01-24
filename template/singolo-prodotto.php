@@ -56,7 +56,7 @@
                         <form action="./utils/add-to-cart-script.php" method="post">
                             <input type="hidden" name="idProdotto" value="<?php echo $prodotto["CodIDProdotto"]; ?>">
                             <input type="number" name="quantita" value="1" min="1" max="<?php echo $prodotto["Giacenza"]; ?>" class="form-control w-25 d-inline-block mx-2">
-                                <button class="btn-cart" <?php if($prodotto["Giacenza"] == 0) echo "disabled"; ?>>
+                                <button type="submit" class="btn-cart" <?php if($prodotto["Giacenza"] == 0) echo "disabled"; ?>>
                                     Aggiungi al Carrello
                                     <img src="./upload/icons/cart-shopping-solid-white.svg" alt="Carrello" width="24">
                                 </button>
@@ -73,8 +73,8 @@
                                     <option value="<?php echo $wishlist["CodID"]; ?>"><?php echo $wishlist["Nome"]; ?></option>
                                 <?php endforeach; ?>
                             </select>
-                            <button class="btn-wishlist" <?php if($prodotto["Giacenza"] == 0) echo "disabled"; ?>>
-                                Aggiungi a Wishlist
+                            <button type="submit" class="btn-wishlist" <?php if($prodotto["Giacenza"] == 0) echo "disabled"; ?>>
+                                Aggiungi a Wishlist &nbsp
                                 <img src="./upload/icons/heart-solid-white.svg" alt="Wishlist" width="24">
                             </button>
                         </form>

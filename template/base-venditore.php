@@ -12,11 +12,13 @@
 
 <body>
     <!-- Login Banner -->
-    <div class="login-banner">
-        <div class="container">
-            <a href="./index-pagina-venditore.php" class="text-decoration-none">Vai alla homepage</a>
+    <a href="./index-pagina-venditore.php" class="text-decoration-none">
+        <div class="login-banner">
+            <div class="container">
+                <span>Vai alla homepage</span>
+            </div>
         </div>
-    </div>
+    </a>
 
     <!-- Header -->
     <header class="mainheader py-4">

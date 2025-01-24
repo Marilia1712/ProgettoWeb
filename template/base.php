@@ -12,15 +12,21 @@
 
 <body>
     <!-- Login Banner -->
-    <div class="login-banner">
-        <div class="container">
-            <?php if(isset($_SESSION["email"])): ?>
-                <a href="./index-pagina-personale.php" class="text-decoration-none">Ciao, <?php echo $_SESSION["nome"]; ?>!</a>
-            <?php else: ?>
-                <a href="./index-login.php" class="text-decoration-none">Welcome! Effettua login</a>
-            <?php endif; ?>
+    <?php if(isset($_SESSION["email"])): ?>
+    <a href="./index-pagina-personale.php">
+    <?php else: ?>
+    <a href="./index-login.php">
+    <?php endif; ?>
+        <div class="login-banner">
+            <div class="container">
+                <?php if(isset($_SESSION["email"])): ?>
+                    <span>Ciao, <?php echo $_SESSION["nome"]; ?>!</span>
+                <?php else: ?>
+                    <span>Welcome! Effettua login</span>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
+    </a>
 
     <!-- Header -->
     <header class="mainheader py-4">
@@ -67,7 +73,7 @@
                     <?php else: ?>
                         <!-- login -->
                         <a class="login-button" href="./index-login.php">
-                            <img src="./upload/icons/login-solid.svg" alt="Effettua il login" width="24">
+                            <!-- <img src="./upload/icons/login-solid.svg" alt="Effettua il login" width="24"> -->
                         </a>
                     <?php endif; ?>
                 </div>

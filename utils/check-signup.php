@@ -13,6 +13,7 @@
         $_SESSION["email"] = $_POST["email"];
         $_SESSION["nome"] = $_POST["nome"];
         $_SESSION["cognome"] = $_POST["cognome"];
+        $dbh->sendWelcomeNotification($_SESSION["email"]);
         header("location: ../index.php");
     }
 ?>

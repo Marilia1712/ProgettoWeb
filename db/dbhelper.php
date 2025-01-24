@@ -54,7 +54,7 @@ class DatabaseHelper{
 
     public function getDiscountedProducts(){
         $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN offerte ON(prodotti.CodID = offerte.CodIDProdotto) WHERE Inizio < ? AND Scadenza > ?");
-        $date = gmdate('Y-m-d h:i:s \G\M\T');
+        $date = gmdate('Y-m-d H:i:s');
         $stmt->bind_param('ss', $date, $date);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -73,7 +73,7 @@ class DatabaseHelper{
     
     public function checkProductInSale($product){
         $stmt = $this->conn->prepare("SELECT * FROM prodotti INNER JOIN offerte ON(prodotti.CodID = offerte.CodIDProdotto) WHERE Inizio < ? AND Scadenza > ? AND prodotti.CodID = ?");
-        $date = gmdate('Y-m-d h:i:s \G\M\T');
+        $date = gmdate('Y-m-d H:i:s');
         $stmt->bind_param('ssi', $date, $date, $product);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -168,7 +168,7 @@ class DatabaseHelper{
                                         LEFT JOIN (SELECT * FROM offerte WHERE Inizio < ? AND Scadenza > ?) AS offerteAttive ON(prodotti.CodID = offerteAttive.CodIDProdotto)
                                         INNER JOIN prodottiordinati ON(prodotti.CodID = prodottiordinati.CodIDProdotto)
                                         INNER JOIN ordini ON(prodottiordinati.CodIDOrdine = ordini.CodID) WHERE EmailCliente = ? AND Pagato = 0");
-        $date = gmdate('Y-m-d h:i:s \G\M\T');
+        $date = gmdate('Y-m-d H:i:s');
         $stmt->bind_param('sss', $date, $date, $userEmail);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -269,7 +269,7 @@ class DatabaseHelper{
 
         $query = "UPDATE ordini SET Pagato = True, Importo = ?, Data = ?, Ora = ?, Stato = 'Ricevuto' WHERE CodID = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('dssi', $totalPrice, gmdate('Y-m-d \G\M\T'), gmdate('h:i:s \G\M\T'), $cartID);
+        $stmt->bind_param('dssi', $totalPrice, gmdate('Y-m-d'), gmdate('H:i:s'), $cartID);
         $stmt->execute();
 
         $this->createNewOrder($userEmail);
@@ -347,7 +347,7 @@ class DatabaseHelper{
         foreach ($this->getUsers() as $user) {
             $query = "INSERT INTO inboxclienti (Email, CodID, Data, Ora) VALUES (?, ?, ?, ?)";
             $stmt = $this->conn->prepare($query);
-            $stmt->bind_param('siss', $user["Email"], $newNotificationId, gmdate('Y-m-d \G\M\T'), gmdate('h:i:s \G\M\T'));
+            $stmt->bind_param('siss', $user["Email"], $newNotificationId, gmdate('Y-m-d'), gmdate('H:i:s'));
             $stmt->execute();
         }
     }
@@ -355,8 +355,33 @@ class DatabaseHelper{
     public function sendWelcomeNotification($userEmail){
         $query = "INSERT INTO inboxclienti (Email, CodID, Data, Ora) VALUES (?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('siss', $userEmail, 1, gmdate('Y-m-d \G\M\T'), gmdate('h:i:s \G\M\T'));
+        $stmt->bind_param('siss', $userEmail, 1, gmdate('Y-m-d'), gmdate('H:i:s'));
         $stmt->execute();
+    }
+
+    public function nextOrderState($orderID, $orderState){
+
+        switch ($orderState) {
+            case 'Ricevuto':
+                $nextState = "Lavorazione";
+                break;
+            case 'Lavorazione':
+                $nextState = "Spedito";
+                break;
+            case 'Spedito':
+                $nextState = "Consegna";
+                break;
+            case 'Consegna':
+                $nextState = "Consegnato";
+                break;
+        }
+
+        $query = "UPDATE ordini SET Stato = ? WHERE CodID = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('ss', $nextState, $orderID);
+        $stmt->execute();
+
+        return;
     }
 
 }

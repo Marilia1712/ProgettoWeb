@@ -122,8 +122,8 @@ header .loginbanner a {
 
 
 header .icons img {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3.0rem;
+    height: 3.0rem;
 }
 
 header .icons .btn img {
@@ -131,8 +131,9 @@ header .icons .btn img {
     height: auto;
 }
 header .icons .btn {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3.0rem;
+    height: 3.0rem;
+    margin-right: 10px;
 }
 
 header .icons .btn {
@@ -141,7 +142,6 @@ header .icons .btn {
 
 header .icons {
     gap: 15px;
-
     a {
         margin-left: 10px; 
         margin-right: 10px;

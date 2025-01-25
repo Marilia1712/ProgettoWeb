@@ -60,6 +60,7 @@
                 <form action="./utils/next-order-state-script.php" method="post">
                     <input type="hidden" name="idOrdine" value="<?php echo $ordine["CodID"]; ?>">
                     <input type="hidden" name="statoOrdine" value="<?php echo $ordine["Stato"]; ?>">
+                    <input type="hidden" name="emailCliente" value="<?php echo $ordine["EmailCliente"]; ?>">
                     <button>
                         Avanza lo stato dell'ordine
                         <img src="./upload/icons/truck-solid.svg" alt="Wishlist" width="24">

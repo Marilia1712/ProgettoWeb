@@ -386,12 +386,19 @@ class DatabaseHelper{
         }
     }
 
-    public function sendWelcomeNotification($userEmail){
+    public function sendFormatNotification($userEmail, $formatID){
+        //Welcome = 1, order confirmed = 2, order delivering = 3
         $query = "INSERT INTO inboxclienti (Email, CodID, Data, Ora) VALUES (?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query);
-        $notificationID = 1;
-        $stmt->bind_param('siss', $userEmail, $notificationID, gmdate('Y-m-d'), gmdate('H:i:s'));
+        $stmt->bind_param('siss', $userEmail, $formatID, gmdate('Y-m-d'), gmdate('H:i:s'));
         $stmt->execute();
+
+        $stmt = $this->conn->prepare("SELECT * FROM avvisi WHERE CodID = ?");
+        $stmt->bind_param('i', $formatID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $result = $result->fetch_all(MYSQLI_ASSOC);
+        mail($user['Email'], $result[0]["Titolo"], $result[0]["Contenuto"], 'From: AllYouKnit S.p.A.');
     }
 
     public function nextOrderState($orderID, $orderState){

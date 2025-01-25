@@ -68,7 +68,7 @@ CREATE TABLE `inboxclienti` (
   `Data` date NOT NULL,
   `Ora` time NOT NULL,
   `Letta` date NOT NULL DEFAULT 0,
-  PRIMARY KEY (`Email`,`CodID`),
+  PRIMARY KEY (`Email`,`CodID`,`Data`,`Ora`),
   CONSTRAINT `CodID` FOREIGN KEY (`CodID`) REFERENCES `avvisi` (`CodID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `Email` FOREIGN KEY (`Email`) REFERENCES `clienti` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE
 );

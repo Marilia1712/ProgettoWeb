@@ -133,7 +133,7 @@ class DatabaseHelper{
     }
 
     public function getUserInbox($userEmail){
-        $stmt = $this->conn->prepare("SELECT * FROM clienti INNER JOIN inboxclienti USING(Email) INNER JOIN avvisi USING(CodID) WHERE Email = ? ORDER BY Data DESC");
+        $stmt = $this->conn->prepare("SELECT * FROM clienti INNER JOIN inboxclienti USING(Email) INNER JOIN avvisi USING(CodID) WHERE Email = ? ORDER BY Data DESC, Ora DESC");
         $stmt->bind_param('s', $userEmail);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -355,9 +355,10 @@ class DatabaseHelper{
             $composition = NULL;
         if($tools == "")
             $tools = NULL;
-        $query = "INSERT INTO prodotti (Nome, Prezzo, Colore, Composizione, Strumenti, Giacenza) VALUES (?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO prodotti (Nome, Immagine, Prezzo, Colore, Composizione, Strumenti, Giacenza) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('sdsssi', $name, $price, $color, $composition, $tools, $store);
+        $imageDummyName = "dummy.jpg";
+        $stmt->bind_param('ssdsssi', $name, $imageDummyName, $price, $color, $composition, $tools, $store);
         $stmt->execute();
 
         $lastAddedProductId = $stmt->insert_id;

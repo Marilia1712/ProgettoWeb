@@ -4,5 +4,5 @@
     $dbh->verifyUser($_POST["email"]);
     $dbh->createNewOrder($_POST["email"]);
     $dbh->sendWelcomeNotification($_POST["email"]);
-    header("location: ../index-login.php?verified=true");
+    //header("location: ../index-login.php?verified=true");
 ?>

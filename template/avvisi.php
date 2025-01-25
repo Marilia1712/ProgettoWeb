@@ -24,6 +24,8 @@
                     <?php if($notification["Letta"]): ?>
                         <form action="./utils/unread-notification-script.php" method="POST">
                             <input type="hidden" name="idAvviso" value="<?php echo $notification["CodID"]; ?>" />
+                            <input type="hidden" name="dataAvviso" value="<?php echo $notification["Data"]; ?>" />
+                            <input type="hidden" name="oraAvviso" value="<?php echo $notification["Ora"]; ?>" />
                             <button type="submit" class="btn btn-link p-0">
                                 <img src="./upload/icons/read-icon.svg" alt="Segna come non letto" width="32">
                             </button>
@@ -31,6 +33,8 @@
                     <?php else: ?>
                         <form action="./utils/read-notification-script.php" method="POST">
                             <input type="hidden" name="idAvviso" value="<?php echo $notification["CodID"]; ?>" />
+                            <input type="hidden" name="dataAvviso" value="<?php echo $notification["Data"]; ?>" />
+                            <input type="hidden" name="oraAvviso" value="<?php echo $notification["Ora"]; ?>" />
                             <button type="submit" class="btn btn-link p-0">
                                 <img src="./upload/icons/unread-icon.svg" alt="Segna come letto" width="32">
                             </button>
@@ -38,6 +42,8 @@
                     <?php endif; ?>
                     <form action="./utils/delete-notification-script.php" method="POST">
                         <input type="hidden" name="idAvviso" value="<?php echo $notification["CodID"]; ?>" />
+                        <input type="hidden" name="dataAvviso" value="<?php echo $notification["Data"]; ?>" />
+                        <input type="hidden" name="oraAvviso" value="<?php echo $notification["Ora"]; ?>" />
                         <button type="submit" class="btn btn-link p-0">
                             <img src="./upload/icons/trash-solid-white.svg" alt="Elimina notifica" width="32">
                         </button>

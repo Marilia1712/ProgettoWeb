@@ -59,9 +59,9 @@
                         <!-- icone avvisi, carrello, logout -->
                         <a href="./index-avvisi.php">
                             <?php if($templateParams["news"]): ?>
-                                <img src="./upload/icons/bell-solid.svg" alt="Ci sono nuove notifiche" width="24">
+                                <img src="./upload/icons/bell-solid-notification.svg" alt="Ci sono nuove notifiche" width="24">
                             <?php else: ?>
-                                <img src="./upload/icons/bell-regular.svg" alt="Sezione notifiche" width="24">
+                                <img src="./upload/icons/bell-solid.svg" alt="Sezione notifiche" width="24">
                             <?php endif; ?>
                         </a>
                         <a href="./index-carrello.php">

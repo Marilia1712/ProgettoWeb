@@ -14,7 +14,7 @@
                     $_SESSION["email"] = $cliente["Email"];
                     $_SESSION["nome"] = $cliente["Nome"];
                     $_SESSION["cognome"] = $cliente["Cognome"];
-                    header("location: ../index.php");
+                    header("location: ../index-pagina-personale.php");
                 }
                 else{
                     header("location: ../index-login.php?notVerified=true");

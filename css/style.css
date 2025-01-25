@@ -644,6 +644,38 @@ main {
 }
 
 
+/* Product list layout */
+.orders-list ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.orders-list li {
+    display: flex;
+    align-items: center;
+}
+
+.orders-list li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.orders-list .product-image {
+    width: 8rem;
+    height: 8rem;
+}
+
+/* Order details - grey background and rounded corners */
+.order-details {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
 
 /*small screens*/
 @media (max-width: 767.98px) {

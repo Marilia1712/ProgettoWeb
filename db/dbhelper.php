@@ -199,25 +199,25 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    public function readNotification($userEmail, $notificationID){
-        $query = "UPDATE inboxclienti SET Letta = True WHERE Email = ? AND CodId = ?";
+    public function readNotification($userEmail, $notificationID, $data, $ora){
+        $query = "UPDATE inboxclienti SET Letta = True WHERE Email = ? AND CodId = ? AND Data = ? AND Ora = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('si',$userEmail, $notificationID);
+        $stmt->bind_param('siss',$userEmail, $notificationID, $data, $ora);
         
         return $stmt->execute();
     }
 
-    public function unreadNotification($userEmail, $notificationID){
-        $query = "UPDATE inboxclienti SET Letta = False WHERE Email = ? AND CodId = ?";
+    public function unreadNotification($userEmail, $notificationID, $data, $ora){
+        $query = "UPDATE inboxclienti SET Letta = False WHERE Email = ? AND CodId = ? AND Data = ? AND Ora = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('si',$userEmail, $notificationID);
+        $stmt->bind_param('siss',$userEmail, $notificationID, $data, $ora);
         
         return $stmt->execute();
     }
 
-    public function deleteUserNotification($userEmail, $notificationID){
-        $stmt = $this->conn->prepare("DELETE FROM inboxclienti WHERE Email = ? AND CodID = ?");
-        $stmt->bind_param('si', $userEmail, $notificationID);
+    public function deleteUserNotification($userEmail, $notificationID, $data, $ora){
+        $stmt = $this->conn->prepare("DELETE FROM inboxclienti WHERE Email = ? AND CodId = ? AND Data = ? AND Ora = ?");
+        $stmt->bind_param('siss', $userEmail, $notificationID, $data, $ora);
         $stmt->execute();
     }
 
@@ -398,7 +398,7 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
         $result = $result->fetch_all(MYSQLI_ASSOC);
-        mail($user['Email'], $result[0]["Titolo"], $result[0]["Contenuto"], 'From: AllYouKnit S.p.A.');
+        mail($userEmail, $result[0]["Titolo"], $result[0]["Contenuto"], 'From: AllYouKnit S.p.A.');
     }
 
     public function nextOrderState($orderID, $orderState){

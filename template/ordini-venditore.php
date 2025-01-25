@@ -2,11 +2,11 @@
 <section class="row">
     <h1 class="mb-4">Elenco di tutti gli ordini del sito</h1>
     <?php foreach ($templateParams["ordini"] as $ordine): ?>
-    <div class="col-12 mb-4">
+    <div class="col-md-12 col-lg-6 mb-4">
         <div class="card bg-white shadow-sm p-4">
             <h2>Ordine #<?php echo $ordine["CodID"]; ?></h2>
-            <p>Email cliente: <?php echo $ordine["EmailCliente"]; ?></p>
-            <p>Importo: <?php echo number_format($ordine["Importo"], 2, ",", ""); ?> €</p>
+            <p style="font-weight:bold;" >Cliente: <?php echo $ordine["EmailCliente"]; ?></p>
+            <p style="font-weight:bold;" >Importo: <?php echo number_format($ordine["Importo"], 2, ",", ""); ?> €</p>
             <p>Data: <?php echo $ordine["Data"]; ?></p>
             <p>Ora: <?php echo $ordine["Ora"]; ?></p>
             <article class="tracking-section">
@@ -16,7 +16,9 @@
                         case "Ricevuto": 
                             ?>
                             <div class="tracking-step completed">
-                                <div class="step-icon">📝</div>
+                                <div>
+                                    <img src="./upload/icons/shipping1.svg" alt="">
+                                </div>
                                 <p>Ordine Ricevuto</p>
                             </div>
                             <?php
@@ -24,7 +26,9 @@
                         case "Lavorazione":
                             ?>
                             <div class="tracking-step completed">
-                                <div class="step-icon">🖥️</div>
+                                <div>
+                                    <img src="./upload/icons/shipping2.svg" alt="">
+                                </div>
                                 <p>In lavorazione</p>
                             </div>
                             <?php
@@ -32,7 +36,9 @@
                         case "Spedito":
                             ?>
                             <div class="tracking-step completed">
-                                <div class="step-icon">📦</div>
+                                <div>
+                                    <img src="./upload/icons/shipping3.svg" alt="">
+                                </div>
                                 <p>Spedito</p>
                             </div>
                             <?php
@@ -40,7 +46,9 @@
                         case "Consegna":
                             ?>
                             <div class="tracking-step">
-                                <div class="step-icon">🚚</div>
+                                <div>
+                                    <img src="./upload/icons/shipping4.svg" alt="">
+                                </div>
                                 <p>In Consegna</p>
                             </div>
                             <?php
@@ -48,7 +56,9 @@
                         case "Consegnato":
                             ?>
                             <div class="tracking-step">
-                                <div class="step-icon">🏡</div>
+                                <div>
+                                    <img src="./upload/icons/shipping5.svg" alt="">
+                                </div>
                                 <p>Consegnato</p>
                             </div>
                             <?php
@@ -60,9 +70,9 @@
                 <form action="./utils/next-order-state-script.php" method="post">
                     <input type="hidden" name="idOrdine" value="<?php echo $ordine["CodID"]; ?>">
                     <input type="hidden" name="statoOrdine" value="<?php echo $ordine["Stato"]; ?>">
-                    <button>
-                        Avanza lo stato dell'ordine
-                        <img src="./upload/icons/truck-solid.svg" alt="Wishlist" width="24">
+                    <button class="btn-shipping p-3 mb-3">
+                        Avanza stato dell'ordine
+                        <img src="./upload/icons/forward-solid.svg" alt="Wishlist" width="24">
                     </button>
                 </form>
             <?php endif; ?>
@@ -71,7 +81,9 @@
                 <?php $prodottiOrdinati = $dbh->getOrderProducts($ordine["CodID"]);?>
                 <?php foreach ($prodottiOrdinati as $prodotto): ?>
                 <li>
-                    <?php echo $prodotto["Nome"]; ?> - Quantità: <?php echo $prodotto["Quantita"]; ?>
+                    <a style="text-decoration:none;color:black;" href="./index-singolo-prodotto.php?idProdotto=<?php echo $prodotto["CodID"]; ?>">
+                        <?php echo $prodotto["Nome"]; ?> - Quantità: <?php echo $prodotto["Quantita"]; ?>
+                    </a>
                 </li>
                 <?php endforeach; ?>
             </div>

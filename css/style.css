@@ -676,6 +676,20 @@ main {
 }
 
 
+.btn-shipping img {
+    max-width: 3rem;
+    max-height: auto;
+    margin: 0px;
+    margin-left: 5px;
+}
+
+.btn-shipping {
+    border-width: 5px;
+    align-items: center;
+    border-color: #005BAD;
+    border-radius: 5px;
+}
+
 
 /*small screens*/
 @media (max-width: 767.98px) {

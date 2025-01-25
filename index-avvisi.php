@@ -1,7 +1,7 @@
 <?php
 require_once 'php/bootstrap.php';
 
-$templateParams["titolo"] = "AllYouKnit - Notifications";
+$templateParams["titolo"] = "Avvisi";
 $templateParams["news"] = $dbh->checkNewNotifications($_SESSION["email"]);
 $templateParams["categorie"] = $dbh->getCategories();
 $templateParams["inbox"] = $dbh->getUserInbox($_SESSION["email"]);

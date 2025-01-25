@@ -4,7 +4,7 @@ require_once 'php/bootstrap.php';
 if(isset($_GET["idProdotto"])){
     $idProdotto = $_GET["idProdotto"];
 }
-$templateParams["titolo"] = "AllYouKnit - Product ".$idProdotto;
+$templateParams["titolo"] = "Prodotto n. ".$idProdotto;
 $templateParams["nome"] = "singolo-prodotto.php";
 $templateParams["categorie"] = $dbh->getCategories();
 if(isset($_SESSION["email"])){

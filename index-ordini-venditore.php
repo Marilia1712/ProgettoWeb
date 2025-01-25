@@ -1,7 +1,7 @@
 <?php
 require_once 'php/bootstrap.php';
 
-$templateParams["titolo"] = "AllYouKnit - Website orders";
+$templateParams["titolo"] = "Ordini del sito";
 $templateParams["nome"] = "ordini-venditore.php";
 $templateParams["ordini"] = $dbh->getOrders();
 

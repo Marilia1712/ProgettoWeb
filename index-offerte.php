@@ -1,7 +1,7 @@
 <?php
 require_once 'php/bootstrap.php';
 
-$templateParams["titolo"] = "AllYouKnit - Offerte Speciali";
+$templateParams["titolo"] = "Offerte speciali";
 $templateParams["nome"] = "offerte.php";
 $templateParams["categorie"] = $dbh->getCategories();
 if(isset($_SESSION["email"]))

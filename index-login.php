@@ -1,7 +1,7 @@
 <?php
 require_once 'php/bootstrap.php';
 
-$templateParams["titolo"] = "AllYouKnit - Login";
+$templateParams["titolo"] = "Login";
 $templateParams["categorie"] = $dbh->getCategories();
 $templateParams["nome"] = "login.php";
 

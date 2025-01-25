@@ -1,7 +1,7 @@
 <?php
 require_once 'php/bootstrap.php';
 
-$templateParams["titolo"] = "AllYouKnit - Edit Product";
+$templateParams["titolo"] = "Modifica prodotto";
 $templateParams["nome"] = "modifica-prodotto.php";
 $templateParams["prodotto"] = $dbh->getProduct($_POST["idProdotto"]);
 $templateParams["categorie"] = $dbh->getCategories();

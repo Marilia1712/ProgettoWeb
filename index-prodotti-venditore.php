@@ -1,7 +1,7 @@
 <?php
 require_once 'php/bootstrap.php';
 
-$templateParams["titolo"] = "AllYouKnit - Website products";
+$templateParams["titolo"] = "Prodotti del sito";
 $templateParams["nome"] = "prodotti-venditore.php";
 $templateParams["prodotti"] = $dbh->getProducts();
 

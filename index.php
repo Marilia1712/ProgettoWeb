@@ -2,7 +2,7 @@
 require_once 'php/bootstrap.php';
 
 //Base Template
-$templateParams["titolo"] = "AllYouKnit - Homepage";
+$templateParams["titolo"] = "AllYouKnit";
 $templateParams["nome"] = "lista-categorie.php";
 $templateParams["categorie"] = $dbh->getCategories();
 if(isset($_SESSION["email"]))

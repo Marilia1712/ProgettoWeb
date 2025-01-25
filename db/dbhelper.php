@@ -119,9 +119,16 @@ class DatabaseHelper{
     }
 
     public function signUserUp($email, $nome, $cognome, $password){
-        $query = "INSERT INTO clienti (Email, Nome, Cognome, Password) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO clienti (Email, Nome, Cognome, Password, Registrazione) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('ssss', $email, $nome, $cognome, $password);
+        $stmt->bind_param('sssss', $email, $nome, $cognome, $password, gmdate('Y-m-d H:i:s'));
+        $stmt->execute();
+    }
+
+    public function verifyUser($email){
+        $query = "UPDATE clienti SET Verificato = True WHERE Email = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('s', $email);
         $stmt->execute();
     }
 
@@ -374,13 +381,15 @@ class DatabaseHelper{
             $stmt = $this->conn->prepare($query);
             $stmt->bind_param('siss', $user["Email"], $newNotificationId, gmdate('Y-m-d'), gmdate('H:i:s'));
             $stmt->execute();
+            mail($user['Email'], $title, $content, 'From: AllYouKnit S.p.A.');
         }
     }
 
     public function sendWelcomeNotification($userEmail){
         $query = "INSERT INTO inboxclienti (Email, CodID, Data, Ora) VALUES (?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('siss', $userEmail, 1, gmdate('Y-m-d'), gmdate('H:i:s'));
+        $notificationID = 1;
+        $stmt->bind_param('siss', $userEmail, $notificationID, gmdate('Y-m-d'), gmdate('H:i:s'));
         $stmt->execute();
     }
 

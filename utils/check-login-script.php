@@ -8,12 +8,17 @@
         if($dbh->checkUserPresence($_POST["email"])){
             $cliente = $dbh->checkUserCredentials($_POST["email"], $_POST["password"]);
             if(!is_null($cliente)) {
-                session_start();
-                session_unset();
-                $_SESSION["email"] = $cliente["Email"];
-                $_SESSION["nome"] = $cliente["Nome"];
-                $_SESSION["cognome"] = $cliente["Cognome"];
-                header("location: ../index.php");
+                if($cliente["Verificato"]){
+                    session_start();
+                    session_unset();
+                    $_SESSION["email"] = $cliente["Email"];
+                    $_SESSION["nome"] = $cliente["Nome"];
+                    $_SESSION["cognome"] = $cliente["Cognome"];
+                    header("location: ../index-pagina-personale.php");
+                }
+                else{
+                    header("location: ../index-login.php?notVerified=true");
+                }
             }
             else {
                 header("location: ../index-login.php?wrongPassword=true");

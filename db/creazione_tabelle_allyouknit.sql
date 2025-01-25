@@ -16,6 +16,8 @@ CREATE TABLE `clienti` (
   `Nome` varchar(45) NOT NULL,
   `Cognome` varchar(45) NOT NULL,
   `Password` varchar(45) NOT NULL,
+  `Verificato` int(11) NOT NULL DEFAULT 0,
+  `Registrazione` datetime NOT NULL,
   PRIMARY KEY (`Email`)
 );
 

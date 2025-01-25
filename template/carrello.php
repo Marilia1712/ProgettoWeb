@@ -4,7 +4,7 @@
 <section class="cart">
     <div class="row">
         <?php foreach ($templateParams["prodotti"] as $prodotto): ?>
-        <div class="col-12 mb-3">
+        <div class="col-md-12 col-lg-6 mb-3">
             <article class="cart-item d-flex align-items-center p-3 bg-white border rounded">
                 <div class="product-image me-3">
                 <img src="<?php echo UPLOAD_DIR . "productimages/" . $prodotto["Immagine"]; ?>"
@@ -29,8 +29,8 @@
                         <form action="./utils/remove-from-cart-script.php" method="post">
                             <input type="hidden" name="idProdotto" value="<?php echo $prodotto["CodIDProdotto"]; ?>">
                             <input type="hidden" name="quantita" value="<?php echo $prodotto["Quantita"]; ?>">
-                            <button type="submit">
-                                <img src="./upload/icons/trash-red-solid.svg" alt="Cestino" width="48"> <!--  HELP MARYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY FIXME PLEASE UWU -->
+                            <button class="btn-trash" type="submit">
+                                <img src="./upload/icons/trash-solid-white.svg" alt="Rimuovi" width="24">
                             </button>
                         </form>
                     </div>
@@ -61,7 +61,7 @@
     <?php if($totale > 0): ?>
         <form action="./utils/checkout-script.php" method="post">
             <input type="hidden" name="prezzoTotale" value="<?php echo number_format($totale, 2, ".", "");; ?>">
-            <button type="submit" class="btn btn-primary">Procedi al Checkout</button>
+            <button style="background-color: #F85760; font-weight: bold; color:white;" type="submit" class="btn btn-checkout">Procedi al Checkout</button>
         </form>
     <?php endif; ?>
 </section>

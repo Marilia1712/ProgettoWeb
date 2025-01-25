@@ -76,6 +76,13 @@
                         <img src="./upload/icons/forward-solid.svg" alt="Wishlist" width="24">
                     </button>
                 </form>
+            <?php else: ?>
+                <form action="#" method="post">
+                    <button class="btn-shipping p-3 mb-3" disabled>
+                        Avanza lo stato dell'ordine
+                        <img src="./upload/icons/forward-solid.svg" alt="Wishlist" width="24">
+                    </button>
+                </form>
             <?php endif; ?>
             <div>
                 <h3>Prodotti:</h3>

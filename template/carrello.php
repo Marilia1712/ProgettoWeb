@@ -28,8 +28,9 @@
                         <input type="number" id="quantity1" value="<?php echo $prodotto["Quantita"]; ?>" class="form-control w-25" disabled>
                         <form action="./utils/remove-from-cart-script.php" method="post">
                             <input type="hidden" name="idProdotto" value="<?php echo $prodotto["CodIDProdotto"]; ?>">
+                            <input type="hidden" name="quantita" value="<?php echo $prodotto["Quantita"]; ?>">
                             <button type="submit">
-                                <img src="./upload/icons/trash-solid.svg" alt="Cestino" width="48"> <!--  HELP MARYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY FIXME PLEASE UWU -->
+                                <img src="./upload/icons/trash-red-solid.svg" alt="Cestino" width="48"> <!--  HELP MARYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY FIXME PLEASE UWU -->
                             </button>
                         </form>
                     </div>

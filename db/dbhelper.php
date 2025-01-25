@@ -19,7 +19,7 @@ class DatabaseHelper{
     }
 
     public function getProducts(){
-        $stmt = $this->conn->prepare("SELECT * FROM prodotti");
+        $stmt = $this->conn->prepare("SELECT * FROM prodotti ORDER BY Giacenza");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -208,6 +208,12 @@ class DatabaseHelper{
         return $stmt->execute();
     }
 
+    public function deleteUserNotification($userEmail, $notificationID){
+        $stmt = $this->conn->prepare("DELETE FROM inboxclienti WHERE Email = ? AND CodID = ?");
+        $stmt->bind_param('si', $userEmail, $notificationID);
+        $stmt->execute();
+    }
+
     public function checkNewNotifications($userEmail){
         $stmt = $this->conn->prepare("SELECT * FROM inboxclienti WHERE Email = ? AND Letta = 0");
         $stmt->bind_param('s', $userEmail);
@@ -254,10 +260,15 @@ class DatabaseHelper{
             $stmt->execute();
         }
 
+        $query = "UPDATE prodotti SET Giacenza = Giacenza - ? WHERE CodID = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('ii', $quantity, $productID);
+        $stmt->execute();
+
         return;
     }
 
-    public function removeFromCart($userEmail, $productID){
+    public function removeFromCart($userEmail, $productID, $quantity){
         $stmt = $this->conn->prepare("SELECT CodID FROM ordini INNER JOIN clienti ON(Email = EmailCliente) WHERE Email = ? AND Pagato = False");
         $stmt->bind_param('s', $userEmail);
         $stmt->execute();
@@ -266,6 +277,11 @@ class DatabaseHelper{
 
         $stmt = $this->conn->prepare("DELETE FROM prodottiordinati WHERE CodIDProdotto = ? AND CodIDOrdine = ?");
         $stmt->bind_param('ii', $productID, $cartID);
+        $stmt->execute();
+
+        $query = "UPDATE prodotti SET Giacenza = Giacenza + ? WHERE CodID = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('ii', $quantity, $productID);
         $stmt->execute();
     }
 
@@ -346,7 +362,7 @@ class DatabaseHelper{
         }
     }
 
-    public function sendNotification($title, $content){
+    public function sendBroadcastNotification($title, $content){
         $query = "INSERT INTO avvisi (Titolo, Contenuto) VALUES (?, ?)";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param('ss', $title, $content);
@@ -369,7 +385,6 @@ class DatabaseHelper{
     }
 
     public function nextOrderState($orderID, $orderState){
-
         switch ($orderState) {
             case 'Ricevuto':
                 $nextState = "Lavorazione";
@@ -389,8 +404,6 @@ class DatabaseHelper{
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param('ss', $nextState, $orderID);
         $stmt->execute();
-
-        return;
     }
 
     public function editProduct($name, $price, $store, $categories, $color, $composition, $tools, $productID){

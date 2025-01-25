@@ -73,7 +73,7 @@
                                     <option value="<?php echo $wishlist["CodID"]; ?>"><?php echo $wishlist["Nome"]; ?></option>
                                 <?php endforeach; ?>
                             </select>
-                            <button type="submit" class="btn-wishlist" <?php if($prodotto["Giacenza"] == 0) echo "disabled"; ?>>
+                            <button type="submit" class="btn-wishlist">
                                 Aggiungi a Wishlist &nbsp
                                 <img src="./upload/icons/heart-solid-white.svg" alt="Wishlist" width="24">
                             </button>

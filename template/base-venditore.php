@@ -23,12 +23,6 @@
     <!-- Header -->
     <header class="mainheader py-4">
         <div class="row align-items-center justify-content-between py-3" style="padding-left:30px; padding-right:30px;">
-            <!-- Hamburger Menu Icon -->
-            <div class="col-auto d-md-none">
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-                    <img src="./upload/icons/bars-solid.svg" alt="Menu" width="24">
-                </button>
-            </div>
 
             <!-- Search Bar -->
             <div class="col-auto"></div>
@@ -42,21 +36,6 @@
             <div class="col-auto icons"></div>
         </div>
     </header>
-
-    <!-- Offcanvas Menu for Small Screens -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-        <div class="offcanvas-header">
-            <div class="logo text-center w-100">
-                <img src="./upload/icons/user-solid-white.svg" alt="Logo All You Knit" class="img-fluid">
-            </div>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="text-center mb-4">
-                <a href="./index-pagina-venditore.php">Vai alla homepage</a>
-            </div>
-        </div>
-    </div>
 
     <!-- Main Content -->
     <main class="container py-4">

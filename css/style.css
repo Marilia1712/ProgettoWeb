@@ -153,7 +153,6 @@ header .icons {
     }
 }
 
-
 /* Navigation Bar */
 nav.desktop-navbar {
     background-color: #fff;
@@ -210,8 +209,6 @@ nav.desktop-navbar .nav-link {
     padding-right: 15px; 
     font-size: 16px; 
 }
-
-
 
 /* Footer */
 footer {
@@ -292,7 +289,6 @@ footer .payment-icons img {
     margin-bottom: 15px;
 }
 
-
 /* Carousel Banner */
 .banner-categorie {
     width: 100%;
@@ -322,7 +318,6 @@ footer .payment-icons img {
     z-index: 10;
     margin: 0;
 }
-
 
 .carousel-item a {
     position: relative;
@@ -357,7 +352,6 @@ footer .payment-icons img {
     margin: 0px;
 }
 
-
 .brand-logo {
     display: flex;
     justify-content: center; 
@@ -370,10 +364,7 @@ footer .payment-icons img {
     height: auto;
 }
 
-
-
 /*buttons section*/
-
 .btn-cart, .btn-wishlist, .btn-addwishlist, .btn-removewishlist {
     color: white;
     border: none; 
@@ -384,7 +375,6 @@ footer .payment-icons img {
     border-radius: 5px;
     transition: background-color 0.3s ease; 
 }
-
 
 .btn-addwishlist, .btn-removewishlist {
     gap: 10px;
@@ -409,11 +399,9 @@ footer .payment-icons img {
     background-color: #D33F48;
 }
 
-
 footer .payment-icons {
     display: flex;
 }
-
 
 footer .payment-icons .payment-icon {
     flex-grow: 1; 
@@ -422,7 +410,6 @@ footer .payment-icons .payment-icon {
     object-fit: contain;
     transform: translateY(50%);
 }
-
 
 .wishlist-card {
     border-radius: 12 px;
@@ -434,18 +421,13 @@ footer .payment-icons .payment-icon {
     color:#F85760
 }
 
-
-
-
 /* Main container */
 main {
-    margin-top: 20px;
+    margin-top: 0;
     padding: 20px 0;
 }
 
-
 /*cards categorie*/
-
 .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0.9;
@@ -471,7 +453,6 @@ main {
     word-wrap: break-word; 
 }
 
-
 .card-body {
     flex: 1; 
     padding: 10px;
@@ -486,7 +467,6 @@ main {
     min-width: 400px;
 }
 
-
 .product-info h1,
 .product-info p strong {
     font-size: 2rem;
@@ -498,7 +478,6 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     padding: 30px;
 }
-
 
 .schedatecnica {
     background-color: #f7f7f7; 
@@ -513,23 +492,18 @@ main {
     margin-bottom: 10px;
 }
 
-
 .product-info p {
     font-size: 1.2rem;
 }
-
 
 .mt-4 {
     margin-top: 30px;
 }
 
-
 .product-info p strong {
     font-weight: bold;
     color: #333;
 }
-
-
 
 #imageZoom {
     position: relative;
@@ -561,7 +535,6 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
 .basic-bg{
     background-color: white;
     border-radius: 12px;
@@ -573,12 +546,7 @@ main {
     padding: 2rem 0;
 }
 
-
-
-
-
 /* offerte */
-
 .old-price {
     font-size: 1.5rem;
     text-decoration: line-through;
@@ -609,7 +577,6 @@ main {
     justify-content: center;
     height: 100%;
 }
-
 
 .offcanvas-header {
     background-color: #F85760;
@@ -646,7 +613,6 @@ main {
     padding-bottom: 10px;
 }
 
-
 /*small screens*/
 @media (max-width: 767.98px) {
 
@@ -666,7 +632,6 @@ main {
         transform: translateY(-30%);
     }
 
-
     footer .payment-icons {
         display: flex;
         justify-content: center;
@@ -675,7 +640,6 @@ main {
     footer .list-unstyled {
         display: none;
     }
-
 
     .brand-description {
         margin-top: 2rem;
@@ -714,6 +678,3 @@ main {
         justify-content: center;
     }
 }
-
-
-

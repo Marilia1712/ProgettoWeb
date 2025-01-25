@@ -74,7 +74,7 @@
                                 <?php endforeach; ?>
                             </select>
                             <button type="submit" class="btn-wishlist">
-                                Aggiungi a Wishlist &nbsp
+                                Aggiungi a Wishlist&nbsp
                                 <img src="./upload/icons/heart-solid-white.svg" alt="Wishlist" width="24">
                             </button>
                         </form>

@@ -40,7 +40,7 @@ CREATE TABLE `aggiuntawishlist` (
 
 LOCK TABLES `aggiuntawishlist` WRITE;
 /*!40000 ALTER TABLE `aggiuntawishlist` DISABLE KEYS */;
-INSERT INTO `aggiuntawishlist` VALUES (36,10),(58,10);
+INSERT INTO `aggiuntawishlist` VALUES (36,10),(46,10),(58,10),(60,13);
 /*!40000 ALTER TABLE `aggiuntawishlist` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,7 +67,7 @@ CREATE TABLE `appartenenzacategoria` (
 
 LOCK TABLES `appartenenzacategoria` WRITE;
 /*!40000 ALTER TABLE `appartenenzacategoria` DISABLE KEYS */;
-INSERT INTO `appartenenzacategoria` VALUES (1,'Filati'),(2,'Filati'),(3,'Filati'),(4,'Filati'),(5,'Filati'),(6,'Filati'),(7,'Filati'),(8,'Filati'),(9,'Filati'),(10,'Filati'),(11,'Filati'),(12,'Filati'),(13,'Tutto borse'),(14,'Tutto borse'),(15,'Tutto borse'),(16,'Tutto borse'),(17,'Tutto borse'),(18,'Tutto borse'),(19,'Tutto borse'),(20,'Tutto borse'),(21,'Tutto borse'),(22,'Tutto borse'),(23,'Tutto borse'),(24,'Tutto borse'),(25,'Tutto borse'),(26,'Tutto borse'),(27,'Tutto borse'),(28,'Tutto borse'),(29,'Tutto borse'),(30,'Tutto borse'),(31,'Tutto borse'),(32,'Tutto borse'),(33,'Tutto borse'),(34,'Applicazioni'),(35,'Applicazioni'),(36,'Applicazioni'),(37,'Applicazioni'),(38,'Applicazioni'),(39,'Applicazioni'),(40,'Applicazioni'),(41,'Applicazioni'),(42,'Applicazioni'),(42,'Attrezzi'),(43,'Applicazioni'),(43,'Attrezzi'),(44,'Applicazioni'),(45,'Applicazioni'),(46,'Bijoux'),(47,'Bijoux'),(48,'Bijoux'),(49,'Bijoux'),(50,'Bijoux'),(51,'Attrezzi'),(52,'Attrezzi'),(53,'Attrezzi'),(54,'Attrezzi'),(55,'Attrezzi'),(56,'Attrezzi'),(57,'Attrezzi'),(58,'Editoria'),(59,'Editoria'),(60,'Editoria'),(61,'Editoria'),(62,'Editoria');
+INSERT INTO `appartenenzacategoria` VALUES (1,'Filati'),(2,'Filati'),(3,'Filati'),(4,'Filati'),(5,'Filati'),(6,'Filati'),(7,'Filati'),(8,'Filati'),(9,'Filati'),(10,'Filati'),(11,'Filati'),(12,'Filati'),(13,'Tutto borse'),(14,'Tutto borse'),(15,'Tutto borse'),(16,'Tutto borse'),(17,'Tutto borse'),(18,'Tutto borse'),(19,'Tutto borse'),(20,'Tutto borse'),(21,'Tutto borse'),(22,'Tutto borse'),(23,'Tutto borse'),(24,'Tutto borse'),(25,'Tutto borse'),(26,'Tutto borse'),(27,'Tutto borse'),(28,'Tutto borse'),(29,'Tutto borse'),(30,'Tutto borse'),(31,'Tutto borse'),(32,'Tutto borse'),(33,'Tutto borse'),(34,'Applicazioni'),(35,'Applicazioni'),(36,'Applicazioni'),(37,'Applicazioni'),(38,'Applicazioni'),(39,'Applicazioni'),(40,'Applicazioni'),(41,'Applicazioni'),(42,'Applicazioni'),(42,'Attrezzi'),(43,'Applicazioni'),(43,'Attrezzi'),(44,'Applicazioni'),(45,'Applicazioni'),(46,'Bijoux'),(47,'Bijoux'),(48,'Bijoux'),(49,'Bijoux'),(50,'Bijoux'),(51,'Attrezzi'),(52,'Attrezzi'),(53,'Attrezzi'),(54,'Attrezzi'),(55,'Attrezzi'),(56,'Attrezzi'),(57,'Attrezzi'),(58,'Editoria'),(59,'Editoria'),(60,'Editoria'),(61,'Editoria'),(62,'Editoria'),(68,'Attrezzi');
 /*!40000 ALTER TABLE `appartenenzacategoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,7 +83,7 @@ CREATE TABLE `avvisi` (
   `Titolo` varchar(45) NOT NULL,
   `Contenuto` varchar(250) NOT NULL,
   PRIMARY KEY (`CodID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -92,7 +92,7 @@ CREATE TABLE `avvisi` (
 
 LOCK TABLES `avvisi` WRITE;
 /*!40000 ALTER TABLE `avvisi` DISABLE KEYS */;
-INSERT INTO `avvisi` VALUES (1,'Benvenuto su AllYouKnit!','Il più caloroso benvenuto su AllYouKnit da parte di tutto lo staff. Ci auguriamo che troverai tutta l\'ispirazione e i materiali che cerchi! Ricordati di dare un\'occhiata alla tua casella di posta per non perderti aggiornamenti a te utili. '),(2,'Ordine confermato!','Il tuo ordine è stato confermato. Ora non resta che aspettare! Nel frattempo, perchè non dai un\'occhiata alle nostre offerte? Troverai ogni giorno nuovi prodotti in sconto!'),(3,'Nuovo prodotto in offerta.','Ci sono delle novità nella sezione offerte... perchè non dai un\'occhiata?'),(4,'Carrello in sospeso','A nessuno piacciono le attese troppo lunghe... perchè non completi il tuo ordine? La tua prossima creazione preferita è alla portata di un click!'),(5,'Nuovi metodi di pagamento','Fare acquisti non è mai stato così facile! Da oggi sarà possibile effettuare transazioni anche con Satispay e con Klarna, che offre un servizio di rateizzazione priva di interessi. Che aspetti?'),(6,'Filati, attrezzi, accessori...','Il mondo della maglieria non si limita ai gomitoli: esplora tutte le nostre categorie e lasciati ispirare da articoli di ogni genere!'),(7,'Nuovo ordine ricevuto','Controlla l\'elenco degli ordini per ulteriori dettagli.');
+INSERT INTO `avvisi` VALUES (1,'Benvenuto su AllYouKnit!','Il più caloroso benvenuto su AllYouKnit da parte di tutto lo staff. Ci auguriamo che troverai tutta l\'ispirazione e i materiali che cerchi! Ricordati di dare un\'occhiata alla tua casella di posta per non perderti aggiornamenti a te utili. '),(2,'Ordine confermato!','Il tuo ordine è stato confermato. Ora non resta che aspettare! Nel frattempo, perchè non dai un\'occhiata alle nostre offerte? Troverai ogni giorno nuovi prodotti in sconto!'),(3,'Nuovo prodotto in offerta.','Ci sono delle novità nella sezione offerte... perchè non dai un\'occhiata?'),(4,'Carrello in sospeso','A nessuno piacciono le attese troppo lunghe... perchè non completi il tuo ordine? La tua prossima creazione preferita è alla portata di un click!'),(5,'Nuovi metodi di pagamento','Fare acquisti non è mai stato così facile! Da oggi sarà possibile effettuare transazioni anche con Satispay e con Klarna, che offre un servizio di rateizzazione priva di interessi. Che aspetti?'),(6,'Filati, attrezzi, accessori...','Il mondo della maglieria non si limita ai gomitoli: esplora tutte le nostre categorie e lasciati ispirare da articoli di ogni genere!'),(7,'Nuovo ordine ricevuto','Controlla l\'elenco degli ordini per ulteriori dettagli.'),(11,'Buon natale!!!','Nuove offerte natalizie pensate esclusivamente per il nostro pubblico fidato');
 /*!40000 ALTER TABLE `avvisi` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +143,7 @@ CREATE TABLE `clienti` (
 
 LOCK TABLES `clienti` WRITE;
 /*!40000 ALTER TABLE `clienti` DISABLE KEYS */;
-INSERT INTO `clienti` VALUES ('','','',''),('cinziabuccino@gmail.com','Cinzia','Buccino','Paco2006'),('mariliamerendi@gmail.com','Marilia','Merendi','Tina2022'),('mauricapuano@gmail.com','Maurizio','Capuano','Kira2003'),('mauricapuano@icloud.com','Maurizio','Capuano','Maurizio03');
+INSERT INTO `clienti` VALUES ('cinziabuccino@gmail.com','Cinzia','Buccino','Paco2006'),('mariliamerendi@gmail.com','Marilia','Merendi','Tina2022'),('mauricapuano@gmail.com','Maurizio','Capuano','Kira2003'),('mauricapuano@icloud.com','Maurizio','Capuano','Maurizio03');
 /*!40000 ALTER TABLE `clienti` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -162,8 +162,8 @@ CREATE TABLE `inboxclienti` (
   `Letta` tinyint(4) NOT NULL DEFAULT 0,
   PRIMARY KEY (`Email`,`CodID`),
   KEY `CodID` (`CodID`),
-  CONSTRAINT `CodID` FOREIGN KEY (`CodID`) REFERENCES `avvisi` (`CodID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `Email` FOREIGN KEY (`Email`) REFERENCES `clienti` (`Email`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `CodID` FOREIGN KEY (`CodID`) REFERENCES `avvisi` (`CodID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `Email` FOREIGN KEY (`Email`) REFERENCES `clienti` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -173,7 +173,7 @@ CREATE TABLE `inboxclienti` (
 
 LOCK TABLES `inboxclienti` WRITE;
 /*!40000 ALTER TABLE `inboxclienti` DISABLE KEYS */;
-INSERT INTO `inboxclienti` VALUES ('mariliamerendi@gmail.com',1,'2025-01-10','00:00:00',0),('mariliamerendi@gmail.com',4,'2025-01-15','00:00:00',0),('mauricapuano@gmail.com',1,'2025-01-10','00:00:00',1),('mauricapuano@gmail.com',2,'2025-01-12','00:00:00',1),('mauricapuano@gmail.com',3,'2025-01-15','00:00:00',1),('mauricapuano@gmail.com',4,'2025-01-15','00:00:00',1);
+INSERT INTO `inboxclienti` VALUES ('cinziabuccino@gmail.com',11,'2025-01-24','05:55:11',0),('mariliamerendi@gmail.com',1,'2025-01-10','00:00:00',0),('mariliamerendi@gmail.com',4,'2025-01-15','00:00:00',0),('mariliamerendi@gmail.com',11,'2025-01-24','05:55:11',0),('mauricapuano@gmail.com',1,'2025-01-10','00:00:00',1),('mauricapuano@gmail.com',2,'2025-01-12','00:00:00',1),('mauricapuano@gmail.com',3,'2025-01-15','00:00:00',1),('mauricapuano@gmail.com',11,'2025-01-24','05:55:11',1),('mauricapuano@icloud.com',11,'2025-01-24','05:55:11',0);
 /*!40000 ALTER TABLE `inboxclienti` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,15 +219,12 @@ CREATE TABLE `ordini` (
   `Ora` time DEFAULT NULL,
   `Pagato` tinyint(4) NOT NULL DEFAULT 0,
   `Importo` double NOT NULL DEFAULT 0,
-  `CodIDTransazione` int(11) DEFAULT NULL,
   `EmailCliente` varchar(45) NOT NULL,
-  `Stato` varchar(45) DEFAULT NULL,
+  `Stato` enum('Ricevuto','Lavorazione','Spedito','Consegna','Consegnato') DEFAULT NULL,
   PRIMARY KEY (`CodID`),
   KEY `EmailCliente` (`EmailCliente`),
-  KEY `CodIDTransazione` (`CodIDTransazione`),
-  CONSTRAINT `CodIDTransazione` FOREIGN KEY (`CodIDTransazione`) REFERENCES `transazioni` (`CodID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `EmailCliente` FOREIGN KEY (`EmailCliente`) REFERENCES `clienti` (`Email`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -236,7 +233,7 @@ CREATE TABLE `ordini` (
 
 LOCK TABLES `ordini` WRITE;
 /*!40000 ALTER TABLE `ordini` DISABLE KEYS */;
-INSERT INTO `ordini` VALUES (1,'2025-01-23','10:50:19',1,16.15,NULL,'mauricapuano@gmail.com','Ricevuto'),(2,NULL,NULL,0,0,NULL,'mariliamerendi@gmail.com',NULL),(3,NULL,NULL,0,0,NULL,'cinziabuccino@gmail.com',NULL),(12,NULL,NULL,0,0,NULL,'mauricapuano@gmail.com',NULL);
+INSERT INTO `ordini` VALUES (1,'2025-01-23','10:50:19',1,16.15,'mauricapuano@gmail.com','Consegnato'),(2,NULL,NULL,0,0,'mariliamerendi@gmail.com',NULL),(3,NULL,NULL,0,0,'cinziabuccino@gmail.com',NULL),(12,'2025-01-24','05:40:52',1,22.22,'mauricapuano@gmail.com','Consegnato'),(13,'2025-01-25','00:43:56',1,32.1,'mauricapuano@gmail.com','Spedito'),(14,NULL,NULL,0,0,'mauricapuano@gmail.com',NULL);
 /*!40000 ALTER TABLE `ordini` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -257,7 +254,7 @@ CREATE TABLE `prodotti` (
   `Strumenti` varchar(250) DEFAULT NULL,
   `Giacenza` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`CodID`)
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -266,7 +263,7 @@ CREATE TABLE `prodotti` (
 
 LOCK TABLES `prodotti` WRITE;
 /*!40000 ALTER TABLE `prodotti` DISABLE KEYS */;
-INSERT INTO `prodotti` VALUES (1,'Alma Alabama Gr 100','alabama.jpg',6.9,'Blu','70% cotone 20% viscosa 10% lino','Ferri 5-6 Uncinetto 4-5',5),(2,'Alma Arizona Gr 100','arizona.jpg',6.9,'Giallo/Arancione','70% cotone 20% viscosa 10% lino','Ferri 5-6 Uncinetto 4-5',8),(3,'Alma Vermont Gr 100','vermont.jpg',6.9,'Verde','70% cotone 20% viscosa 10% lino','Ferri 5-6 Uncinetto 4-5',3),(4,'Aretha Slim Beige Grammi 150','aretha-beige.jpg',7.5,'Beige','100% poliammide','Ferri 6-8 Uncinetto 3-5',2),(5,'Aretha Slim Bianco Grammi 150','aretha-bianco.jpg',7.5,'Bianco','100% poliammide','Ferri 6-8 Uncinetto 3-5',7),(6,'Aretha Slim Cammello Grammi 150','aretha-cammello.jpg',7.5,'Marrone','100% poliammide','Ferri 6-8 Uncinetto 3-5',2),(7,'Aretha Slim Cielo Grammi 150','aretha-cielo.jpg',7.5,'Azzurro','100% poliammide','Ferri 6-8 Uncinetto 3-5',7),(8,'Barnes Violet Gr 50','barnes-violet.jpg',2.9,'Viola','30% lana 70% acrilico','Ferri 6-8 Uncinetto 5-7',4),(9,'Barnes Turquoise Gr 50','barnes-turquoise.jpg',2.9,'Blu/Marrone','30% lana 70% acrilico','Ferri 6-8 Uncinetto 5-7',2),(10,'Barnes Wafer Gr 50','barnes-wafer.jpg',2.9,'Rosso/Ocra','30% lana 70% acrilico','Ferri 6-8 Uncinetto 5-7',0),(11,'AllenChic Nero Gr 100','allen-nero.jpg',6.9,'Nero','40% acrilico 60% poliestere','Ferri 7-8 Uncinetto 6-7',7),(12,'AllenChic Rosso Gr 100','allen-rosso.jpg',6.9,'Rosso','40% acrilico 60% poliestere','Ferri 7-8 Uncinetto 6-7',3),(13,'Borsa Juta 42x33 Natural','borsa-juta.jpg',6.8,'Beige','100% juta',NULL,67),(14,'Borsa di paglia Grande','borsa-pagliaL.jpg',18.9,'Beige',NULL,NULL,3),(15,'Borsa di paglia Media','borsa-pagliaM.jpg',16.9,'Beige',NULL,NULL,7),(16,'Borsa di paglia Piccola','borsa-pagliaS.jpg',12.9,'Beige',NULL,NULL,2),(17,'Fodera in lycra Bianco','lycra-bianco.jpg',4.9,'Bianco','90% poliammide 10% elasthan',NULL,7),(18,'Fodera in lycra Carne','lycra-carne.jpg',4.9,'Carne','90% poliammide 10% elasthan',NULL,5),(19,'Anelli ovali Oro 25mm','ovali-oroS.jpg',2.7,'Oro',NULL,NULL,9),(20,'Anelli ovali Oro 40mm','ovali-oroL.jpg',4.6,'Oro',NULL,NULL,8),(21,'Anelli rettangolari Argento 25mm','rettang-argentoS.jpg',1.7,'Argento',NULL,NULL,2),(22,'Anelli rettangolari Argento 30mm','rettang-argentoL.jpg',1.9,'Argento',NULL,NULL,7),(23,'Anelli semicircolari aperti Oro 25mm','semicirc-oroS.jpg',4.4,'Oro',NULL,NULL,2),(24,'Anelli semicircolari aperti Oro 40mm','semicirc-oroL.jpg',4.5,'Oro',NULL,NULL,5),(25,'Fondo Borsa 27x12 ecopelle Giallo','borsa-eco-giallo.jpg',3.8,'Giallo','100% ecopelle',NULL,2),(26,'Fondo Borsa 27x12 ecopelle Magenta','borsa-eco-magenta.jpg',3.8,'Magenta','100% ecopelle',NULL,9),(27,'Fondo Borsa 27x12 ecopelle Marrone','borsa-eco-marrone.jpg',3.8,'Marrone','100% ecopelle',NULL,5),(28,'Manici Bamboo ad arco con asta in metallo','manici-bamboo.jpg',8.9,'Marrone',NULL,NULL,2),(29,'Manici Circle Giallo','manici-circle.jpg',8,'Giallo',NULL,NULL,7),(30,'Manici Dior Avorio','manici-avorio.jpg',6.9,'Bianco',NULL,NULL,5),(31,'Fibbia a scatto Rossa','fibbia-scatto-rossa.jpg',3.9,'Rosso','100% nylon',NULL,8),(32,'Fibbia a scatto Verde','fibbia-scatto-verde.jpg',3.9,'Verde','100% nylon',NULL,3),(33,'Fibbia nylon fb114 Nero','fibbia-nylon.jpg',3.4,'Nero','100% nylon',NULL,7),(34,'Paillettes Classic Lilla-g716','paillettes-lilla.jpg',2,'Viola',NULL,NULL,2),(35,'Paillettes Classic Oro-h813','paillettes-oro.jpg',2,'Oro',NULL,NULL,8),(36,'Paillettes Classic Smeraldo-h804','paillettes-smeraldo.jpg',2,'Verde',NULL,NULL,3),(37,'Bottone Akoya 40 Arancio 1pz','akoya-arancio.jpg',1.5,'Giallo',NULL,NULL,9),(38,'Bottone Akoya 40 Corallo 1pz','akoya-corallo.jpg',1.5,'Rosso',NULL,NULL,7),(39,'Bottone Akoya 24 Nero 1pz','akoya-nero.jpg',0.4,'Nero',NULL,NULL,5),(40,'Feltro 70x50 cm Giallo','feltro-giallo.jpg',4.3,'Giallo',NULL,NULL,4),(41,'Feltro 70x50 cm Viola','feltro-viola.jpg',4.3,'Viola',NULL,NULL,2),(42,'Spille da balia 51mm','spille-baliaL.jpg',1.5,NULL,'100% acciaio',NULL,6),(43,'Spille da balia 32mm','spille-baliaS.jpg',1.5,NULL,'100% acciaio',NULL,7),(44,'Spilla stella pearl 1pz','spilla-stella.jpg',3.5,NULL,'100% acciaio',NULL,8),(45,'Spilla gufo 1pz','spilla-gufo.jpg',2.9,'Bronzo','10% acciaio 90% pet',NULL,0),(46,'Anelli aperti 5mm Oro 4gr','anelli-oro.jpg',1.5,'Oro','100% nichel',NULL,10),(47,'Anelli aperti 5mm Argento 4gr','anelli-argento.jpg',1.5,'Argento','100% nichel',NULL,0),(48,'Apple Leaf Verde','apple-leaf.jpg',0.8,'Verde',NULL,NULL,0),(49,'Sagea Verde','sagea.jpg',0.7,'Verde',NULL,NULL,0),(50,'Shelly Bianco Oro','shelly.jpg',0.6,'Bianco/Oro',NULL,NULL,5),(51,'Set 9 Uncinetto Monet','uncinetto-monet.jpg',17.9,'Multicolor',NULL,NULL,2),(52,'Set 8 Uncinetto Woody','uncinetto-woody.jpg',24.9,'Marrone',NULL,NULL,7),(53,'Set uncinetti assortiti Soft Touch 7-12','uncinetti-softtouch.jpg',18.9,'Multicolor',NULL,NULL,9),(54,'Ferri da maglia Basic 40 n 13','ferri-maglia13.jpg',4.9,'Grigio',NULL,NULL,5),(55,'Ferri da maglia Basic 40 n 20','ferri-maglia20.jpg',7.2,'Grigio',NULL,NULL,3),(56,'Cassetta Legno Wood','cassetta-wood.jpg',24.2,'Marrone',NULL,NULL,7),(57,'Borsa All in one Dandelion ','borsa-allinone.jpg',58.9,'Blu',NULL,NULL,3),(58,'Libro 100 Fiori a Maglia','100fiori-maglia.jpg',23.8,NULL,NULL,NULL,79),(59,'Libro 75 motivi di pizzo all’uncinetto','75motivi-pizzo.jpg',18.9,NULL,NULL,NULL,0),(60,'Libro Guida tecniche di sartoria','tecniche-sartoria.jpg',22.8,NULL,NULL,NULL,5),(61,'Libro Uncinetto tunisino moderno','uncinetto-tunisino.jpg',32.4,NULL,NULL,NULL,2),(62,'Libro Complementi d’arredo a Uncinetto','complementi-arredo.jpg',18.9,NULL,NULL,NULL,8);
+INSERT INTO `prodotti` VALUES (1,'Alma Alabama Gr 100','alabama.jpg',6.9,'Blu','70% cotone 20% viscosa 10% lino','Ferri 5-6 Uncinetto 4-5',8),(2,'Alma Arizona Gr 100','arizona.jpg',6.9,'Giallo/Arancione','70% cotone 20% viscosa 10% lino','Ferri 5-6 Uncinetto 4-5',8),(3,'Alma Vermont Gr 100','vermont.jpg',6.9,'Verde','70% cotone 20% viscosa 10% lino','Ferri 5-6 Uncinetto 4-5',3),(4,'Aretha Slim Beige Grammi 150','aretha-beige.jpg',7.5,'Beige','100% poliammide','Ferri 6-8 Uncinetto 3-5',2),(5,'Aretha Slim Bianco Grammi 150','aretha-bianco.jpg',7.5,'Bianco','100% poliammide','Ferri 6-8 Uncinetto 3-5',7),(6,'Aretha Slim Cammello Grammi 150','aretha-cammello.jpg',7.5,'Marrone','100% poliammide','Ferri 6-8 Uncinetto 3-5',2),(7,'Aretha Slim Cielo Grammi 150','aretha-cielo.jpg',7.5,'Azzurro','100% poliammide','Ferri 6-8 Uncinetto 3-5',7),(8,'Barnes Violet Gr 50','barnes-violet.jpg',2.9,'Viola','30% lana 70% acrilico','Ferri 6-8 Uncinetto 5-7',4),(9,'Barnes Turquoise Gr 50','barnes-turquoise.jpg',2.9,'Blu/Marrone','30% lana 70% acrilico','Ferri 6-8 Uncinetto 5-7',2),(10,'Barnes Wafer Gr 50','barnes-wafer.jpg',2.9,'Rosso/Ocra','30% lana 70% acrilico','Ferri 6-8 Uncinetto 5-7',0),(11,'AllenChic Nero Gr 100','allen-nero.jpg',6.9,'Nero','40% acrilico 60% poliestere','Ferri 7-8 Uncinetto 6-7',7),(12,'AllenChic Rosso Gr 100','allen-rosso.jpg',6.9,'Rosso','40% acrilico 60% poliestere','Ferri 7-8 Uncinetto 6-7',3),(13,'Borsa Juta 42x33 Natural','borsa-juta.jpg',6.8,'Beige','100% juta',NULL,67),(14,'Borsa di paglia Grande','borsa-pagliaL.jpg',18.9,'Beige',NULL,NULL,3),(15,'Borsa di paglia Media','borsa-pagliaM.jpg',16.9,'Beige',NULL,NULL,7),(16,'Borsa di paglia Piccola','borsa-pagliaS.jpg',12.9,'Beige',NULL,NULL,2),(17,'Fodera in lycra Bianco','lycra-bianco.jpg',4.9,'Bianco','90% poliammide 10% elasthan',NULL,7),(18,'Fodera in lycra Carne','lycra-carne.jpg',4.9,'Carne','90% poliammide 10% elasthan',NULL,5),(19,'Anelli ovali Oro 25mm','ovali-oroS.jpg',2.7,'Oro',NULL,NULL,9),(20,'Anelli ovali Oro 40mm','ovali-oroL.jpg',4.6,'Oro',NULL,NULL,8),(21,'Anelli rettangolari Argento 25mm','rettang-argentoS.jpg',1.7,'Argento',NULL,NULL,2),(22,'Anelli rettangolari Argento 30mm','rettang-argentoL.jpg',1.9,'Argento',NULL,NULL,7),(23,'Anelli semicircolari aperti Oro 25mm','semicirc-oroS.jpg',4.4,'Oro',NULL,NULL,2),(24,'Anelli semicircolari aperti Oro 40mm','semicirc-oroL.jpg',4.5,'Oro',NULL,NULL,5),(25,'Fondo Borsa 27x12 ecopelle Giallo','borsa-eco-giallo.jpg',3.8,'Giallo','100% ecopelle',NULL,2),(26,'Fondo Borsa 27x12 ecopelle Magenta','borsa-eco-magenta.jpg',3.8,'Magenta','100% ecopelle',NULL,9),(27,'Fondo Borsa 27x12 ecopelle Marrone','borsa-eco-marrone.jpg',3.8,'Marrone','100% ecopelle',NULL,5),(28,'Manici Bamboo ad arco con asta in metallo','manici-bamboo.jpg',8.9,'Marrone',NULL,NULL,2),(29,'Manici Circle Giallo','manici-circle.jpg',8,'Giallo',NULL,NULL,7),(30,'Manici Dior Avorio','manici-avorio.jpg',6.9,'Bianco',NULL,NULL,5),(31,'Fibbia a scatto Rossa','fibbia-scatto-rossa.jpg',3.9,'Rosso','100% nylon',NULL,8),(32,'Fibbia a scatto Verde','fibbia-scatto-verde.jpg',3.9,'Verde','100% nylon',NULL,3),(33,'Fibbia nylon fb114 Nero','fibbia-nylon.jpg',3.4,'Nero','100% nylon',NULL,7),(34,'Paillettes Classic Lilla-g716','paillettes-lilla.jpg',2,'Viola',NULL,NULL,2),(35,'Paillettes Classic Oro-h813','paillettes-oro.jpg',2,'Oro',NULL,NULL,8),(36,'Paillettes Classic Smeraldo-h804','paillettes-smeraldo.jpg',2,'Verde',NULL,NULL,3),(37,'Bottone Akoya 40 Arancio 1pz','akoya-arancio.jpg',1.5,'Giallo',NULL,NULL,9),(38,'Bottone Akoya 40 Corallo 1pz','akoya-corallo.jpg',1.5,'Rosso',NULL,NULL,7),(39,'Bottone Akoya 24 Nero 1pz','akoya-nero.jpg',0.4,'Nero',NULL,NULL,5),(40,'Feltro 70x50 cm Giallo','feltro-giallo.jpg',4.3,'Giallo',NULL,NULL,4),(41,'Feltro 70x50 cm Viola','feltro-viola.jpg',4.3,'Viola',NULL,NULL,2),(42,'Spille da balia 51mm','spille-baliaL.jpg',1.5,NULL,'100% acciaio',NULL,6),(43,'Spille da balia 32mm','spille-baliaS.jpg',1.5,NULL,'100% acciaio',NULL,7),(44,'Spilla stella pearl 1pz','spilla-stella.jpg',3.5,NULL,'100% acciaio',NULL,8),(45,'Spilla gufo 1pz','spilla-gufo.jpg',2.9,'Bronzo','10% acciaio 90% pet',NULL,0),(46,'Anelli aperti 5mm Oro 4gr','anelli-oro.jpg',1.5,'Oro','100% nichel',NULL,0),(47,'Anelli aperti 5mm Argento 4gr','anelli-argento.jpg',1.5,'Argento','100% nichel',NULL,0),(48,'Apple Leaf Verde','apple-leaf.jpg',0.8,'Verde',NULL,NULL,0),(49,'Sagea Verde','sagea.jpg',0.7,'Verde',NULL,NULL,0),(50,'Shelly Bianco Oro','shelly.jpg',0.6,'Bianco/Oro',NULL,NULL,5),(51,'Set 9 Uncinetto Monet','uncinetto-monet.jpg',17.9,'Multicolor',NULL,NULL,2),(52,'Set 8 Uncinetto Woody','uncinetto-woody.jpg',24.9,'Marrone',NULL,NULL,7),(53,'Set uncinetti assortiti Soft Touch 7-12','uncinetti-softtouch.jpg',18.9,'Multicolor',NULL,NULL,9),(54,'Ferri da maglia Basic 40 n 13','ferri-maglia13.jpg',4.9,'Grigio',NULL,NULL,5),(55,'Ferri da maglia Basic 40 n 20','ferri-maglia20.jpg',7.2,'Grigio',NULL,NULL,3),(56,'Cassetta Legno Wood','cassetta-wood.jpg',24.2,'Marrone',NULL,NULL,7),(57,'Borsa All in one Dandelion ','borsa-allinone.jpg',58.9,'Blu',NULL,NULL,3),(58,'Libro 100 Fiori a Maglia','100fiori-maglia.jpg',23.8,NULL,NULL,NULL,79),(59,'Libro 75 motivi di pizzo all’uncinetto','75motivi-pizzo.jpg',18.9,NULL,NULL,NULL,0),(60,'Libro Guida tecniche di sartoria','tecniche-sartoria.jpg',22.8,NULL,NULL,NULL,5),(61,'Libro Uncinetto tunisino moderno','uncinetto-tunisino.jpg',32.4,NULL,NULL,NULL,2),(62,'Libro Complementi d’arredo a Uncinetto','complementi-arredo.jpg',18.9,NULL,NULL,NULL,8),(68,'Marcello','',6.9,NULL,NULL,NULL,0);
 /*!40000 ALTER TABLE `prodotti` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -320,33 +317,8 @@ CREATE TABLE `prodottiordinati` (
 
 LOCK TABLES `prodottiordinati` WRITE;
 /*!40000 ALTER TABLE `prodottiordinati` DISABLE KEYS */;
-INSERT INTO `prodottiordinati` VALUES (22,1,10);
+INSERT INTO `prodottiordinati` VALUES (14,12,1),(22,1,10),(32,12,1),(46,13,10),(60,13,1);
 /*!40000 ALTER TABLE `prodottiordinati` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `transazioni`
---
-
-DROP TABLE IF EXISTS `transazioni`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `transazioni` (
-  `CodID` int(11) NOT NULL AUTO_INCREMENT,
-  `Data` date NOT NULL,
-  `Ora` time NOT NULL,
-  `Circuito` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`CodID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `transazioni`
---
-
-LOCK TABLES `transazioni` WRITE;
-/*!40000 ALTER TABLE `transazioni` DISABLE KEYS */;
-/*!40000 ALTER TABLE `transazioni` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -412,4 +384,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-24  3:47:09
+-- Dump completed on 2025-01-25  2:04:05

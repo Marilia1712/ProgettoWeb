@@ -19,14 +19,6 @@ CREATE TABLE `clienti` (
   PRIMARY KEY (`Email`)
 );
 
-CREATE TABLE `transazioni` (
-  `CodID` int(11) NOT NULL,
-  `Data` date NOT NULL,
-  `Ora` time NOT NULL,
-  `Circuito` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`CodID`)
-);
-
 CREATE TABLE `prodotti` (
   `CodID` int(11) NOT NULL,
   `Nome` varchar(45) NOT NULL,
@@ -45,7 +37,6 @@ CREATE TABLE `ordini` (
   `Ora` time,
   `Pagato` tinyint(4) NOT NULL,
   `Importo` double NOT NULL DEFAULT 0,
-  `CodIDTransazione` int(11),
   `EmailCliente` varchar(45) NOT NULL,
   PRIMARY KEY (`CodID`),
   CONSTRAINT `EmailCliente` FOREIGN KEY (`EmailCliente`) REFERENCES `clienti` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE,

@@ -366,7 +366,7 @@ footer .payment-icons img {
 }
 
 /*buttons section*/
-.btn-cart, .btn-wishlist, .btn-addwishlist, .btn-addproduct, .btn-removewishlist {
+.btn-cart, .btn-wishlist, .btn-addwishlist, .btn-addproduct, .btn-removewishlist, .btn-sendnotif {
     color: white;
     border: none; 
     padding: 10px 20px;
@@ -377,14 +377,14 @@ footer .payment-icons img {
     transition: background-color 0.3s ease; 
 }
 
-.btn-addwishlist, .btn-removewishlist, .btn-addproduct {
+.btn-addwishlist, .btn-removewishlist, .btn-addproduct, .btn-sendnotif {
     gap: 10px;
 }
 .btn-wishlist img , .btn-cart img{
     margin-left: 8px; 
 }
 
-.btn-cart, .btn-addwishlist, .btn-removewishlist, .btn-editproduct, .btn-deleteproduct, .btn-addproduct{
+.btn-cart, .btn-addwishlist, .btn-removewishlist, .btn-editproduct, .btn-deleteproduct, .btn-addproduct, .btn-sendnotif{
     background-color: #005BAD;
 }
 

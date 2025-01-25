@@ -1,30 +1,30 @@
 <h1 class="text-center mb-4">Modifica prodotto #<?php echo $templateParams["prodotto"]["CodID"]; ?></h1>
-<form action="./utils/edit-product-script.php" method="POST" enctype="multipart/form-data" class="row g-4">
+<form action="./utils/edit-product-script.php" method="POST" enctype="multipart/form-data" class="row basic-bg mt-3 g-4">
 
     <input type="hidden" name="product-id" value="<?php echo $templateParams["prodotto"]["CodID"]; ?>">
 
     <!-- Nome del prodotto -->
     <div class="col-md-4">
-        <label for="product-name" class="form-label">Nome del prodotto:</label>
+        <label style="font-weight:bold;" for="product-name" class="form-label">Nome del prodotto:</label>
         <input type="text" id="product-name" name="product-name" value="<?php echo $templateParams["prodotto"]["Nome"]; ?>" class="form-control" required>
     </div>
 
     <!-- Prezzo del prodotto -->
     <div class="col-md-4">
-        <label for="product-price" class="form-label">Prezzo:</label>
+        <label style="font-weight:bold;" for="product-price" class="form-label">Prezzo:</label>
         <input type="text" id="product-price" name="product-price" value="<?php echo number_format($templateParams["prodotto"]["Prezzo"], 2, ".", ""); ?>" class="form-control" required>
         <p class="form-text">Inserisci il prezzo utilizzando il punto come separatore decimale</p>
     </div>
 
     <!-- Giacenza del prodotto -->
     <div class="col-md-4">
-        <label for="product-store" class="form-label">Giacenza:</label>
+        <label style="font-weight:bold;" for="product-store" class="form-label">Giacenza:</label>
         <input type="number" min="0" id="product-store" name="product-store" value="<?php echo $templateParams["prodotto"]["Giacenza"]; ?>" class="form-control" required>
     </div>
 
     <!-- Categoria -->
     <div class="col-12">
-        <label for="product-category" class="form-label">Categoria:</label>
+        <label style="font-weight:bold;" for="product-category" class="form-label">Categoria:</label>
         <select id="product-category" name="product-category[]" multiple class="form-select" required>
             <?php foreach ($templateParams["categorie"] as $categoria): ?>
                 <option value="<?php echo $categoria["Nome"]; ?>" <?php if(in_array($categoria["Nome"], $templateParams["categorieProdotto"])) echo "selected"; ?>>
@@ -59,7 +59,7 @@
 
     <!-- Pulsante per l'invio -->
     <div class="col-12 text-center">
-        <button type="submit" class="btn btn-primary btn-lg">Applica modifiche</button>
+        <button type="submit" class="btn-editproduct">Applica modifiche</button>
     </div>
 </form>
 

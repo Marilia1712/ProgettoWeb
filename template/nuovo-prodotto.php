@@ -1,33 +1,33 @@
 <h1 class="text-center mb-4">Aggiungi un nuovo prodotto</h1>
-<form action="./utils/add-product-script.php" method="POST" enctype="multipart/form-data" class="row g-4">
+<form action="./utils/add-product-script.php" method="POST" enctype="multipart/form-data" class="row basic-bg mt-3 g-4">
     <!-- Sezione per l'immagine del prodotto -->
     <div class="col-12">
-        <label for="product-image" class="form-label">Carica immagine del prodotto:</label>
+        <label style="font-weight:bold;" for="product-image" class="form-label">Carica immagine del prodotto:</label>
         <input type="file" id="product-image" name="product-image" accept="image/*" class="form-control" required>
     </div>
 
     <!-- Nome del prodotto -->
     <div class="col-md-4">
-        <label for="product-name" class="form-label">Nome del prodotto:</label>
+        <label style="font-weight:bold;" for="product-name" class="form-label">Nome del prodotto:</label>
         <input type="text" id="product-name" name="product-name" placeholder="Inserisci il nome del prodotto" class="form-control" required>
     </div>
 
     <!-- Prezzo del prodotto -->
     <div class="col-md-4">
-        <label for="product-price" class="form-label">Prezzo:</label>
+        <label style="font-weight:bold;" for="product-price" class="form-label">Prezzo:</label>
         <input type="text" id="product-price" name="product-price" placeholder="Inserisci il prezzo (es. 11.90)" class="form-control" required>
         <p class="form-text">Inserisci il prezzo utilizzando il punto come separatore decimale</p>
     </div>
 
     <!-- Giacenza del prodotto -->
     <div class="col-md-4">
-        <label for="product-store" class="form-label">Giacenza:</label>
+        <label style="font-weight:bold;" for="product-store" class="form-label">Giacenza:</label>
         <input type="number" min="0" id="product-store" name="product-store" placeholder="Inserisci la giacenza del prodotto" class="form-control" required>
     </div>
 
     <!-- Categoria -->
     <div class="col-12">
-        <label for="product-category" class="form-label">Categoria:</label>
+        <label style="font-weight:bold;" for="product-category" class="form-label">Categoria:</label>
         <select id="product-category" name="product-category[]" multiple class="form-select" required>
             <?php foreach ($templateParams["categorie"] as $categoria): ?>
                 <option value="<?php echo $categoria["Nome"]; ?>"><?php echo $categoria["Nome"]; ?></option>
@@ -60,7 +60,7 @@
 
     <!-- Pulsante per l'invio -->
     <div class="col-12 text-center">
-        <button type="submit" class="btn btn-primary btn-lg">Aggiungi Prodotto</button>
+        <button type="submit" class="btn-addproduct">Aggiungi Prodotto</button>
     </div>
 </form>
 

@@ -1,5 +1,5 @@
 <h1 class="text-center mb-4">Crea una nuova wishlist</h1>
-<form action="./utils/new-wishlist-script.php" method="POST" class="row basic-bg g-4">
+<form action="./utils/new-wishlist-script.php" method="POST" class="row mt-3 basic-bg g-4">
     <!-- Nome della wishlist -->
     <div class="col-12 col-md-4">
         <label style="font-weight:bold;" for="wishlist-name" class="form-label">Nome della wishlist:</label>

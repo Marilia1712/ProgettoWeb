@@ -1,9 +1,11 @@
 <section class="container py-5">
-    <div class="row p-4">
+    <div class="row">
         <!-- Image -->                                               
-        <div id="imageZoom" style="--url: url(.<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>); --zoom-x: 0%; --zoom-y:0%; --display:none;" 
-                class="col-md-6 text-center mb-4 prod-image">
-            <img src="<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="col-md-6 text-center mb-4 image-container">
+            <div id="imageZoom" style="--url: url(.<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>); --zoom-x: 0%; --zoom-y:0%; --display:none;" 
+                    class="prod-image">
+                <img src="<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            </div>
         </div>
         <script>
             let imageZoom = document.getElementById('imageZoom');

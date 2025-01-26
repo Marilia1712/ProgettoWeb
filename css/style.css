@@ -517,6 +517,11 @@ footer .payment-icons .payment-icon {
     font-weight: bold;
 }
 
+.image-container {
+    overflow: hidden;
+    max-width: 100%;
+}
+
 #imageZoom {
     position: relative;
     overflow: hidden; 

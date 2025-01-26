@@ -98,8 +98,13 @@ class DatabaseHelper{
         $stmt->bind_param('s', $userEmail);
         $stmt->execute();
         $result = $stmt->get_result();
+        
+        $stmt2 = $this->conn->prepare("SELECT * FROM venditori WHERE Email = ?");
+        $stmt2->bind_param('s', $userEmail);
+        $stmt2->execute();
+        $result2 = $stmt2->get_result();
 
-        if(empty($result->fetch_all(MYSQLI_ASSOC)))
+        if(empty($result->fetch_all(MYSQLI_ASSOC)) AND empty($result2->fetch_all(MYSQLI_ASSOC)))
             return false; //utente non registrato
         else
             return true; //utente registrato
@@ -112,10 +117,23 @@ class DatabaseHelper{
         $result = $stmt->get_result();
         $result = $result->fetch_all(MYSQLI_ASSOC);
 
-        if(empty($result))
-            return NULL; //credenziali errate
-        else
+        $stmt2 = $this->conn->prepare("SELECT * FROM venditori WHERE Email = ? AND Password = ?");
+        $stmt2->bind_param('ss', $email, $password);
+        $stmt2->execute();
+        $result2 = $stmt2->get_result();
+        $result2 = $result2->fetch_all(MYSQLI_ASSOC);
+
+        if(empty($result)){
+            if(empty($result2)){
+                return NULL;
+            }
+            else{
+                return $result2[0];
+            }
+        }
+        else{
             return $result[0]; //credenziali corrette
+        }
     }
 
     public function signUserUp($email, $nome, $cognome, $password){

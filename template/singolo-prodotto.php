@@ -49,37 +49,39 @@
                 </div>
 
                 <!-- Buttons -->
-                <div class="mt-4">
+                <?php if(isset($_SESSION["email"])): ?>
+                    <div class="mt-4">
 
-                    <!-- Cart -->
-                    <div class="mb-3">
-                        <form action="./utils/add-to-cart-script.php" method="post">
-                            <input type="hidden" name="idProdotto" value="<?php echo $prodotto["CodIDProdotto"]; ?>">
-                            <input type="number" name="quantita" value="1" min="1" max="<?php echo $prodotto["Giacenza"]; ?>" class="form-control w-25 d-inline-block mx-2" aria-label="Quantità">
-                                <button type="submit" class="btn-cart" <?php if($prodotto["Giacenza"] == 0) echo "disabled"; ?>>
-                                    Aggiungi al Carrello
-                                    <img src="./upload/icons/cart-shopping-solid-white.svg" alt="Carrello" width="24">
+                        <!-- Cart -->
+                        <div class="mb-3">
+                            <form action="./utils/add-to-cart-script.php" method="post">
+                                <input type="hidden" name="idProdotto" value="<?php echo $prodotto["CodIDProdotto"]; ?>">
+                                <input type="number" name="quantita" value="1" min="1" max="<?php echo $prodotto["Giacenza"]; ?>" class="form-control w-25 d-inline-block mx-2" aria-label="Quantità">
+                                    <button type="submit" class="btn-cart" <?php if($prodotto["Giacenza"] == 0) echo "disabled"; ?>>
+                                        Aggiungi al Carrello
+                                        <img src="./upload/icons/cart-shopping-solid-white.svg" alt="Carrello" width="24">
+                                    </button>
+                            </form>
+                        </div>
+
+                        <!-- Wishlist -->
+                        <div class="mb-3">
+                            <form action="./utils/add-to-wishlist-script.php" method="post">
+                                <input type="hidden" name="idProdotto" value="<?php echo $prodotto["CodIDProdotto"]; ?>">
+                                <select name="idWishlist"  class="form-control w-25 d-inline-block mx-2" required aria-label="Nome wishlist">
+                                    <option value="" disabled selected hidden>Scegli Wishlist</option>
+                                    <?php foreach($templateParams["wishlists"] as $wishlist): ?>
+                                        <option value="<?php echo $wishlist["CodID"]; ?>"><?php echo $wishlist["Nome"]; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                                <button type="submit" class="btn-wishlist">
+                                    Aggiungi a Wishlist&nbsp
+                                    <img src="./upload/icons/heart-solid-white.svg" alt="Wishlist" width="24">
                                 </button>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-
-                    <!-- Wishlist -->
-                    <div class="mb-3">
-                        <form action="./utils/add-to-wishlist-script.php" method="post">
-                            <input type="hidden" name="idProdotto" value="<?php echo $prodotto["CodIDProdotto"]; ?>">
-                            <select name="idWishlist"  class="form-control w-25 d-inline-block mx-2" required aria-label="Nome wishlist">
-                                <option value="" disabled selected hidden>Scegli Wishlist</option>
-                                <?php foreach($templateParams["wishlists"] as $wishlist): ?>
-                                    <option value="<?php echo $wishlist["CodID"]; ?>"><?php echo $wishlist["Nome"]; ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                            <button type="submit" class="btn-wishlist">
-                                Aggiungi a Wishlist&nbsp
-                                <img src="./upload/icons/heart-solid-white.svg" alt="Wishlist" width="24">
-                            </button>
-                        </form>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

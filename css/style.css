@@ -107,10 +107,12 @@ header .search-bar::after {
 
 
 /*header logo*/
+/*
 header .logo img {
     margin: auto;
     display: block;
 }
+*/
 
 header .loginbanner a {
     text-decoration: none;
@@ -717,6 +719,11 @@ main {
     .desktop-navbar {
         display: none;
     }
+
+    .icons {
+        display: flex;
+        justify-content: center;
+    }    
 
     header .icons .login-button {
         min-width: auto;

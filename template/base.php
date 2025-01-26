@@ -30,9 +30,9 @@
 
     <!-- Header -->
     <header class="mainheader py-4">
-        <div class="row align-items-center py-3" style="max-width:100%;">
+        <div class="row align-items-center gap-2" style="max-width:100%;">
             <!-- Search Bar -->
-            <div class="col-auto search-bar">
+            <div class="col search-bar text-center">
                 <form class="d-flex" action="./index-ricerca.php" method="get">
                     <input type="text" name="research" class="form-control me-2" placeholder="Cerca un prodotto">
                     <button type="submit" class="btn btn-primary">
@@ -42,41 +42,34 @@
             </div>
 
             <!-- Logo -->
-            <div class="col-auto logo text-center">
+            <div class="col logo text-center">
                 <img src="./upload/logos/LOGO2.png" alt="Logo All You Knit" class="img-fluid">
             </div>
 
             <!-- Icons -->
-            <div class="col-auto icons">
-                <div class="d-inline-flex gap-2">
-                    <!-- Hamburger menu mobile -->
-                    <div class="col-auto d-md-none">
-                        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-                            <img src="./upload/icons/bars-solid.svg" alt="Menu" width="24">
-                        </button>
-                    </div>
-                    <?php if(isset($_SESSION["email"])): ?>
-                        <!-- icone avvisi, carrello, logout -->
-                        <a href="./index-avvisi.php">
-                            <?php if($templateParams["news"]): ?>
-                                <img src="./upload/icons/bell-solid-notification.svg" alt="Ci sono nuove notifiche" width="24">
-                            <?php else: ?>
-                                <img src="./upload/icons/bell-solid.svg" alt="Sezione notifiche" width="24">
-                            <?php endif; ?>
-                        </a>
-                        <a href="./index-carrello.php">
-                            <img src="./upload/icons/cart-shopping-solid.svg" alt="Accedi al carrello" width="24">
-                        </a>
-                        <a href="./utils/logout-script.php">
-                            <img src="./upload/icons/logout-solid.svg" alt="Effettua il logout" width="24">
-                        </a>
-                    <?php else: ?>
-                        <!-- login -->
-                        <a class="login-button" href="./index-login.php">
-                            <!-- <img src="./upload/icons/login-solid.svg" alt="Effettua il login" width="24"> -->
-                        </a>
-                    <?php endif; ?>
+            <div class="col icons text-center">
+                <!-- Hamburger menu mobile -->
+                <div class="d-md-none">
+                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                        <img src="./upload/icons/bars-solid.svg" alt="Menu" width="24">
+                    </button>
                 </div>
+                <?php if(isset($_SESSION["email"])): ?>
+                    <!-- icone avvisi, carrello, logout -->
+                    <a href="./index-avvisi.php">
+                        <?php if($templateParams["news"]): ?>
+                            <img src="./upload/icons/bell-solid-notification.svg" alt="Ci sono nuove notifiche" width="24">
+                        <?php else: ?>
+                            <img src="./upload/icons/bell-solid.svg" alt="Sezione notifiche" width="24">
+                        <?php endif; ?>
+                    </a>
+                    <a href="./index-carrello.php">
+                        <img src="./upload/icons/cart-shopping-solid.svg" alt="Accedi al carrello" width="24">
+                    </a>
+                    <a href="./utils/logout-script.php">
+                        <img src="./upload/icons/logout-solid.svg" alt="Effettua il logout" width="24">
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
     </header>

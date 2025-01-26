@@ -32,8 +32,9 @@ body {
     background-color: #005BAD; 
     color: white;
     font-size: 14px;
-    padding: 8px 15px; 
-    position:absolute;
+    padding: 8px 15px;
+    position:fixed;
+    z-index: 30;
     top: 0;
     right: 3%; 
     border-radius: 0 0 12px 12px; 

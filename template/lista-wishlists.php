@@ -1,5 +1,5 @@
 <!-- Bottone per aggiungere una nuova wishlist -->
-<section class="mb-4">
+<section class="my-4">
 <a href="./index-nuova-wishlist.php">
     <button class="btn-addwishlist">Crea una nuova wishlist
         <img src="./upload/icons/plus-solid-white.svg" alt="Aggiungi" width="24">

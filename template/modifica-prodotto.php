@@ -13,7 +13,6 @@
     <div class="col-md-4">
         <label style="font-weight:bold;" for="product-price" class="form-label">Prezzo:</label>
         <input type="text" id="product-price" name="product-price" value="<?php echo number_format($templateParams["prodotto"]["Prezzo"], 2, ".", ""); ?>" class="form-control" required>
-        <p class="form-text">Inserisci il prezzo utilizzando il punto come separatore decimale</p>
     </div>
 
     <!-- Giacenza del prodotto -->

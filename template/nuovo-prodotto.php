@@ -16,7 +16,6 @@
     <div class="col-md-4">
         <label style="font-weight:bold;" for="product-price" class="form-label">Prezzo:</label>
         <input type="text" id="product-price" name="product-price" placeholder="Inserisci il prezzo (es. 11.90)" class="form-control" required>
-        <p class="form-text">Inserisci il prezzo utilizzando il punto come separatore decimale</p>
     </div>
 
     <!-- Giacenza del prodotto -->

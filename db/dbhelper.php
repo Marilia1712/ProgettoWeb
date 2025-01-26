@@ -128,11 +128,11 @@ class DatabaseHelper{
                 return NULL;
             }
             else{
-                return $result2[0];
+                return $result2[0]; //è venditore
             }
         }
         else{
-            return $result[0]; //credenziali corrette
+            return $result[0]; //è utente
         }
     }
 

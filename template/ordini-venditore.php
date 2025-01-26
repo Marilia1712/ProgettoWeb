@@ -88,11 +88,13 @@
                 <h3>Prodotti:</h3>
                 <?php $prodottiOrdinati = $dbh->getOrderProducts($ordine["CodID"]);?>
                 <?php foreach ($prodottiOrdinati as $prodotto): ?>
-                <li>
-                    <a style="text-decoration:none;color:black;" href="./index-singolo-prodotto.php?idProdotto=<?php echo $prodotto["CodID"]; ?>">
-                        <?php echo $prodotto["Nome"]; ?> - Quantità: <?php echo $prodotto["Quantita"]; ?>
-                    </a>
-                </li>
+                <ul>
+                    <li>
+                        <a style="text-decoration:none;color:black;" href="./index-singolo-prodotto.php?idProdotto=<?php echo $prodotto["CodID"]; ?>">
+                            <?php echo $prodotto["Nome"]; ?> - Quantità: <?php echo $prodotto["Quantita"]; ?>
+                        </a>
+                    </li>
+                </ul>
                 <?php endforeach; ?>
             </div>
         </div>

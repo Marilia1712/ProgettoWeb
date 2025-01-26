@@ -2,7 +2,6 @@
 
 body {
     background-image: url('../upload/logos/background.png');
-    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -19,7 +18,6 @@ body {
     position:absolute;
     top: 0;
     right: 3%; 
-    z-index: 9999;
     border-radius: 0 0 12px 12px; 
     align-items: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
@@ -435,11 +433,6 @@ footer .payment-icons .payment-icon {
     color:#F85760
 }
 
-/* Main container */
-main {
-    margin-top: 0;
-    padding: 20px 0;
-}
 
 /*cards categorie*/
 .card {

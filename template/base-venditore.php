@@ -38,7 +38,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="container py-0">
+    <main class="container pb-4">
         <?php
         if (isset($templateParams["nome"])) {
             require($templateParams["nome"]);
@@ -46,7 +46,6 @@
         ?>
     </main>
     
-    <br>
     <!-- Footer -->
     <footer class="py-4">
         <div class="container">

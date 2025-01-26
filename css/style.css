@@ -124,7 +124,7 @@ header .search-bar::after { /*underlining black line*/
     display: inline-flex;
     align-items: center;
     margin-left: 10px; 
-        margin-right: 10px;
+    margin-right: 10px;
 }
 
 header .icons img {
@@ -139,7 +139,8 @@ header .icons .btn img {
 header .icons .btn {
     width: 3.0rem;
     height: 3.0rem;
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
     background-color: #005BAD;
 }
 

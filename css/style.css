@@ -105,15 +105,6 @@ header .search-bar::after {
 }
 
 
-
-/*header logo*/
-/*
-header .logo img {
-    margin: auto;
-    display: block;
-}
-*/
-
 header .loginbanner a {
     text-decoration: none;
     background-color: #F85760;

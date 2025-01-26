@@ -1,5 +1,5 @@
 <section>
-    <div class="row">
+    <div class="row mt-4">
         <?php foreach ($templateParams["categorie"] as $categoria): ?>
             <div class="col-12 col-md-6 mb-4">
                 <a href="./index-prodotti-categoria.php?nomeCategoria=<?php echo $categoria["Nome"]; ?>" class="card-link" style="text-decoration:none;">

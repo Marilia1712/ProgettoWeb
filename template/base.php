@@ -22,7 +22,7 @@
                 <?php if(isset($_SESSION["email"])): ?>
                     <span>Pagina personale di <?php echo $_SESSION["nome"]; ?></span>
                 <?php else: ?>
-                    <span>Welcome! Effettua login</span>
+                    <span>Benvenuto! Effettua il login</span>
                 <?php endif; ?>
             </div>
         </div>
@@ -104,7 +104,7 @@
                 <?php if(isset($_SESSION["email"])): ?>
                     <a href="./index-pagina-personale.php">Ciao, <?php echo $_SESSION["nome"]; ?>!</a>
                 <?php else: ?>
-                    <a href="./index-login.php">Log In / Sign Up</a>
+                    <a href="./index-login.php">Entra / Registrati</a>
                 <?php endif; ?>
             </div>
             <ul class="nav flex-column">
@@ -120,7 +120,7 @@
     </div>
 
     <!-- Main Content -->
-    <main class="container py-4">
+    <main class="container py-0">
         <?php
         if (isset($templateParams["nome"])) {
             require($templateParams["nome"]);

@@ -1,4 +1,4 @@
-<h1 class="mb-4">Il tuo carrello</h1>
+<h1 class="mt-4 mb-4">Il tuo carrello</h1>
 
 <!-- Elenco Prodotti -->
 <section class="cart">

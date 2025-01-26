@@ -1,5 +1,5 @@
 <!-- Sezione di benvenuto -->
-<div class="user-header text-center">
+<div class="user-header text-center mt-4">
     <img src="./upload/icons/user-solid.svg" alt="Logo utente" class="user-logo">
     <h1>Il tuo account</h1>
 </div>

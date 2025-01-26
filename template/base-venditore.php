@@ -38,7 +38,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="container py-4">
+    <main class="container py-0">
         <?php
         if (isset($templateParams["nome"])) {
             require($templateParams["nome"]);

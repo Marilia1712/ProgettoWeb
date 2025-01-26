@@ -2,7 +2,7 @@
     <div class="row p-4">
         <!-- Product Image -->                                               
         <div id="imageZoom" style="--url: url(.<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>); --zoom-x: 0%; --zoom-y:0%; --display:none;" 
-                class="col-md-5 text-center mb-4 prod-image">
+                class="col-md-6 text-center mb-4 prod-image">
             <img src="<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         </div>
         <script>
@@ -24,7 +24,7 @@
         </script>
 
         <!-- Product Details -->
-        <div class="col-md-7">
+        <div class="col-md-">
             <div class="product-info">
                 <h1><?php echo $prodotto["Nome"]; ?></h1>
                 <?php if($prodotto["Giacenza"] > 0): ?>
@@ -74,7 +74,7 @@
                                 <?php endforeach; ?>
                             </select>
                             <button type="submit" class="btn-wishlist">
-                                Aggiungi a Wishlist&nbsp
+                                Aggiungi a Wishlist
                                 <img src="./upload/icons/heart-solid-white.svg" alt="Wishlist" width="24">
                             </button>
                         </form>

@@ -1,5 +1,5 @@
 <!-- Elenco degli ordini -->
-<section class="row orders-list">
+<section class="row orders-list mt-4">
     <?php foreach ($templateParams["ordini"] as $ordine): ?>
     <div class="col-md-12 col-lg-6 mb-4">
         <div class="card bg-white shadow-sm p-4">

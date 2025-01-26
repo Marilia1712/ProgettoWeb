@@ -1,5 +1,5 @@
 <h1 class="text-center mb-4">Invia un nuovo avviso agli utenti</h1>
-<form action="./utils/send-notification-script.php" method="POST" class="row basic-bg mt-3 g-4">
+<form action="./utils/send-notification-script.php" method="POST" class="row basic-bg mx-2 mt-3 g-4">
 
     <!-- Titolo avviso -->
     <div class="col-12">

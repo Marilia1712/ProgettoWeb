@@ -1,5 +1,5 @@
 <h1 class="text-center mb-4">Modifica prodotto #<?php echo $templateParams["prodotto"]["CodID"]; ?></h1>
-<form action="./utils/edit-product-script.php" method="POST" enctype="multipart/form-data" class="row basic-bg mt-3 g-4">
+<form action="./utils/edit-product-script.php" method="POST" enctype="multipart/form-data" class="row basic-bg mx-2 mt-3 g-4">
 
     <input type="hidden" name="product-id" value="<?php echo $templateParams["prodotto"]["CodID"]; ?>">
 

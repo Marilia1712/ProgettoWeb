@@ -104,7 +104,7 @@
                 <?php if(isset($_SESSION["email"])): ?>
                     <a href="./index-pagina-personale.php">Ciao, <?php echo $_SESSION["nome"]; ?>!</a>
                 <?php else: ?>
-                    <a href="./index-login.php">Entra / Registrati</a>
+                    <a href="./index-login.php">Accedi/Registrati</a>
                 <?php endif; ?>
             </div>
             <ul class="nav flex-column">

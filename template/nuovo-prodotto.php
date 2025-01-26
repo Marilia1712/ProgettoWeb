@@ -1,5 +1,5 @@
 <h1 class="text-center mb-4">Aggiungi un nuovo prodotto</h1>
-<form action="./utils/add-product-script.php" method="POST" enctype="multipart/form-data" class="row basic-bg mt-3 g-4">
+<form action="./utils/add-product-script.php" method="POST" enctype="multipart/form-data" class="row basic-bg mx-2 mt-3 g-4">
     <!-- Sezione per l'immagine del prodotto -->
     <div class="col-12">
         <label style="font-weight:bold;" for="product-image" class="form-label">Carica immagine del prodotto:</label>

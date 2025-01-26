@@ -1,4 +1,4 @@
-<section class="basic-bg">
+<section class="basic-bg mx-2">
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <!-- Sezione Login -->

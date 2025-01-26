@@ -19,7 +19,7 @@
                         <p><?php echo $notification["Contenuto"]; ?></p>
                 <?php endif; ?>
 
-                <!-- Icons at the bottom-right -->
+                <!-- Icons -->
                 <div class="d-flex justify-content-end align-items-center gap-2 " style="bottom: 10px; right: 10px;">
                     <?php if($notification["Letta"]): ?>
                         <form action="./utils/unread-notification-script.php" method="POST">

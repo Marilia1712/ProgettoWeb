@@ -1,11 +1,10 @@
-<!-- Bottone per aggiungere una nuova wishlist -->
+<!-- Bottone nuova wishlist -->
 <section class="my-4">
-<a href="./index-nuova-wishlist.php">
-    <button class="btn-addwishlist">Crea una nuova wishlist
-        <img src="./upload/icons/plus-solid-white.svg" alt="Aggiungi" width="24">
-    </button>
-</a>    
-    <!-- <input type="button" onclick="location.href='https://google.com';" value="Go to Google" /> -->
+    <a href="./index-nuova-wishlist.php">
+        <button class="btn-addwishlist">Crea una nuova wishlist
+            <img src="./upload/icons/plus-solid-white.svg" alt="Aggiungi" width="24">
+        </button>
+    </a>    
 </section>
 
 <!-- Elenco wishlist -->

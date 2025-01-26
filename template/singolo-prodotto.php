@@ -1,6 +1,6 @@
 <section class="container py-5">
     <div class="row p-4">
-        <!-- Product Image -->                                               
+        <!-- Image -->                                               
         <div id="imageZoom" style="--url: url(.<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>); --zoom-x: 0%; --zoom-y:0%; --display:none;" 
                 class="col-md-6 text-center mb-4 prod-image">
             <img src="<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
@@ -48,10 +48,10 @@
                     <p>Codice di Riferimento: <?php echo $prodotto["CodIDProdotto"]; ?></p>
                 </div>
 
-                <!-- Action Buttons -->
+                <!-- Buttons -->
                 <div class="mt-4">
 
-                    <!-- Cart Section -->
+                    <!-- Cart -->
                     <div class="mb-3">
                         <form action="./utils/add-to-cart-script.php" method="post">
                             <input type="hidden" name="idProdotto" value="<?php echo $prodotto["CodIDProdotto"]; ?>">
@@ -63,7 +63,7 @@
                         </form>
                     </div>
 
-                    <!-- Wishlist Section -->
+                    <!-- Wishlist -->
                     <div class="mb-3">
                         <form action="./utils/add-to-wishlist-script.php" method="post">
                             <input type="hidden" name="idProdotto" value="<?php echo $prodotto["CodIDProdotto"]; ?>">

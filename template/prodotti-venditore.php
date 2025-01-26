@@ -1,4 +1,4 @@
-<!-- Bottone per aggiungere un prodotto -->
+<!-- Bottone aggiungi un prodotto -->
 <section class="mb-4">
     <form action="./index-nuovo-prodotto.php">
         <button class="btn-addproduct">Aggiungi Prodotto
@@ -11,13 +11,13 @@
 <section class="row g-4">
     <?php foreach ($templateParams["prodotti"] as $prodotto): ?>
     <div class="col-md-12 col-lg-6 mb-4">
-        <div class="card shadow-sm p-3"> <!-- Added padding to the card -->
+        <div class="card shadow-sm p-3">
             <div class="row g-0">
-                <!-- Image occupies 4 columns, with padding adjustment -->
+                <!-- Image -->
                 <div class="col-md-4 d-flex">
                     <img src="<?php echo UPLOAD_DIR."productimages/".$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid w-100 h-100 object-fit-contain">
                 </div>
-                <!-- Text occupies 8 columns, ensures full height -->
+                <!-- Text -->
                 <div class="col-md-8 d-flex flex-column">
                     <div class="card-body d-flex flex-column justify-content-between">
                         <h5 class="card-title"><?php echo $prodotto["Nome"]; ?></h5>

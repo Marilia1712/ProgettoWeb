@@ -1,3 +1,4 @@
+<!-- category card -->
 <section>
     <div class="row mt-4">
         <?php foreach ($templateParams["categorie"] as $categoria): ?>
@@ -18,6 +19,7 @@
     </div>
 </section>
 
+<!-- images carousel -->
 <section class="banner-categorie mb-5">
     <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
         <div class="carousel-inner">

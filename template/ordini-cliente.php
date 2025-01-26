@@ -5,7 +5,7 @@
         <div class="card bg-white shadow-sm p-4">
             <h2>Ordine #<?php echo $ordine["CodID"]; ?></h2>
 
-            <!-- Order details with grey background and rounded margins -->
+            <!-- Dettagli ordine -->
             <div class="order-details">
                 <h4>Importo: <?php echo number_format($ordine["Importo"], 2, ",", ""); ?> €</h4>
                 <p>Data: <?php echo $ordine["Data"]; ?></p>

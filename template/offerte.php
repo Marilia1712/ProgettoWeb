@@ -3,7 +3,6 @@
 
     <section class="row">
         <?php foreach ($templateParams["prodottiScontati"] as $prodotto): ?>
-        <!-- Adjusted column classes for responsiveness -->
         <article class="col-12 col-md-6 mb-4">
             <a href="./index-singolo-prodotto.php?idProdotto=<?php echo $prodotto["CodIDProdotto"]; ?>" class="text-decoration-none text-dark">
                 <div class="card shadow-sm h-100">

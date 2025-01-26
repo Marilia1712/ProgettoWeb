@@ -24,7 +24,7 @@
         </script>
 
         <!-- Product Details -->
-        <div class="col-md-">
+        <div class="col-md-6">
             <div class="product-info">
                 <h1><?php echo $prodotto["Nome"]; ?></h1>
                 <?php if($prodotto["Giacenza"] > 0): ?>

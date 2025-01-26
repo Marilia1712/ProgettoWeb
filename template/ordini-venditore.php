@@ -80,7 +80,7 @@
                 <form action="#" method="post">
                     <button class="btn-shipping p-3 mb-3" disabled>
                         Avanza lo stato dell'ordine
-                        <img src="./upload/icons/forward-solid.svg" alt="Wishlist" width="24">
+                        <img src="./upload/icons/forward-solid-grey.svg" alt="Wishlist" width="24">
                     </button>
                 </form>
             <?php endif; ?>

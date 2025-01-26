@@ -7,14 +7,11 @@
             <div class="notification col-12 bg-white p-3 shadow-sm rounded position-relative">
                 <!-- Notification content -->
                 <?php if($notification["Letta"]): ?>
-                    <h2 style="color:grey;"><?php echo $notification["Titolo"]; ?></h2>
-                    <?php else: ?>
-                    <h2><?php echo $notification["Titolo"]; ?></h2>  
-                <?php endif; ?>
-                <?php if($notification["Letta"]): ?>
+                        <h2 style="color:grey;"><?php echo $notification["Titolo"]; ?></h2>
                         <p style="color:grey;" class="datetime text-muted">Data: <?php echo $notification["Data"]; ?>, Ore: <?php echo $notification["Ora"]; ?></p>
                         <p style="color:grey;" ><?php echo $notification["Contenuto"]; ?></p>
                     <?php else: ?>
+                        <h2><?php echo $notification["Titolo"]; ?></h2>  
                         <p class="datetime text-muted">Data: <?php echo $notification["Data"]; ?>, Ore: <?php echo $notification["Ora"]; ?></p>
                         <p><?php echo $notification["Contenuto"]; ?></p>
                 <?php endif; ?>

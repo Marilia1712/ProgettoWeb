@@ -188,7 +188,7 @@ class DatabaseHelper{
     }
 
     public function getWishlistProducts($wishlistID){
-        $stmt = $this->conn->prepare("SELECT *, prodotti.Nome as NomeProdotto FROM prodotti INNER JOIN aggiuntawishlist ON(prodotti.CodID = aggiuntawishlist.CodIDProdotto)
+        $stmt = $this->conn->prepare("SELECT *, prodotti.Nome as NomeProdotto, prodotti.CodID as CodIDProdotto FROM prodotti INNER JOIN aggiuntawishlist ON(prodotti.CodID = aggiuntawishlist.CodIDProdotto)
                                         INNER JOIN wishlists ON(aggiuntawishlist.CodIDWishlist = wishlists.CodID) WHERE wishlists.CodID = ?");
         $stmt->bind_param('i', $wishlistID);
         $stmt->execute();

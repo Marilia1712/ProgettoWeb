@@ -7,7 +7,7 @@
     <div class="row">
         <?php foreach ($templateParams["prodotti"] as $prodotto): ?>
         <div class="col-12 col-md-6 mb-4">
-            <a href="./index-singolo-prodotto.php?idProdotto=<?php echo $prodotto["CodID"]; ?>" class="product-link" style="text-decoration:none;">
+            <a href="./index-singolo-prodotto.php?idProdotto=<?php echo $prodotto["CodIDProdotto"]; ?>" class="product-link" style="text-decoration:none;">
                 <article class="product-item d-flex align-items-center border p-3 shadow-sm bg-white" style="border-radius:12px;">
                     <!-- Product Image -->
                     <div class="me-3">

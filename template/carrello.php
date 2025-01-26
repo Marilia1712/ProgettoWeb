@@ -5,7 +5,7 @@
     <div class="row">
     <?php foreach ($templateParams["prodotti"] as $prodotto): ?>
             <div class="col-md-12 col-lg-6 mb-3">
-                <a href="./index-singolo-prodotto.php?idProdotto=<?php echo $prodotto["CodID"]; ?>" class="product-link" style="text-decoration:none;color:black">
+                <a href="./index-singolo-prodotto.php?idProdotto=<?php echo $prodotto["CodIDProdotto"]; ?>" class="product-link" style="text-decoration:none;color:black">
                     <article class="cart-item d-flex align-items-center p-3 bg-white border rounded">
                         <div class="product-image me-3">
                         <img src="<?php echo UPLOAD_DIR . "productimages/" . $prodotto["Immagine"]; ?>"

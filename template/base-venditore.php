@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <ul class="list-unstyled">
-                        <li><strong>All You Knit S.p.A</strong></li>
+                        <li><strong>All You Knit S.p.A.</strong></li>
                         <li>© 1988 All rights reserved</li>
                         <li>Via del Gomitolo 42, 45122 Cesena (FC)</li>
                         <li>Tel. +39 322 8443012</li>

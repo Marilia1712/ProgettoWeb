@@ -28,13 +28,13 @@
                             <form action="./utils/delete-product-script.php" method="post">
                                 <input type="hidden" name="idProdotto" value="<?php echo $prodotto["CodID"]; ?>">
                                 <button type="submit" class="btn-deleteproduct">Elimina
-                                    <img src="./upload/icons/trash-solid-white.svg" alt="Elimina">
+                                    <img src="./upload/icons/trash-solid-white.svg" alt="">
                                 </button>
                             </form>
                             <form action="./index-modifica-prodotto.php" method="post">
                                 <input type="hidden" name="idProdotto" value="<?php echo $prodotto["CodID"]; ?>">
                                 <button type="submit" class="btn-editproduct">Modifica
-                                    <img src="./upload/icons/pen-solid.svg" alt="Modifica">
+                                    <img src="./upload/icons/pen-solid.svg" alt="">
                                 </button>
                             </form>
                         </div>

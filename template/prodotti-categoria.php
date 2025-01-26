@@ -12,7 +12,7 @@
                     <!-- Product Image -->
                     <div class="me-3">
                         <img src="<?php echo UPLOAD_DIR . "productimages/" . $prodotto["Immagine"]; ?>" 
-                             alt="<?php echo $prodotto["NomeProdotto"]; ?>" 
+                             alt="" 
                              class="img-fluid" 
                              style="max-width: 150px; height: auto;">
                     </div>
